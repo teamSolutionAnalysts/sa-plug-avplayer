@@ -9,7 +9,7 @@ import AVFoundation
 import UIKit
 import WebKit
 
-protocol PlayerEventDelegate : class{
+public protocol PlayerEventDelegate : class{
     func didUpdateTimer(_ player : AVPlayer, elpsed time : String)
     func totalTime(_ player : AVPlayer)
     func AVPlayer(didPause player : AVPlayer)
@@ -20,13 +20,13 @@ protocol PlayerEventDelegate : class{
     func AVPlayer(didTaptoPreviousvideo : AVPlayer?)
     func AVPlayer(didEndPlaying : AVPlayer?)
 }
-extension PlayerEventDelegate {
+public extension PlayerEventDelegate {
     func didUpdateTimer(_ player : AVPlayer, elpsed time : String){}
     func AVPlayer(didPause player : AVPlayer){}
     func AVPlayer(didPlay player : AVPlayer){}
 }
 
-class ViewVideo : UIView
+public class ViewVideo : UIView
 {
     var playerLayer: AVPlayerLayer?
     var player: AVPlayer?
@@ -41,7 +41,7 @@ class ViewVideo : UIView
     var lblTotalTime : VideoControllLabel?
     var currentVideoID = 0
     var isMiniMized : Bool = false
-    open weak var delegate : PlayerEventDelegate?
+    internal weak var delegate : PlayerEventDelegate?
     var btnBackward : VideoControllButton?
     var btnForward : VideoControllButton?
     var btnPlayPause : VideoControllButton?
@@ -189,7 +189,7 @@ class ViewVideo : UIView
         }
     }
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if object is AVPlayerItem {
             switch keyPath {
                 

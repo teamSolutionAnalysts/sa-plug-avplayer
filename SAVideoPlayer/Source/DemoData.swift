@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-class DemoData : NSObject{
+public class DemoData : NSObject{
 //    var mediaJSON  = ["http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4","http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4","http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4","http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4", "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4","http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4","http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDir.mp4","https://www.youtube.com/embed/tgbNymZ7vqY"]
     
     var mediaJSON : [video]{
@@ -17,7 +17,7 @@ class DemoData : NSObject{
 }
 
 
-struct video {
+public struct video {
     var url: String = ""
     var thumbnail: UIImage?
     

@@ -30,7 +30,7 @@ public extension AVPlayerItem {
     
 }
 
-extension AVAsset {
+public extension AVAsset {
     
     func generateThumbnail(completion: @escaping (UIImage?) -> Void) {
         DispatchQueue.global().async {
@@ -48,7 +48,7 @@ extension AVAsset {
     }
 }
 
-extension UIImageView {
+public extension UIImageView {
     func downloadImageFrom(link:String, contentMode: UIView.ContentMode) {
         URLSession.shared.dataTask( with: NSURL(string:link)! as URL, completionHandler: {
             (data, response, error) -> Void in
@@ -60,7 +60,7 @@ extension UIImageView {
     }
 }
 
-extension Double{
+public extension Double{
     var CGFloatValue: CGFloat {
         return CGFloat(self)
     }

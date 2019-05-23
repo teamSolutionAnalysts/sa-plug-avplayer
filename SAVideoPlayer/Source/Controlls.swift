@@ -8,13 +8,13 @@
 
 import UIKit
 
-enum ButtonControlType :String {
+public enum ButtonControlType :String {
     case PlayPause = "playpause"
     case Expand = "expand"
     case forward = "forward"
     case backward = "backward"
 }
-enum LabelControllType : Int {
+public enum LabelControllType : Int {
     case TimeLabelStart = 1
     case TimeLabelTotal
 }
@@ -22,7 +22,7 @@ enum LabelControllType : Int {
     case Slider
 }
 
-class VideoControllButton : UIButton
+public class VideoControllButton : UIButton
 {
     var controllType : ButtonControlType = .PlayPause
     
@@ -33,7 +33,7 @@ class VideoControllButton : UIButton
     }
     #endif
     
-    override func prepareForInterfaceBuilder() {
+    override public func prepareForInterfaceBuilder() {
         self._setup()
     }
     
@@ -58,7 +58,7 @@ class VideoControllButton : UIButton
 }
 
 
-class VideoControllLabel : UILabel
+public class VideoControllLabel : UILabel
 {
     var controllType : LabelControllType = .TimeLabelStart
     
@@ -69,7 +69,7 @@ class VideoControllLabel : UILabel
     }
     #endif
     
-    override func prepareForInterfaceBuilder() {
+    override public func prepareForInterfaceBuilder() {
         self._setup()
     }
     
@@ -101,7 +101,7 @@ public enum VerticalPosition:Int{
     case bottom = 3
 }
 
-@IBDesignable open class BufferSlider: UISlider {
+@IBDesignable public class BufferSlider: UISlider {
     ///0.0 ~ 1.0. @IBInspectable
     @IBInspectable open var bufferStartValue:Double = 0{
         didSet{

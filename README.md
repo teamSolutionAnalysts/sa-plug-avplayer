@@ -1,4 +1,4 @@
-# SA-Plug-AVPlayer
+# SAPlugAVPlayer
 
 Simple and featured video player with full of customisation possibility, full control over AVPlayer. Adjust as you need in terms of design and feature.
 ## Getting Started
