@@ -130,10 +130,13 @@ public class ViewVideo : UIView
         if let loaderview = loader{
             self.activityIndicator = loaderview
             self.activityIndicator?.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.3)
+            self.activityIndicator?.hidesWhenStopped = true
+            
         }
         if let viewc = ControllView
         {
             self.controllerView = viewc
+            self.controllerView?.backgroundColor = UIColor.clear
         }
         if ViewVideo.checkIfUrlIsEmbedded(url: url)
         {

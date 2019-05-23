@@ -88,7 +88,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UR-3c-rOI">
                                                 <rect key="frame" x="8" y="8" width="272" height="629"/>
-                                                <mutableString key="text">Just ran a test as I was experiencing the same issue. Instruments showed a leak at the start of an app when sound was played using AVAudioPlayer. It was only registered once at the start. The sounds generated afterwards have not had any further leaks.Just ran a test as I was experiencing the same issue. Instruments showed a leak at the start of an app when sound was played using AVAudioPlayer. It was only registered once at the start. The sounds generated afterwards have not had any further leaks.Just ran a test as I was experiencing the same issue. Instruments showed a leak at the start of an app when sound was played using AVAudioPlayer. It was only registered once at the start. The sounds generated afterwards have not had any further leaks.Just ran a test as I was experiencing the same issue. Instruments showed a leak at the start of an app when sound was played using AVAudioPlayer. It was only registered once at the start. The sounds generated afterwards have not had any further leaks.</mutableString>
+                                                <string key="text">Just ran a test as I was experiencing the same issue. Instruments showed a leak at the start of an app when sound was played using AVAudioPlayer. It was only registered once at the start. The sounds generated afterwards have not had any further leaks.Just ran a test as I was experiencing the same issue. Instruments showed a leak at the start of an app when sound was played using AVAudioPlayer. It was only registered once at the start. The sounds generated afterwards have not had any further leaks.Just ran a test as I was experiencing the same issue. Instruments showed a leak at the start of an app when sound was played using AVAudioPlayer. It was only registered once at the start. The sounds generated afterwards have not had any further leaks.Just ran a test as I was experiencing the same issue. Instruments showed a leak at the start of an app when sound was played using AVAudioPlayer. It was only registered once at the start. The sounds generated afterwards have not had any further leaks.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -352,7 +352,7 @@
                                                 </state>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.038869938380281688" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="ARj-tJ-g7s" firstAttribute="top" secondItem="OEg-NJ-pOU" secondAttribute="bottom" id="65d-mQ-Nxy"/>
                                             <constraint firstItem="WrZ-OO-hRm" firstAttribute="leading" secondItem="Owq-V5-Xts" secondAttribute="trailing" constant="20" id="6VN-vR-zsD"/>
@@ -390,7 +390,7 @@
                                             <action selector="btnCloseTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cD1-xJ-5J2"/>
                                         </connections>
                                     </button>
-                                    <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="i4R-ck-emz">
+                                    <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="i4R-ck-emz">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                                         <color key="color" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </activityIndicatorView>
