@@ -105,6 +105,8 @@ class ViewController: UIViewController {
             viewVideo.currentVideoID = self.videoID
             viewVideo.play()
         }
+        self.activityIndicator.hidesWhenStopped = true
+        self.activityIndicator.isHidden = true
         viewVideo.activityIndicator?.startAnimating()
         
     }

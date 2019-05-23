@@ -131,6 +131,7 @@ public class ViewVideo : UIView
             self.activityIndicator = loaderview
             self.activityIndicator?.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.3)
             self.activityIndicator?.hidesWhenStopped = true
+            self.activityIndicator?.isHidden = true
             
         }
         if let viewc = ControllView
