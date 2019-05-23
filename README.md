@@ -36,7 +36,7 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 
 ### Sample
 ```swift
-	import PlusAVPlayer
+	import SAPlugAVPlayer
 
  	@IBOutlet weak var viewController: UIView!
     	@IBOutlet weak var viewVideo: ViewVideo!
