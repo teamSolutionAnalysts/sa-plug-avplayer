@@ -153,11 +153,27 @@ We have kept this code on the developer side because there is another drag video
         }
 ```
 ### Player Rate 
+
+```swift 
+	self.viewVideo.changePlayerRate(rate: rate)
+```
 There is a method which lets you change the player
 
 ## UI Guildlines
 
-Direct drag IB to UIView, the aspect ratio for the 16:9 constraint (priority to 750, lower than the 1000 line), the code section only needs to achieve. See more detail on the demo. You can use XIB or storyboard to make the UI, Use a view, assign its a custom class ViewVideo which is your main interface and player. Take a another view but do not add as a subview of ViewVideo, add subviews of all your controlls like playPause, FullscreenExit, time labels, sliders to controller view. to show progress take UIProgressBar seperate on the top of ViewVideo and controller view. Take out the outlets and pass it in.
+Make a view for video player and another with all controlls like,
+* Use VideoControllButton subclass for PlayPause, FullScreen
+* Use VideoControllLabel subclass for time label and total time
+* Use BufferSlider for UISlider which lets you customize colors and other property.
+
+## Note 
+Do not forgot to write ButtonControlType :
+For Buttons -> playpause, expand, forward, backward
+For Labels -> LabelControllType 1 for timelabelupdate or 2 for total time
+See more detail on the demo.
+
+
+Directly drag IB to UIViewController, the aspect ratio for the 16:9 constraint (priority to 750, lower than the 1000 line), the code section only needs to achieve. See more detail on the demo.
 
 ```
 viewVideo.configure(url: url,ControllView: self.viewController,loader: self.activityIndicator)
