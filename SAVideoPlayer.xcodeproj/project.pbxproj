@@ -10,6 +10,8 @@
 		AF147EBD228A901500EF42EA /* Controlls.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF147EBC228A901500EF42EA /* Controlls.swift */; };
 		AF147EBF228AA14400EF42EA /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF147EBE228AA14400EF42EA /* DemoData.swift */; };
 		AF3270E2229678F400C46927 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3270E1229678F400C46927 /* Extension.swift */; };
+		AF3270EE2296C5B200C46927 /* Simulator Screen Shot - iPhone 6 - 2019-05-23 at 17.37.56.png in Resources */ = {isa = PBXBuildFile; fileRef = AF3270EC2296C5B200C46927 /* Simulator Screen Shot - iPhone 6 - 2019-05-23 at 17.37.56.png */; };
+		AF3270EF2296C5B200C46927 /* Simulator Screen Shot - iPhone 6 - 2019-05-23 at 17.37.59.png in Resources */ = {isa = PBXBuildFile; fileRef = AF3270ED2296C5B200C46927 /* Simulator Screen Shot - iPhone 6 - 2019-05-23 at 17.37.59.png */; };
 		AF38A86A228961F600DC0B2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF38A869228961F600DC0B2B /* AppDelegate.swift */; };
 		AF38A86C228961F600DC0B2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF38A86B228961F600DC0B2B /* ViewController.swift */; };
 		AF38A86F228961F600DC0B2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF38A86D228961F600DC0B2B /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 		AF147EBC228A901500EF42EA /* Controlls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controlls.swift; sourceTree = "<group>"; };
 		AF147EBE228AA14400EF42EA /* DemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
 		AF3270E1229678F400C46927 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		AF3270EC2296C5B200C46927 /* Simulator Screen Shot - iPhone 6 - 2019-05-23 at 17.37.56.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 6 - 2019-05-23 at 17.37.56.png"; sourceTree = "<group>"; };
+		AF3270ED2296C5B200C46927 /* Simulator Screen Shot - iPhone 6 - 2019-05-23 at 17.37.59.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 6 - 2019-05-23 at 17.37.59.png"; sourceTree = "<group>"; };
 		AF38A866228961F600DC0B2B /* SAVideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAVideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF38A869228961F600DC0B2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF38A86B228961F600DC0B2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 				AF38A86B228961F600DC0B2B /* ViewController.swift */,
 				AF38A8992289971800DC0B2B /* ListVideoVC.swift */,
 				AF38A86D228961F600DC0B2B /* Main.storyboard */,
+				AF3270EC2296C5B200C46927 /* Simulator Screen Shot - iPhone 6 - 2019-05-23 at 17.37.56.png */,
+				AF3270ED2296C5B200C46927 /* Simulator Screen Shot - iPhone 6 - 2019-05-23 at 17.37.59.png */,
 				AFF6C491229553ED00DCDE84 /* filename1.mp4 */,
 				AFF6C48F2295122800DCDE84 /* filename.mp4 */,
 				AFF6C4932295543400DCDE84 /* filename2.mp4 */,
@@ -237,10 +243,12 @@
 			files = (
 				AFF6C4902295122900DCDE84 /* filename.mp4 in Resources */,
 				AFF6C4942295543400DCDE84 /* filename2.mp4 in Resources */,
+				AF3270EF2296C5B200C46927 /* Simulator Screen Shot - iPhone 6 - 2019-05-23 at 17.37.59.png in Resources */,
 				AFF6C492229553ED00DCDE84 /* filename1.mp4 in Resources */,
 				AF38A874228961F800DC0B2B /* LaunchScreen.storyboard in Resources */,
 				AF38A871228961F800DC0B2B /* Assets.xcassets in Resources */,
 				AF38A86F228961F600DC0B2B /* Main.storyboard in Resources */,
+				AF3270EE2296C5B200C46927 /* Simulator Screen Shot - iPhone 6 - 2019-05-23 at 17.37.56.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
