@@ -91,6 +91,7 @@ class ViewController: UIViewController {
 //            self.swipe?.removeTarget(self, action: nil)
 //            self.swipeoverlay?.removeTarget(self, action: nil)
 //        }
+        
     }
     
     //MARK: Class methods
