@@ -192,7 +192,7 @@ BufferSlider
 * URLSession is used
 
 ## Authors
-Paresh Prajapati
+Solution Analyst
 
 ## Acknowledgments
 
