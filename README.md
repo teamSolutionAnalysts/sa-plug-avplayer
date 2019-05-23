@@ -35,8 +35,7 @@ Manually
 If you prefer not to use any of the aforementioned dependency managers, you can integrate SA-Plug-AVPlayer into your project manually. Just copy the source file in your project directory
 
 ### Sample
-
-```
+```swift
 	import PlusAVPlayer
 
  	@IBOutlet weak var viewController: UIView!
@@ -145,16 +144,13 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 We have given the pan gesture configuration in ViewController file please add gesture recognizer on your viewvideo and you will be able to manually access the fast forward  and backward methods.
 We have kept this code on the developer side because there is another drag video view feature associated. You can take advantage of managing multiple cases.
 
-```
-		        if (touchPoint.x - initialTouchPoint.x) > 10
-            {
-                self.viewVideo.fastForwardPlayer()
-            }
-            else if (initialTouchPoint.x - touchPoint.x) > 10
-            {
-                self.viewVideo.fastBackward()
-            }
-
+```swift
+	if (touchPoint.x - initialTouchPoint.x) > 1{
+       	        self.viewVideo.fastForwardPlayer()
+       	}
+	else if (initialTouchPoint.x - touchPoint.x) > 10{
+		self.viewVideo.fastBackward()
+        }
 ```
 ### Player Rate 
 There is a method which lets you change the player
@@ -168,23 +164,24 @@ viewVideo.configure(url: url,ControllView: self.viewController,loader: self.acti
 ```
 
 ## Controlls Types 
-```
-enum ButtonControlType :String {
-    case PlayPause = "playpause"
-    case Expand = "expand"
-    case forward = "forward"
-    case backward = "backward"
-}
+```swift
+	enum ButtonControlType :String {
+        case PlayPause = "playpause"
+        case Expand = "expand"
+        case forward = "forward"
+        case backward = "backward"
+    	}
 ```
 
 ### Sub Class Controlls
 User BufferSlider for buffer progress
 VideoControllButton for PlayPause and fullscreeExit buttons
 VideoControllLabel for time labels 
-```
-VideoControllButton
-VideoControllLabel
-BufferSlider
+
+```swift
+	VideoControllButton
+	VideoControllLabel
+	BufferSlider
 ```
 ## Built With
 
@@ -193,10 +190,3 @@ BufferSlider
 
 ## Authors
 Solution Analyst
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
-
