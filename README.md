@@ -22,6 +22,14 @@ Here we have a simple plug and play module that a developer can use to integrate
 Reference:
 The slider is taken from BufferSlider Github project.
 
+### Preview (Mine)
+##Note : Make your own design. this is just a view to view
+
+![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/Simulator%20Screen%20Shot%20-%20iPhone%206%20-%202019-05-23%20at%2017.37.56.png)
+
+
+![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/Simulator%20Screen%20Shot%20-%20iPhone%206%20-%202019-05-23%20at%2017.37.59.png)
+
 ### Prerequisites
 
 Swift 4.2
