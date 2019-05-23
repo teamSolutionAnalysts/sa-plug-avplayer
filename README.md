@@ -181,6 +181,7 @@ Make a view for video player and another with all controlls like,
 * Use VideoControllButton subclass for PlayPause, FullScreen
 * Use VideoControllLabel subclass for time label and total time
 * Use BufferSlider for UISlider which lets you customize colors and other property.
+* For Activity Indicator set hideWhenStopped = true and isHidden false
 
 ## Note 
 Do not forgot to write ButtonControlType :
