@@ -54,9 +54,8 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 ```swift
 	import SAPlugAVPlayer
 
- 	@IBOutlet weak var viewController: UIView!
+ 	@IBOutlet weak var videoControll: VideoController!
     	@IBOutlet weak var viewVideo: ViewVideo!
-	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
 	override func viewDidLoad() {
     		super.viewDidLoad()  
@@ -71,22 +70,24 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 	func setUpPlayerWithURlStreaming()
     	 {
         //MARK : if url is emded. It will play in webview and managed automatically in webview
-        viewVideo.configure(url: url,ControllView: self.viewOverlay,loader: self.activityIndicator)
+        viewVideo.configure(url: url,ControllView: self.videoControll)
+	viewVideo.play()
+	
+	//other configuration
         viewVideo.saveVideoLocally = true
         viewVideo.delegate = self
         viewVideo.currentVideoID = self.videoID
-        viewVideo.play()
-        viewVideo.activityIndicator?.startAnimating()
     }
 
 	//Play Video locally
 	func setUpPlayerWithLocal()
     {
-        viewVideo.configure(ControllView: self.viewOverlay,loader: self.activityIndicator,localPath:self.arrlocalVideo[self.index],fileextension : "mp4")
+        viewVideo.configure(ControllView: self.videoControll,localPath:self.arrlocalVideo[self.index],fileextension : "mp4")
+	viewVideo.play()
+	
         viewVideo.delegate = self
         viewVideo.currentVideoID = self.videoID
-        viewVideo.play()
-        viewVideo.activityIndicator?.startAnimating()
+  	
     }
 
 	//With PlayerEventDelegate Method manage as you need iterate over array of urls and manage Next Previous End of video, fullscreen, totalTime and  many more.
