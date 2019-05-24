@@ -143,7 +143,7 @@
 		AF38A89F2289A81800DC0B2B /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				AFF695BB2297BFF9008C211E /* Resources */,
+				AFF695BB2297BFF9008C211E /* Resource */,
 				AF3270E1229678F400C46927 /* Extension.swift */,
 				AF38A8972289637D00DC0B2B /* ViewVideo.swift */,
 				AF147EBC228A901500EF42EA /* Controlls.swift */,
@@ -153,7 +153,7 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
-		AFF695BB2297BFF9008C211E /* Resources */ = {
+		AFF695BB2297BFF9008C211E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
 				AFF695BC2297BFF9008C211E /* pause@2x.png */,
@@ -163,7 +163,7 @@
 				AFF695C02297BFF9008C211E /* backward.png */,
 				AFF695C12297BFF9008C211E /* fast-forward.png */,
 			);
-			path = Resources;
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

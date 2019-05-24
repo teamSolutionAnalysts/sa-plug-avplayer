@@ -192,28 +192,28 @@ public class VideoController : UIView{
         self.fullscreenButton = UIButton(type: .custom)
         self.fullscreenButton?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(70), height: CGFloat(70))
         self.fullscreenButton?.translatesAutoresizingMaskIntoConstraints = false
-        self.fullscreenImage = UIImage(named: "fullscreen@2x", in: self.getBundle(resource: "fullscreen@2x", ofType: ".png"), compatibleWith: nil)
-        self.exitfullscreenImage = UIImage(named: "Colaps@2x", in: self.getBundle(resource: "Colaps@2x", ofType: ".png"), compatibleWith: nil)
+        self.fullscreenImage = UIImage(named: "fullscreen@2x", in: self.getBundle(), compatibleWith: nil)
+        self.exitfullscreenImage = UIImage(named: "Colaps@2x", in: self.getBundle(), compatibleWith: nil)
         self.fullscreenButton?.setImage(self.fullscreenImage, for: .normal)
         
         //Set PlayPause Button
         self.playButton = UIButton(type: .custom)
         self.playButton?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(70), height: CGFloat(70))
         self.playButton?.translatesAutoresizingMaskIntoConstraints = false
-        self.playImage = UIImage(named: "play@2x", in: self.getBundle(resource: "play@2x", ofType: ".png"), compatibleWith: nil)
-        self.pauseImage = UIImage(named: "pause@2x", in: self.getBundle(resource: "pause@2x", ofType: ".png"), compatibleWith: nil)
+        self.playImage = UIImage(named: "play@2x", in: self.getBundle(), compatibleWith: nil)
+        self.pauseImage = UIImage(named: "pause@2x", in: self.getBundle(), compatibleWith: nil)
         self.playButton?.setImage(self.playImage, for: .normal)
         
         ///Set next button image
         self.nextButton = UIButton(type: .custom)
         self.nextButton?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(70), height: CGFloat(70))
-        self.nextbtnImage = UIImage(named: "fast-forward", in: self.getBundle(resource: "fast-forward", ofType: ".png"), compatibleWith: nil)
+        self.nextbtnImage = UIImage(named: "fast-forward", in: self.getBundle(), compatibleWith: nil)
         self.nextButton?.translatesAutoresizingMaskIntoConstraints = false
         self.nextButton?.setImage(self.nextbtnImage, for: .normal)
         //Set Previous button image
         self.previousButton = UIButton(type: .custom)
         self.previousButton?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(70), height: CGFloat(70))
-        self.previousbtnImage = UIImage(named: "backward", in: self.getBundle(resource: "backward", ofType: ".png"), compatibleWith: nil)
+        self.previousbtnImage = UIImage(named: "backward", in: self.getBundle(), compatibleWith: nil)
         self.previousButton?.translatesAutoresizingMaskIntoConstraints = false
         self.previousButton?.setImage(self.previousbtnImage, for: .normal)
         
@@ -253,10 +253,10 @@ public class VideoController : UIView{
         addConstraintToolbar()
     }
     
-    func getBundle(resource: String, ofType: String) -> Bundle?
+    func getBundle() -> Bundle?
     {
-        let bundlePath = Bundle.main.path(forResource: resource, ofType:ofType)
-        return Bundle.init(path: bundlePath!)
+        let bundlePath = Bundle.main.path(forResource: "Resources", ofType:"bundle")
+        return Bundle.init(path: bundlePath ?? "")
         
     }
 
