@@ -178,45 +178,8 @@ There is a method which lets you change the player
 
 ## UI Guildlines
 
-Make a view for video player and another with all controlls like,
-* Use VideoControllButton subclass for PlayPause, FullScreen
-* Use VideoControllLabel subclass for time label and total time
-* Use BufferSlider for UISlider which lets you customize colors and other property.
-* For Activity Indicator set hideWhenStopped = true and isHidden false
-
-## Note 
-Do not forgot to write ButtonControlType :
-For Buttons -> playpause, expand, forward, backward
-For Labels -> LabelControllType 1 for timelabelupdate or 2 for total time
-See more detail on the demo.
-
-
 Directly drag IB to UIViewController, the aspect ratio for the 16:9 constraint (priority to 750, lower than the 1000 line), the code section only needs to achieve. See more detail on the demo.
 
-```
-viewVideo.configure(url: url,ControllView: self.viewController,loader: self.activityIndicator)
-```
-
-## Controlls Types 
-```swift
-	enum ButtonControlType :String {
-        case PlayPause = "playpause"
-        case Expand = "expand"
-        case forward = "forward"
-        case backward = "backward"
-    	}
-```
-
-### Sub Class Controlls
-User BufferSlider for buffer progress
-VideoControllButton for PlayPause and fullscreeExit buttons
-VideoControllLabel for time labels 
-
-```swift
-	VideoControllButton
-	VideoControllLabel
-	BufferSlider
-```
 ## Built With
 
 * AVKit Framework
