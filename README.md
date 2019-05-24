@@ -39,7 +39,7 @@ iOS 10*
 Xcode 10.2
 ### Installing
 
-You want to add pod 'SAPlugAVPlayer', '~> 0.1.7' similar to the following to your Podfile
+You want to add pod 'SAPlugAVPlayer', '~> 0.2.1' similar to the following to your Podfile
 ```swift
 target 'MyApp' do
   pod 'SAPlugAVPlayer', '~> 0.2.1'
