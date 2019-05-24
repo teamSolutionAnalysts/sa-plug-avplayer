@@ -78,7 +78,7 @@ extension ListVideoVC : UITableViewDelegate, UITableViewDataSource
             nextVC.url = self.dataSource[indexPath.row].url
             nextVC.videoID = indexPath.row
             nextVC.view.alpha = 0
-//            nextVC.index = indexPath.row
+            nextVC.index = indexPath.row
             UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseInOut, animations: {
                 self.addChild(nextVC)
                 self.view.addSubview(nextVC.view)

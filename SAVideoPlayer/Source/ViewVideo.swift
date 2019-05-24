@@ -19,11 +19,14 @@ public protocol PlayerEventDelegate : class{
     func AVPlayer(didTaptoNextvideo : AVPlayer?)
     func AVPlayer(didTaptoPreviousvideo : AVPlayer?)
     func AVPlayer(didEndPlaying : AVPlayer?)
+    func AVPlayer(panGesture didTriggerd : UIPanGestureRecognizer?)
+    func AVPlayer(minimizevideoScreen : Bool)
 }
 public extension PlayerEventDelegate {
     func didUpdateTimer(_ player : AVPlayer, elpsed time : String){}
     func AVPlayer(didPause player : AVPlayer){}
     func AVPlayer(didPlay player : AVPlayer){}
+    func AVPlayer(panGesture didTriggerd : Notification?){}
 }
 
 public class ViewVideo : UIView
@@ -34,18 +37,11 @@ public class ViewVideo : UIView
     public var saveVideoLocally: Bool = false
     public var isToolHidden :Bool = true
     private var timer : Timer?
-    public var slider : BufferSlider?
     public var activityIndicator : UIActivityIndicatorView?
     public var totalTime : Double = 0
-    public var lblStartTime : VideoControllLabel?
-    public var lblTotalTime : VideoControllLabel?
     public var currentVideoID = 0
     public var isMiniMized : Bool = false
     open weak var delegate : PlayerEventDelegate?
-    public var btnBackward : VideoControllButton?
-    public var btnForward : VideoControllButton?
-    public var btnPlayPause : VideoControllButton?
-    public var btnFullScreen : VideoControllButton?
     public var webview: WKWebView?
     public var OverlayWindow: UIView?
     open var isEmbeddedVideo = false
@@ -53,55 +49,26 @@ public class ViewVideo : UIView
     public var timeObserver :Any?
     public let seekDuration: Float64 = 5
     public var isFullscreen :Bool = false
-    public weak var controllerView:UIView?
+    var isAnimating : Bool = false
+    public var videoControll : VideoController?
     {
         didSet{
-            if self.isEmbeddedVideo{
-                return
-            }
-            for vw  in (self.controllerView?.subviews ?? [])
-            {
-                if let btn = vw as? VideoControllButton, btn.controllType == .backward
-                {
-                    self.btnBackward = btn
-                    // self.btnBackward?.addTarget(self, action: #selector(doBackwardJump), for: .touchDownRepeat)
-                    self.btnBackward?.addTarget(self, action: #selector(doBackwardJump), for: .touchUpInside)
-                    
-                }
-                else if let btn = vw as? VideoControllButton, btn.controllType == .forward
-                {
-                    self.btnForward = btn
-                    // self.btnForward?.addTarget(self, action: #selector(doForwardJump), for: .touchDownRepeat)
-                    self.btnForward?.addTarget(self, action: #selector(doForwardJump), for: .touchUpInside)
-                }
-                else if let playbtn = vw as? VideoControllButton, playbtn.controllType == .PlayPause
-                {
-                    self.btnPlayPause = playbtn
-                    self.btnPlayPause?.addTarget(self, action: #selector(didPressPlayButton), for: .touchUpInside)
-                }
-                else if let fullscreenbtn = vw as? VideoControllButton, fullscreenbtn.controllType == .Expand
-                {
-                    self.btnFullScreen = fullscreenbtn
-                    self.btnFullScreen?.addTarget(self, action: #selector(btnExpandTouched), for: .touchUpInside)
-                }
-                else if let slide = vw as? BufferSlider
-                {
-                    self.slider = slide
-                    self.slider?.addTarget(self, action: #selector(sliderDidChangeValue), for: .valueChanged)
-                    let currentItem = player?.currentItem
-                    let duration = currentItem?.asset.duration
-                    self.totalTime = duration?.seconds ?? 0
-                }
-                else if let timeLabel = vw as? VideoControllLabel, timeLabel.controllType == .TimeLabelStart
-                {
-                    self.lblStartTime = timeLabel
-                }
-                else if let timeLabel = vw as? VideoControllLabel, timeLabel.controllType == .TimeLabelTotal
-                {
-                    self.lblTotalTime = timeLabel
-                }
-            }
+            self.videoControll?.previousButton.addTarget(self, action: #selector(doBackwardJump), for: .touchUpInside)
+            self.videoControll?.nextButton.addTarget(self, action: #selector(doForwardJump), for: .touchUpInside)
+            self.videoControll?.playButton.addTarget(self, action: #selector(didPressPlayButton), for: .touchUpInside)
+            self.videoControll?.fullscreenButton.addTarget(self, action: #selector(btnExpandTouched), for: .touchUpInside)
+            self.videoControll?.slider.addTarget(self, action: #selector(sliderDidChangeValue), for: .valueChanged)
         }
+    }
+
+    public func makeNextButton(enable: Bool)
+    {
+        self.videoControll?.nextButton.isEnabled = enable
+    }
+    
+    public func makePreviousButton(enable: Bool)
+    {
+        self.videoControll?.previousButton.isEnabled = enable
     }
     
     public var currentItem : AVPlayerItem?{
@@ -121,38 +88,137 @@ public class ViewVideo : UIView
         return asset
     }()
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        self._setup()
     }
     
+    #if !TARGET_INTERFACE_BUILDER
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self._setup()
+    }
+    #endif
     
-    public func configure(url: String = "", ControllView:UIView?, loader : UIActivityIndicatorView?, localPath  :String = "", fileextension : String = "") {
-        if let loaderview = loader{
-            self.activityIndicator = loaderview
-            self.activityIndicator?.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.3)
-            self.activityIndicator?.hidesWhenStopped = true
-            self.activityIndicator?.isHidden = true
-            
-        }
+    override public func prepareForInterfaceBuilder() {
+        self._setup()
+    }
+    
+    func _setup()
+    {
+        self.addActityIndicator()
+        
+    }
+    
+    public func configure(url: String = "", ControllView:VideoController?, localPath  :String = "", fileextension : String = "") {
+    
+        //self.addActityIndicator()
         if let viewc = ControllView
         {
-            self.controllerView = viewc
-            self.controllerView?.backgroundColor = UIColor.clear
+            self.videoControll = viewc
         }
         if ViewVideo.checkIfUrlIsEmbedded(url: url)
         {
             self.playEmbeddedVideo(url: url)
-            return
         }
-        
-        if let videoURL = URL(string: url), self.isEmbeddedVideo == false {
+        else if let videoURL = URL(string: url), self.isEmbeddedVideo == false {
             self.url = videoURL
             self.configurePlayer(videoURL: videoURL)
+            self.setUpGesture()
         }
         else if localPath != "" && fileextension != ""{
             self.configurePlayer(localvideoname: localPath, videoextension: fileextension)
+            self.setUpGesture()
         }
-        self.setUpGesture()
+        self.setUpGestureRecognizer()
+    }
+    
+    func addActityIndicator()
+    {
+        
+        self.activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+        self.activityIndicator?.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.8)
+        self.activityIndicator?.translatesAutoresizingMaskIntoConstraints = false
+        self.activityIndicator?.hidesWhenStopped = true
+        self.activityIndicator?.isHidden = false
+        self.activityIndicator?.startAnimating()
+        self.addSubview(self.activityIndicator!)
+        self.addConstraintCenter()
+    }
+    
+    func setUpGestureRecognizer()
+    {
+        let swipe = UIPanGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipe.maximumNumberOfTouches = 1
+        if self.isEmbeddedVideo
+        {
+            if let webView = self.webview
+            {
+                webView.addGestureRecognizer(swipe)
+            }
+        }
+        else{
+            self.addGestureRecognizer(swipe)
+        }
+        let swipeoverlay = UIPanGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeoverlay.maximumNumberOfTouches = 1
+        self.videoControll?.addGestureRecognizer(swipeoverlay)
+    }
+    
+    public var initialTouchPoint: CGPoint = CGPoint(x: 0,y: 0)
+    public var superView :UIView?
+    
+    
+    @objc func handleGesture(_ sender: UIPanGestureRecognizer) {
+        self.delegate?.AVPlayer(panGesture: sender)
+        let touchPoint = sender.location(in: self.window)
+        guard let superView = self.superView else {
+            return
+        }
+        if sender.state == UIGestureRecognizer.State.began {
+            initialTouchPoint = touchPoint
+            if touchPoint.y - initialTouchPoint.y > 10 && self.isFullscreen == false{
+                self.isAnimating = true
+                self.pause()
+            }
+        } else if sender.state == UIGestureRecognizer.State.changed {
+            if (touchPoint.x - initialTouchPoint.x) > 10
+            {
+                self.fastForwardPlayer()
+            }
+            else if (initialTouchPoint.x - touchPoint.x) > 10
+            {
+                self.fastBackward()
+            }
+            else if touchPoint.y - initialTouchPoint.y > 0 && self.isMiniMized == false && self.isFullscreen == false{
+                superView.frame = CGRect(x: 0, y: touchPoint.y - initialTouchPoint.y, width: superView.frame.size.width, height: superView.frame.size.height)
+            }
+            else if superView.frame.origin.y != 0 && self.isMiniMized == true && self.isFullscreen == false
+            {
+                superView.frame = CGRect(x: 0, y:(superView.frame.size.height - self.frame.size.height) - (initialTouchPoint.y - touchPoint.y), width: superView.frame.size.width, height: superView.frame.size.height)
+            }
+        } else if sender.state == UIGestureRecognizer.State.ended || sender.state == UIGestureRecognizer.State.cancelled && (self.isFullscreen == false) {
+            
+            if touchPoint.y - initialTouchPoint.y > (UIScreen.main.bounds.height / 2) - 70 {
+                UIView.animate(withDuration: 0.3, animations: {
+                    superView.frame = CGRect(x: 0, y: superView.frame.size.height - (self.frame.size.height + 30), width: superView.frame.size.width, height: superView.frame.size.height)
+                    self.isMiniMized = true
+                    self.delegate?.AVPlayer(minimizevideoScreen: true)
+                    superView.backgroundColor = UIColor.clear
+                })
+                
+            } else {
+                UIView.animate(withDuration: 0.3, animations: {
+                    superView.frame = CGRect(x: 0, y: 0, width: superView.frame.size.width, height: superView.frame.size.height)
+                    self.isMiniMized = false
+                    self.delegate?.AVPlayer(minimizevideoScreen: false)
+                    superView.backgroundColor = UIColor.white
+                })
+                
+            }
+            self.isAnimating = false
+            self.play()
+        }
     }
     
     private func setUpGesture()
@@ -165,7 +231,7 @@ public class ViewVideo : UIView
         self.addGestureRecognizer(gestureControll)
         let gestureControll1 = UITapGestureRecognizer(target: self, action: #selector(hideOverlay))
         gestureControll1.numberOfTapsRequired = 1
-        self.controllerView?.addGestureRecognizer(gestureControll1)
+        self.videoControll?.addGestureRecognizer(gestureControll1)
     }
     
     private func addObserverPlayerItem()
@@ -201,8 +267,8 @@ public class ViewVideo : UIView
                 
                 let duration = self.currentItem?.totalBuffer() ?? 0
                 let totalduration = currentItem?.asset.duration
-                self.slider?.bufferEndValue = totalduration?.seconds ?? 0
-                self.slider?.bufferStartValue = (duration) / (totalduration?.seconds ?? 1)
+                self.videoControll?.slider.bufferEndValue = totalduration?.seconds ?? 0
+                self.videoControll?.slider.bufferStartValue = (duration) / (totalduration?.seconds ?? 1)
                 print((duration) / (totalduration?.seconds ?? 1))
                 
             case "playbackBufferEmpty":
@@ -287,6 +353,19 @@ public class ViewVideo : UIView
         return isEmbed
     }
     
+    private func addConstraintCenter()
+    {
+    
+        let leadConstraint = NSLayoutConstraint(item: self.activityIndicator!,attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0)
+        
+        let trailConstraint = NSLayoutConstraint(item: self.activityIndicator!, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
+        
+        let top = NSLayoutConstraint(item: self.activityIndicator!, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
+        
+        let bottom = NSLayoutConstraint(item: self.activityIndicator!, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0)
+        NSLayoutConstraint.activate([leadConstraint, trailConstraint,top,(bottom)])
+    }
+    
     public func availableDuration() -> CMTime
     {
         if let range = self.player?.currentItem?.loadedTimeRanges.first {
@@ -356,14 +435,14 @@ public class ViewVideo : UIView
                 {
                     self?.activityIndicator?.stopAnimating()
                 }
-                strongSelf.lblStartTime?.text = NSString(format: "%02d:%02d", secs/60, secs%60) as String//"\(secs/60):\(secs%60)"
+                strongSelf.videoControll?.labelTime.text = NSString(format: "%02d:%02d", secs/60, secs%60) as String//"\(secs/60):\(secs%60)"
                 //                strongSelf.delegate?.didUpdateTimer(strongSelf.player!, elpsed: timetext)
                 let currentItem = strongSelf.player?.currentItem
                 let currTime:Double = currentItem?.currentTime().seconds ?? 0
                 
                 let duration = currentItem?.asset.duration
                 
-                strongSelf.slider?.setValue(Float(currTime / duration!.seconds) , animated: true)
+                strongSelf.videoControll?.slider.setValue(Float(currTime / duration!.seconds) , animated: true)
             }
             else if strongSelf.player!.currentItem?.status ==  .failed{
                 print("Error occured playing video")
@@ -388,7 +467,7 @@ public class ViewVideo : UIView
         }
         else{
             self.play()
-            self.controllerView?.isHidden = true
+            self.videoControll?.isHidden = true
             self.isToolHidden = true
         }
     }
@@ -398,7 +477,7 @@ public class ViewVideo : UIView
         if self.isEmbeddedVideo{
             return
         }
-        self.controllerView?.isHidden = true
+        self.videoControll?.isHidden = true
         self.isToolHidden = true
     }
     
@@ -411,14 +490,14 @@ public class ViewVideo : UIView
         if self.isToolHidden
         {
             DispatchQueue.main.async {
-                self.controllerView?.isHidden = false
+                self.videoControll?.isHidden = false
                 self.timer = nil
                 self.updateFocusVideo()
                 self.isToolHidden = false
             }
         }
         else{
-            self.controllerView?.isHidden = true
+            self.videoControll?.isHidden = true
             self.isToolHidden = true
         }
     }
@@ -436,12 +515,14 @@ public class ViewVideo : UIView
         {
             let value = UIInterfaceOrientation.landscapeLeft.rawValue
             UIDevice.current.setValue(value, forKey: "orientation")
-            self.btnFullScreen?.setImage(#imageLiteral(resourceName: "Colaps"), for: .normal)
+            self.videoControll?.fullscreenButton.setImage(videoControll?.exitfullscreenImage, for: .normal)
+//            self.btnFullScreen?.setImage(#imageLiteral(resourceName: "Colaps"), for: .normal)
         }
         else{
             let value = UIInterfaceOrientation.portrait.rawValue
             UIDevice.current.setValue(value, forKey: "orientation")
-            self.btnFullScreen?.setImage(#imageLiteral(resourceName: "fullscreen"), for: .normal)
+            self.videoControll?.fullscreenButton.setImage(videoControll?.fullscreenImage, for: .normal)
+//            self.btnFullScreen?.setImage(#imageLiteral(resourceName: "fullscreen"), for: .normal)
         }
     }
     
@@ -452,10 +533,12 @@ public class ViewVideo : UIView
         }
         if UIDevice.current.orientation == .portrait
         {
-            self.btnFullScreen?.setImage(#imageLiteral(resourceName: "fullscreen"), for: .normal)
+            self.videoControll?.fullscreenButton.setImage(videoControll?.fullscreenImage, for: .normal)
+//            self.btnFullScreen?.setImage(#imageLiteral(resourceName: "fullscreen"), for: .normal)
         }
         else{
-            self.btnFullScreen?.setImage(#imageLiteral(resourceName: "Colaps"), for: .normal)
+            self.videoControll?.fullscreenButton.setImage(videoControll?.exitfullscreenImage, for: .normal)
+//            self.btnFullScreen?.setImage(#imageLiteral(resourceName: "Colaps"), for: .normal)
             if self.isMiniMized
             {
                 self.delegate?.AVPlayer(willExpand: self.player)
@@ -469,7 +552,7 @@ public class ViewVideo : UIView
         }
         self.timer?.invalidate()
         self.timer = nil
-        guard let value = self.slider?.value else { return }
+        guard let value = self.videoControll?.slider.value else { return }
         let durationToSeek = Float(self.totalTime) * value
         if let player = self.player{
             player.seek(to: CMTimeMakeWithSeconds(Float64(durationToSeek),preferredTimescale: player.currentItem!.duration.timescale)) { [weak self](state) in
@@ -502,12 +585,16 @@ public class ViewVideo : UIView
         }
         if self.isToolHidden == false
         {
-            self.controllerView?.isHidden = true
+            self.videoControll?.isHidden = true
             self.isToolHidden = true
         }
     }
     
     public func play() {
+        
+        guard self.player != nil else {
+            return
+        }
         if self.isEmbeddedVideo{
             return
         }
@@ -516,14 +603,14 @@ public class ViewVideo : UIView
             //            self.delegate?.totalTime(self.player!)
             let currentItem = player?.currentItem
             let duration = currentItem?.asset.duration
-            self.slider?.maximumValue = 1
-            self.slider?.minimumValue = 0
+            self.videoControll?.slider.maximumValue = 1
+            self.videoControll?.slider.minimumValue = 0
             let sec = CMTimeGetSeconds(duration!)
             self.totalTime = duration?.seconds ?? 0
             self.setHoursMinutesSecondsFrom(seconds: sec)
-            self.btnPlayPause?.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            self.videoControll?.playButton?.setImage(self.videoControll?.pauseImage, for: .normal)
             self.delegate?.AVPlayer(didPlay: self.player!)
-            self.controllerView?.isHidden = true
+            self.videoControll?.isHidden = true
             self.isToolHidden = true
         }
     }
@@ -548,7 +635,7 @@ public class ViewVideo : UIView
             self.url = videoURL
             self.webview?.load(URLRequest(url: videoURL))
         }
-        self.controllerView?.isHidden = true
+        self.videoControll?.isHidden = true
     }
     
     public func replaceVideo(videourl:String)
@@ -559,7 +646,7 @@ public class ViewVideo : UIView
             if ViewVideo.checkIfUrlIsEmbedded(url: videourl)
             {
                 self.webview?.load(URLRequest(url: fileurl))
-                self.controllerView?.isHidden = true
+                self.videoControll?.isHidden = true
             }
             else
             {
@@ -569,7 +656,14 @@ public class ViewVideo : UIView
                 player?.replaceCurrentItem(with: item)
                 self.addObserverPlayerItem()
                 self.player?.play()
+                
             }
+        }
+    }
+    
+    func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
         }
     }
     
@@ -622,12 +716,15 @@ public class ViewVideo : UIView
         if newTime < CMTimeGetSeconds(duration) {
             
             let time2: CMTime = CMTimeMake(value: Int64(newTime * 1000 as Float64), timescale: 1000)
-            player?.seek(to: time2)
+            player?.seek(to: time2, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero)
+//            player?.seek(to: time2)
+            
         }
     }
     
     public func fastBackward()
     {
+        
         let playerCurrentTime = CMTimeGetSeconds((player?.currentTime())!)
         var newTime = playerCurrentTime - seekDuration
         
@@ -635,7 +732,9 @@ public class ViewVideo : UIView
             newTime = 0
         }
         let time2: CMTime = CMTimeMake(value: Int64(newTime * 1000 as Float64), timescale: 1000)
-        player?.seek(to: time2)
+        player?.seek(to: time2, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero)
+      
+//        player?.seek(to: time2)
     }
     
     @objc func doBackwardJump(_ sender: UIButton, event: UIEvent) {
@@ -647,7 +746,7 @@ public class ViewVideo : UIView
     
     public func setHoursMinutesSecondsFrom(seconds: Double){
         let secs = Int(seconds)
-        self.lblTotalTime?.text = NSString(format: "%02d:%02d", secs/60, secs%60) as String
+        self.videoControll?.totalTime?.text = NSString(format: "%02d:%02d", secs/60, secs%60) as String
     }
     
     public var isPlaying : Bool{
@@ -662,7 +761,7 @@ public class ViewVideo : UIView
             return
         }
         player?.pause()
-        self.btnPlayPause?.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+        self.videoControll?.playButton?.setImage(videoControll?.playImage, for: .normal)
         self.delegate?.AVPlayer(didPause: self.player!)
         self.timer?.invalidate()
         self.timer = nil
@@ -694,7 +793,7 @@ public class ViewVideo : UIView
         else
         {
             player?.seek(to: CMTime.zero)
-            self.btnPlayPause?.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            self.videoControll?.playButton?.setImage(videoControll?.playImage, for: .normal)
             self.stop()
         }
     }
@@ -737,13 +836,13 @@ public class ViewVideo : UIView
 extension ViewVideo : WKNavigationDelegate, AVAssetResourceLoaderDelegate
 {
     
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         self.activityIndicator?.stopAnimating()
         webView.frame.size.height = 1
         webView.frame.size = webView.scrollView.contentSize
     }
     
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+    public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         self.activityIndicator?.stopAnimating()
     }
     

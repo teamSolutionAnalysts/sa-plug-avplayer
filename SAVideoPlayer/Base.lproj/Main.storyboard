@@ -252,127 +252,9 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGH-JK-hCp">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGY-4M-023" customClass="VideoController" customModule="SAVideoPlayer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lF-zI-TWn" customClass="VideoControllButton" customModule="SAVideoPlayer" customModuleProvider="target">
-                                                <rect key="frame" x="40" y="70" width="80" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="6v8-qv-U8j"/>
-                                                </constraints>
-                                                <state key="normal" image="backward">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="controllerType" value="backward"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Owq-V5-Xts" customClass="VideoControllButton" customModule="SAVideoPlayer" customModuleProvider="target">
-                                                <rect key="frame" x="140" y="70" width="40" height="40"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="pause">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="controllerType" value="playpause"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WrZ-OO-hRm" customClass="VideoControllButton" customModule="SAVideoPlayer" customModuleProvider="target">
-                                                <rect key="frame" x="200" y="70" width="80" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="Zj1-90-2zl"/>
-                                                </constraints>
-                                                <state key="normal" image="fast-forward">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="controllerType" value="forward"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbC-w3-4vB" customClass="VideoControllButton" customModule="SAVideoPlayer" customModuleProvider="target">
-                                                <rect key="frame" x="272" y="132" width="40" height="40"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="fullscreen"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="controllerType" value="expand"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <slider opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="ARj-tJ-g7s" customClass="BufferSlider" customModule="SAVideoPlayer" customModuleProvider="target">
-                                                <rect key="frame" x="6" y="142" width="260" height="31"/>
-                                                <color key="minimumTrackTintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="maximumTrackTintColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="baseColor">
-                                                        <color key="value" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
-                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="bufferColor">
-                                                        <color key="value" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="sliderHeight">
-                                                        <real key="value" value="4"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="bufferStartValue">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="2"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundedSlider" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </slider>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="120" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deg-r9-Pvu" customClass="VideoControllLabel" customModule="SAVideoPlayer" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="121.5" width="25.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="controllerType">
-                                                        <integer key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="121" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEg-NJ-pOU" customClass="VideoControllLabel" customModule="SAVideoPlayer" customModuleProvider="target">
-                                                <rect key="frame" x="238.5" y="121.5" width="25.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="controllerType">
-                                                        <integer key="value" value="2"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLo-ej-QQP">
-                                                <rect key="frame" x="8" y="8" width="32" height="30"/>
-                                                <state key="normal" title="Rate">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="ARj-tJ-g7s" firstAttribute="top" secondItem="OEg-NJ-pOU" secondAttribute="bottom" id="65d-mQ-Nxy"/>
-                                            <constraint firstItem="WrZ-OO-hRm" firstAttribute="leading" secondItem="Owq-V5-Xts" secondAttribute="trailing" constant="20" id="6VN-vR-zsD"/>
-                                            <constraint firstItem="lLo-ej-QQP" firstAttribute="leading" secondItem="yGH-JK-hCp" secondAttribute="leading" constant="8" id="84s-rc-pFY"/>
-                                            <constraint firstItem="deg-r9-Pvu" firstAttribute="leading" secondItem="ARj-tJ-g7s" secondAttribute="leading" constant="8" id="Jlo-zr-CYE"/>
-                                            <constraint firstAttribute="trailing" secondItem="rbC-w3-4vB" secondAttribute="trailing" constant="8" id="MSc-d2-f2E"/>
-                                            <constraint firstItem="Owq-V5-Xts" firstAttribute="centerY" secondItem="yGH-JK-hCp" secondAttribute="centerY" id="PSe-Sq-oSc"/>
-                                            <constraint firstItem="WrZ-OO-hRm" firstAttribute="centerY" secondItem="Owq-V5-Xts" secondAttribute="centerY" id="Pm5-ny-j0e"/>
-                                            <constraint firstItem="lLo-ej-QQP" firstAttribute="top" secondItem="yGH-JK-hCp" secondAttribute="top" constant="8" id="QEP-kr-Org"/>
-                                            <constraint firstItem="ARj-tJ-g7s" firstAttribute="top" secondItem="deg-r9-Pvu" secondAttribute="bottom" id="Rpi-IM-W3Y"/>
-                                            <constraint firstAttribute="bottom" secondItem="ARj-tJ-g7s" secondAttribute="bottom" constant="8" id="Vk2-kl-r63"/>
-                                            <constraint firstItem="Owq-V5-Xts" firstAttribute="leading" secondItem="1lF-zI-TWn" secondAttribute="trailing" constant="20" id="WtE-0T-mbT"/>
-                                            <constraint firstAttribute="bottom" secondItem="rbC-w3-4vB" secondAttribute="bottom" constant="8" id="Y1A-6Q-fMw"/>
-                                            <constraint firstItem="OEg-NJ-pOU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="deg-r9-Pvu" secondAttribute="trailing" constant="8" id="aRJ-X7-0d3"/>
-                                            <constraint firstItem="ARj-tJ-g7s" firstAttribute="leading" secondItem="yGH-JK-hCp" secondAttribute="leading" constant="8" id="dCg-8K-fZM"/>
-                                            <constraint firstItem="OEg-NJ-pOU" firstAttribute="trailing" secondItem="ARj-tJ-g7s" secondAttribute="trailing" id="fho-hN-eaz"/>
-                                            <constraint firstItem="rbC-w3-4vB" firstAttribute="leading" secondItem="ARj-tJ-g7s" secondAttribute="trailing" constant="8" id="uXe-VH-6Cb"/>
-                                            <constraint firstItem="1lF-zI-TWn" firstAttribute="centerY" secondItem="Owq-V5-Xts" secondAttribute="centerY" id="uxV-ej-qXg"/>
-                                            <constraint firstItem="Owq-V5-Xts" firstAttribute="centerX" secondItem="yGH-JK-hCp" secondAttribute="centerX" id="zPx-r0-zPs"/>
-                                        </constraints>
                                     </view>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghs-aZ-FRt">
                                         <rect key="frame" x="290" y="-20" width="50" height="50"/>
@@ -390,10 +272,6 @@
                                             <action selector="btnCloseTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cD1-xJ-5J2"/>
                                         </connections>
                                     </button>
-                                    <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="i4R-ck-emz">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
-                                        <color key="color" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </activityIndicatorView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Jly-x1-Iex" firstAttribute="leading" secondItem="Fzb-R4-nv3" secondAttribute="leading" constant="16" id="0Za-gy-Fmn"/>
@@ -401,31 +279,27 @@
                                     <constraint firstAttribute="trailing" secondItem="u4F-3z-17P" secondAttribute="trailing" constant="16" id="3Ns-P7-MZp"/>
                                     <constraint firstAttribute="trailing" secondItem="RS5-oY-2ov" secondAttribute="trailing" id="6VQ-os-Drn"/>
                                     <constraint firstItem="u4F-3z-17P" firstAttribute="top" secondItem="eSV-RI-h5i" secondAttribute="bottom" constant="16" id="81D-Do-8PJ"/>
+                                    <constraint firstItem="yGY-4M-023" firstAttribute="top" secondItem="RS5-oY-2ov" secondAttribute="top" id="EzX-hL-kb3"/>
+                                    <constraint firstItem="yGY-4M-023" firstAttribute="trailing" secondItem="RS5-oY-2ov" secondAttribute="trailing" id="Fr9-6f-dNe"/>
                                     <constraint firstAttribute="bottom" secondItem="u4F-3z-17P" secondAttribute="bottom" constant="16" id="G2K-qw-QXM"/>
-                                    <constraint firstItem="yGH-JK-hCp" firstAttribute="trailing" secondItem="RS5-oY-2ov" secondAttribute="trailing" id="G2d-Tp-p2H"/>
                                     <constraint firstItem="eSV-RI-h5i" firstAttribute="top" secondItem="Jly-x1-Iex" secondAttribute="bottom" constant="16" id="Ic2-ak-pJp"/>
                                     <constraint firstAttribute="trailing" secondItem="Jly-x1-Iex" secondAttribute="trailing" constant="16" id="Kkz-Oy-SqV"/>
                                     <constraint firstItem="RS5-oY-2ov" firstAttribute="leading" secondItem="Fzb-R4-nv3" secondAttribute="leading" id="PrV-ba-WtS"/>
-                                    <constraint firstItem="i4R-ck-emz" firstAttribute="bottom" secondItem="RS5-oY-2ov" secondAttribute="bottom" id="R6P-59-X2e"/>
                                     <constraint firstItem="ghs-aZ-FRt" firstAttribute="top" secondItem="Fzb-R4-nv3" secondAttribute="top" constant="-20" id="T3Z-Yd-Zo7"/>
-                                    <constraint firstItem="yGH-JK-hCp" firstAttribute="leading" secondItem="RS5-oY-2ov" secondAttribute="leading" id="YiM-cJ-Vix"/>
+                                    <constraint firstItem="yGY-4M-023" firstAttribute="bottom" secondItem="RS5-oY-2ov" secondAttribute="bottom" id="V6p-ir-6tq"/>
                                     <constraint firstItem="lWT-TW-2hl" firstAttribute="leading" secondItem="Fzb-R4-nv3" secondAttribute="leading" constant="16" id="ZCm-87-rzM"/>
                                     <constraint firstItem="Gms-KS-70i" firstAttribute="top" secondItem="eSV-RI-h5i" secondAttribute="top" id="auC-Ie-nq9"/>
                                     <constraint firstAttribute="trailing" secondItem="ghs-aZ-FRt" secondAttribute="trailing" constant="-20" id="cXI-SZ-hF4"/>
-                                    <constraint firstItem="yGH-JK-hCp" firstAttribute="top" secondItem="RS5-oY-2ov" secondAttribute="top" id="e7z-cJ-OS4"/>
                                     <constraint firstItem="Jly-x1-Iex" firstAttribute="top" secondItem="lWT-TW-2hl" secondAttribute="bottom" constant="8" id="fTq-6x-6Ni"/>
                                     <constraint firstAttribute="trailing" secondItem="lWT-TW-2hl" secondAttribute="trailing" constant="16" id="h3G-DG-M76"/>
                                     <constraint firstItem="RS5-oY-2ov" firstAttribute="centerX" secondItem="Fzb-R4-nv3" secondAttribute="centerX" id="hcn-dJ-Dfx"/>
                                     <constraint firstItem="u4F-3z-17P" firstAttribute="leading" secondItem="Fzb-R4-nv3" secondAttribute="leading" constant="16" id="lkQ-81-uQH"/>
                                     <constraint firstItem="lWT-TW-2hl" firstAttribute="top" secondItem="RS5-oY-2ov" secondAttribute="bottom" constant="8" id="m58-cJ-j8w"/>
                                     <constraint firstItem="lWT-TW-2hl" firstAttribute="top" secondItem="RS5-oY-2ov" secondAttribute="bottom" constant="8" id="m6e-kk-Q5Y"/>
-                                    <constraint firstItem="i4R-ck-emz" firstAttribute="top" secondItem="RS5-oY-2ov" secondAttribute="top" id="n4Q-4b-ynL"/>
                                     <constraint firstItem="eSV-RI-h5i" firstAttribute="leading" secondItem="Fzb-R4-nv3" secondAttribute="leading" constant="28" id="nEW-SH-zys"/>
-                                    <constraint firstItem="i4R-ck-emz" firstAttribute="trailing" secondItem="RS5-oY-2ov" secondAttribute="trailing" id="qdQ-IM-v0W"/>
+                                    <constraint firstItem="yGY-4M-023" firstAttribute="leading" secondItem="RS5-oY-2ov" secondAttribute="leading" id="sUz-yK-Hqx"/>
                                     <constraint firstItem="Gms-KS-70i" firstAttribute="leading" secondItem="eSV-RI-h5i" secondAttribute="trailing" constant="4" id="u4C-Zn-Ezs"/>
                                     <constraint firstItem="RS5-oY-2ov" firstAttribute="top" secondItem="Fzb-R4-nv3" secondAttribute="top" id="vpU-nI-P86"/>
-                                    <constraint firstItem="i4R-ck-emz" firstAttribute="leading" secondItem="RS5-oY-2ov" secondAttribute="leading" id="wPf-rG-952"/>
-                                    <constraint firstItem="yGH-JK-hCp" firstAttribute="bottom" secondItem="RS5-oY-2ov" secondAttribute="bottom" id="x9Y-wb-HWi"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -503,13 +377,12 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="activityIndicator" destination="i4R-ck-emz" id="hpS-zI-f2C"/>
                         <outlet property="aspectRationVideoView" destination="SC1-JG-nbE" id="J3T-wK-034"/>
-                        <outlet property="btnClose" destination="ghs-aZ-FRt" id="G3g-L0-Ejf"/>
+                        <outlet property="btnClose" destination="ghs-aZ-FRt" id="0x3-9T-GuU"/>
                         <outlet property="lblDislikes" destination="fxD-7P-HWR" id="dqR-qp-8iA"/>
                         <outlet property="lblLikes" destination="U3G-k0-giZ" id="bbY-3K-XbT"/>
                         <outlet property="scrollView" destination="Fzb-R4-nv3" id="BJc-rE-RJ5"/>
-                        <outlet property="viewOverlay" destination="yGH-JK-hCp" id="Tb8-RP-ACq"/>
+                        <outlet property="viewOverlay" destination="yGY-4M-023" id="VJ4-le-Cl0"/>
                         <outlet property="viewVideo" destination="RS5-oY-2ov" id="7ut-qU-m8v"/>
                     </connections>
                 </viewController>
@@ -519,12 +392,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backward" width="40" height="40"/>
         <image name="dislike" width="20" height="20"/>
-        <image name="fast-forward" width="40" height="40"/>
-        <image name="fullscreen" width="40" height="40"/>
         <image name="like" width="20" height="20"/>
-        <image name="pause" width="40" height="40"/>
         <image name="placeHolder" width="258" height="180"/>
     </resources>
 </document>

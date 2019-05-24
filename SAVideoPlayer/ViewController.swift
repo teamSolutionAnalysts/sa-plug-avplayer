@@ -17,10 +17,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var aspectRationVideoView: NSLayoutConstraint!
     @IBOutlet weak var lblDislikes: UILabel!
     @IBOutlet weak var lblLikes: UILabel!
-    @IBOutlet weak var viewOverlay: UIView!
+    @IBOutlet weak var viewOverlay: VideoController!
     @IBOutlet weak var viewVideo: ViewVideo!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var btnRate: UIButton!
+
     var arrVideos = DemoData().mediaJSON
     var arrlocalVideo:[String] =  ["filename", "filename1","filename2"]
     var index = 0
@@ -43,7 +42,7 @@ class ViewController: UIViewController {
 //            self.setUpPlayerWithLocal()
             //Play video with url
             self.setUpPlayerWithURlStreaming()
-            self.setUpGestureRecognizer()
+          //  self.setUpGestureRecognizer()
             NotificationCenter.default.addObserver(self, selector: #selector(self.didChangeOrientation), name: UIDevice.orientationDidChangeNotification, object: nil)
             self.btnClose.layer.cornerRadius = self.btnClose.frame.size.height / 2
             self.setupDropdown()
@@ -98,26 +97,29 @@ class ViewController: UIViewController {
     func setUpPlayerWithURlStreaming()
     {
         //MARK : if url is emded. It will play in webview and managed automatically in webview
-        viewVideo.configure(url: url,ControllView: self.viewOverlay,loader: self.activityIndicator)
+        viewVideo.configure(url: url,ControllView: self.viewOverlay)
+        viewVideo.superView = self.view
+        viewVideo.play()
+        
+        // other Configuration
         viewVideo.saveVideoLocally = true
-        if viewVideo.isEmbeddedVideo == false{
-            viewVideo.delegate = self
-            viewVideo.currentVideoID = self.videoID
-            viewVideo.play()
-        }
-        self.activityIndicator.hidesWhenStopped = true
-        self.activityIndicator.isHidden = true
-        viewVideo.activityIndicator?.startAnimating()
+        viewVideo.delegate = self
+        viewVideo.currentVideoID = self.videoID
+        //viewVideo.videoControll?.playbuttonImage = your image
+//        viewVideo.videoControll?.pausebuttonImage = you image
         
     }
     
     func setUpPlayerWithLocal()
     {
-        viewVideo.configure(ControllView: self.viewOverlay,loader: self.activityIndicator,localPath:self.arrlocalVideo[self.index],fileextension : "mp4")
+        viewVideo.configure(ControllView: self.viewOverlay,localPath:self.arrlocalVideo[self.index],fileextension : "mp4")
+        viewVideo.play()
+        
+        //Other configuration
         viewVideo.delegate = self
         viewVideo.currentVideoID = self.videoID
-        viewVideo.play()
-        viewVideo.activityIndicator?.startAnimating()
+        
+        
     }
     
     func setUpGestureRecognizer()
@@ -183,14 +185,6 @@ class ViewController: UIViewController {
             self.dropdown?.isHidden = true
             return
         }
-        
-        UIView.animate(withDuration: 0.5) {
-            var frame = self.dropdown?.frame
-            frame?.origin.x = self.btnRate.frame.origin.x + self.btnRate.frame.size.width
-            frame?.origin.y = self.btnRate.frame.origin.y + self.btnRate.frame.size.height
-            self.dropdown?.frame = frame!
-            self.dropdown?.isHidden = false
-        }
     }
     
     func setupDropdown()
@@ -226,6 +220,19 @@ class ViewController: UIViewController {
 // MARK: - Player Delegate Methods
 extension ViewController : PlayerEventDelegate
 {
+    func AVPlayer(minimizevideoScreen: Bool) {
+        DispatchQueue.main.async {
+        if minimizevideoScreen{
+            self.btnClose.isHidden = false
+        }
+        else{
+            self.btnClose.isHidden = true
+        }
+        }
+    }
+    func AVPlayer(panGesture didTriggerd: UIPanGestureRecognizer?) {
+        
+    }
     func totalTime(_ player: AVPlayer) {
         
     }
@@ -250,17 +257,17 @@ extension ViewController : PlayerEventDelegate
     
     func AVPlayer(didTaptoNextvideo: AVPlayer?) {
         //Replace your video with next one
-        if index != self.arrlocalVideo.count - 1
+        if index != self.arrVideos.count - 1
         {
             self.index += 1
-            self.viewVideo.replacelocalVideo(path: self.arrlocalVideo[self.index], videoextension: "mp4")
+            self.viewVideo.replaceVideo(videourl: self.arrVideos[index].url)
             if index == self.arrVideos.count - 1{
-                self.viewVideo.btnForward?.isEnabled = false
+                self.viewVideo.makeNextButton(enable: false)
             }
             else
             {
-                self.viewVideo.btnForward?.isEnabled = true
-                self.viewVideo.btnBackward?.isEnabled = true
+                self.viewVideo.makeNextButton(enable: true)
+                self.viewVideo.makePreviousButton(enable: true)
             }
         }
         
@@ -272,14 +279,17 @@ extension ViewController : PlayerEventDelegate
         if index != 0
         {
             self.index -= 1
-            self.viewVideo.replacelocalVideo(path: self.arrlocalVideo[self.index], videoextension: "mp4")
+            self.viewVideo.replaceVideo(videourl: self.arrVideos[index].url)
             if index == 0{
-                self.viewVideo.btnBackward?.isEnabled = false
+                self.viewVideo.makePreviousButton(enable: false)
+                //self.viewVideo.btnBackward?.isEnabled = false
             }
             else
             {
-                self.viewVideo.btnForward?.isEnabled = true
-                self.viewVideo.btnBackward?.isEnabled = true
+                //self.viewVideo.btnForward?.isEnabled = true
+                //self.viewVideo.btnBackward?.isEnabled = true
+                self.viewVideo.makeNextButton(enable: true)
+                self.viewVideo.makePreviousButton(enable: true)
             }
         }
     }
