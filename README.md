@@ -42,7 +42,7 @@ Xcode 10.2
 You want to add pod 'SAPlugAVPlayer', '~> 0.1.7' similar to the following to your Podfile
 ```swift
 target 'MyApp' do
-  pod 'SAPlugAVPlayer', '~> 0.1.7'
+  pod 'SAPlugAVPlayer', '~> 0.2.1'
 end
 ```
 Then run a pod install inside your terminal, or from CocoaPods.app.
