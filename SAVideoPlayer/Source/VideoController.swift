@@ -255,9 +255,12 @@ public class VideoController : UIView{
     
     func getBundle() -> Bundle?
     {
-        let bundlePath = Bundle.main.path(forResource: "Resources", ofType:"bundle")
-        return Bundle.init(path: bundlePath ?? "")
-        
+        let bundle = Bundle(for: self.classForCoder)
+        if let buld = Bundle(identifier: bundle.bundleIdentifier ?? "")
+        {
+            return buld
+        }
+        return bundle
     }
 
 }

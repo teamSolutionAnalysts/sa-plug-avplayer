@@ -19,14 +19,14 @@ public protocol PlayerEventDelegate : class{
     func AVPlayer(didTaptoNextvideo : AVPlayer?)
     func AVPlayer(didTaptoPreviousvideo : AVPlayer?)
     func AVPlayer(didEndPlaying : AVPlayer?)
-    func AVPlayer(panGesture didTriggerd : UIPanGestureRecognizer?)
+    func AVPlayer(panGesture sender : UIGestureRecognizer?)
     func AVPlayer(minimizevideoScreen : Bool)
 }
 public extension PlayerEventDelegate {
     func didUpdateTimer(_ player : AVPlayer, elpsed time : String){}
     func AVPlayer(didPause player : AVPlayer){}
     func AVPlayer(didPlay player : AVPlayer){}
-    func AVPlayer(panGesture didTriggerd : Notification?){}
+    func AVPlayer(panGesture sender : UIGestureRecognizer?){}
 }
 
 public class ViewVideo : UIView
@@ -165,60 +165,8 @@ public class ViewVideo : UIView
         self.videoControll?.addGestureRecognizer(swipeoverlay)
     }
     
-    public var initialTouchPoint: CGPoint = CGPoint(x: 0,y: 0)
-    public var superView :UIView?
-    
-    
     @objc func handleGesture(_ sender: UIPanGestureRecognizer) {
         self.delegate?.AVPlayer(panGesture: sender)
-        let touchPoint = sender.location(in: self.window)
-        guard let superView = self.superView else {
-            return
-        }
-        if sender.state == UIGestureRecognizer.State.began {
-            initialTouchPoint = touchPoint
-            if touchPoint.y - initialTouchPoint.y > 10 && self.isFullscreen == false{
-                self.isAnimating = true
-                self.pause()
-            }
-        } else if sender.state == UIGestureRecognizer.State.changed {
-            if (touchPoint.x - initialTouchPoint.x) > 10
-            {
-                self.fastForwardPlayer()
-            }
-            else if (initialTouchPoint.x - touchPoint.x) > 10
-            {
-                self.fastBackward()
-            }
-            else if touchPoint.y - initialTouchPoint.y > 0 && self.isMiniMized == false && self.isFullscreen == false{
-                superView.frame = CGRect(x: 0, y: touchPoint.y - initialTouchPoint.y, width: superView.frame.size.width, height: superView.frame.size.height)
-            }
-            else if superView.frame.origin.y != 0 && self.isMiniMized == true && self.isFullscreen == false
-            {
-                superView.frame = CGRect(x: 0, y:(superView.frame.size.height - self.frame.size.height) - (initialTouchPoint.y - touchPoint.y), width: superView.frame.size.width, height: superView.frame.size.height)
-            }
-        } else if sender.state == UIGestureRecognizer.State.ended || sender.state == UIGestureRecognizer.State.cancelled && (self.isFullscreen == false) {
-            
-            if touchPoint.y - initialTouchPoint.y > (UIScreen.main.bounds.height / 2) - 70 {
-                UIView.animate(withDuration: 0.3, animations: {
-                    superView.frame = CGRect(x: 0, y: superView.frame.size.height - (self.frame.size.height + 30), width: superView.frame.size.width, height: superView.frame.size.height)
-                    self.isMiniMized = true
-                    self.delegate?.AVPlayer(minimizevideoScreen: true)
-                    superView.backgroundColor = UIColor.clear
-                })
-                
-            } else {
-                UIView.animate(withDuration: 0.3, animations: {
-                    superView.frame = CGRect(x: 0, y: 0, width: superView.frame.size.width, height: superView.frame.size.height)
-                    self.isMiniMized = false
-                    self.delegate?.AVPlayer(minimizevideoScreen: false)
-                    superView.backgroundColor = UIColor.white
-                })
-                
-            }
-            self.isAnimating = false
-            self.play()
-        }
     }
     
     private func setUpGesture()

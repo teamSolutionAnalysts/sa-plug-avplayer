@@ -98,7 +98,6 @@ class ViewController: UIViewController {
     {
         //MARK : if url is emded. It will play in webview and managed automatically in webview
         viewVideo.configure(url: url,ControllView: self.viewOverlay)
-        viewVideo.superView = self.view
         viewVideo.play()
         
         // other Configuration
@@ -122,24 +121,7 @@ class ViewController: UIViewController {
         
     }
     
-    func setUpGestureRecognizer()
-    {
-        swipe = UIPanGestureRecognizer(target: self, action: #selector(handleGesture))
-        swipe?.maximumNumberOfTouches = 1
-        if viewVideo.isEmbeddedVideo
-        {
-            if let webView = self.viewVideo.webview
-            {
-                webView.addGestureRecognizer(self.swipe!)
-            }
-        }
-        else{
-            self.viewVideo.addGestureRecognizer(swipe!)
-        }
-        swipeoverlay = UIPanGestureRecognizer(target: self, action: #selector(handleGesture))
-        swipeoverlay?.maximumNumberOfTouches = 1
-        self.viewOverlay.addGestureRecognizer(swipeoverlay!)
-    }
+   
     
     func animateLikeDisLike(like:Bool)
     {
@@ -230,9 +212,60 @@ extension ViewController : PlayerEventDelegate
         }
         }
     }
-    func AVPlayer(panGesture didTriggerd: UIPanGestureRecognizer?) {
-        
+    
+    func AVPlayer(panGesture sender: UIGestureRecognizer?) {
+        guard let sender = sender else{
+            return
+        }
+        let touchPoint = sender.location(in: self.viewVideo?.window)
+        if sender.state == UIGestureRecognizer.State.began {
+            initialTouchPoint = touchPoint
+            if touchPoint.y - initialTouchPoint.y > 10 && self.viewVideo.isFullscreen == false{
+                self.isAnimating = true
+                self.viewVideo.pause()
+            }
+        } else if sender.state == UIGestureRecognizer.State.changed {
+            if (touchPoint.x - initialTouchPoint.x) > 10
+            {
+                self.viewVideo.fastForwardPlayer()
+            }
+            else if (initialTouchPoint.x - touchPoint.x) > 10
+            {
+                self.viewVideo.fastBackward()
+            }
+            else if touchPoint.y - initialTouchPoint.y > 0 && self.viewVideo.isMiniMized == false && self.viewVideo.isFullscreen == false{
+                self.view.frame = CGRect(x: 0, y: touchPoint.y - initialTouchPoint.y, width: self.view.frame.size.width, height: self.view.frame.size.height)
+            }
+            else if self.view.frame.origin.y != 0 && self.viewVideo.isMiniMized == true && self.viewVideo.isFullscreen == false
+            {
+                self.view.frame = CGRect(x: 0, y:(self.view.frame.size.height - self.viewVideo.frame.size.height) - (initialTouchPoint.y - touchPoint.y), width: self.view.frame.size.width, height: self.view.frame.size.height)
+            }
+        } else if sender.state == UIGestureRecognizer.State.ended || sender.state == UIGestureRecognizer.State.cancelled && (self.viewVideo.isFullscreen == false) {
+            
+            if touchPoint.y - initialTouchPoint.y > (UIScreen.main.bounds.height / 2) - 70 {
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.view.frame = CGRect(x: 0, y: self.view.frame.size.height - (self.viewVideo.frame.size.height + 20), width: self.view.frame.size.width, height: self.view.frame.size.height)
+                    self.viewVideo.isMiniMized = true
+                    self.btnClose.alpha = 1
+                    self.view.backgroundColor = UIColor.clear
+                    self.scrollView.setContentOffset(CGPoint.zero, animated: true)
+                })
+                
+            } else {
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+                    self.viewVideo.isMiniMized = false
+                    self.btnClose.alpha = 0
+                    self.view.backgroundColor = UIColor.white
+                })
+                
+            }
+            self.isAnimating = false
+            self.viewVideo.play()
+        }
     }
+    
+    
     func totalTime(_ player: AVPlayer) {
         
     }
@@ -297,55 +330,7 @@ extension ViewController : PlayerEventDelegate
 
 extension ViewController {
     
-    @objc func handleGesture(_ sender: UIPanGestureRecognizer) {
-        let touchPoint = sender.location(in: self.viewVideo?.window)
-        self.dropdown?.isHidden = true
-        if sender.state == UIGestureRecognizer.State.began {
-            initialTouchPoint = touchPoint
-            if touchPoint.y - initialTouchPoint.y > 10 && self.viewVideo.isFullscreen == false{
-                self.isAnimating = true
-                self.viewVideo.pause()
-            }
-        } else if sender.state == UIGestureRecognizer.State.changed {
-            if (touchPoint.x - initialTouchPoint.x) > 10
-            {
-                self.viewVideo.fastForwardPlayer()
-            }
-            else if (initialTouchPoint.x - touchPoint.x) > 10
-            {
-                self.viewVideo.fastBackward()
-            }
-            else if touchPoint.y - initialTouchPoint.y > 0 && self.viewVideo.isMiniMized == false && self.viewVideo.isFullscreen == false{
-                self.view.frame = CGRect(x: 0, y: touchPoint.y - initialTouchPoint.y, width: self.view.frame.size.width, height: self.view.frame.size.height)
-            }
-            else if self.view.frame.origin.y != 0 && self.viewVideo.isMiniMized == true && self.viewVideo.isFullscreen == false
-            {
-                self.view.frame = CGRect(x: 0, y:(self.view.frame.size.height - self.viewVideo.frame.size.height) - (initialTouchPoint.y - touchPoint.y), width: self.view.frame.size.width, height: self.view.frame.size.height)
-            }
-        } else if sender.state == UIGestureRecognizer.State.ended || sender.state == UIGestureRecognizer.State.cancelled && (self.viewVideo.isFullscreen == false) {
-            
-            if touchPoint.y - initialTouchPoint.y > (UIScreen.main.bounds.height / 2) - 70 {
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.view.frame = CGRect(x: 0, y: self.view.frame.size.height - (self.viewVideo.frame.size.height + 20), width: self.view.frame.size.width, height: self.view.frame.size.height)
-                    self.viewVideo.isMiniMized = true
-                    self.btnClose.alpha = 1
-                    self.view.backgroundColor = UIColor.clear
-                    self.scrollView.setContentOffset(CGPoint.zero, animated: true)
-                })
-                
-            } else {
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
-                    self.viewVideo.isMiniMized = false
-                    self.btnClose.alpha = 0
-                    self.view.backgroundColor = UIColor.white
-                })
-                
-            }
-            self.isAnimating = false
-            self.viewVideo.play()
-        }
-    }
+   
     
     func showHelperCircle(){
         let center = CGPoint(x: view.bounds.width * 0.5, y: 100)
