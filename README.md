@@ -59,6 +59,16 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
             self.setUpPlayerWithURlStreaming()
 		}
 	}
+	
+	override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        	if self.viewVideo.isEmbeddedVideo == false
+        	{
+            	self.viewVideo.playerLayer?.frame = self.viewVideo.bounds
+        	}
+    	}
+	
 	//Play Video with url streaming
 	func setUpPlayerWithURlStreaming()
     	 {
