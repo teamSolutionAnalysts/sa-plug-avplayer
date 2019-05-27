@@ -487,14 +487,10 @@ public class ViewVideo : UIView
         if UIDevice.current.orientation == .portrait
         {
             self.videoControll?.fullscreenButton.setImage(videoControll?.fullscreenImage, for: .normal)
-            let value = UIInterfaceOrientation.landscapeLeft.rawValue
-            UIDevice.current.setValue(value, forKey: "orientation")
 //            self.btnFullScreen?.setImage(#imageLiteral(resourceName: "fullscreen"), for: .normal)
         }
         else{
             self.videoControll?.fullscreenButton.setImage(videoControll?.exitfullscreenImage, for: .normal)
-            let value = UIInterfaceOrientation.portrait.rawValue
-            UIDevice.current.setValue(value, forKey: "orientation")
 //            self.btnFullScreen?.setImage(#imageLiteral(resourceName: "Colaps"), for: .normal)
             if self.isMiniMized
             {
