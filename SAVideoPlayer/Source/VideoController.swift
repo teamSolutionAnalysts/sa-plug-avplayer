@@ -48,57 +48,52 @@ public class VideoController : UIView{
     public var labelTime : UILabel!
     public var totalTime : UILabel!
     
-    public var playbuttonImage : UIImage?{
-        get{
-            return playImage
-        }
-        set{
-            self.playImage = newValue
-        }
-    }
-    
-    public var pausebuttonImage : UIImage?{
-        get{
-            return pauseImage
-        }
-        set{
-            self.pauseImage = newValue
+    @IBInspectable public var playbuttonImage : UIImage?{
+        didSet{
+            self.playImage = playbuttonImage
+            self.playButton.setImage(self.playImage, for: .normal)
+            self.setNeedsDisplay()
         }
     }
     
-    public var fullscreenbuttonImage : UIImage?{
-        get{
-            return fullscreenImage
-        }
-        set{
-            self.fullscreenImage = newValue
+    @IBInspectable public var pausebuttonImage : UIImage?{
+        
+        didSet{
+            self.pauseImage = pausebuttonImage
         }
     }
     
-    public var exitscreenbuttonImage : UIImage?{
-        get{
-            return exitfullscreenImage
-        }
-        set{
-            self.exitfullscreenImage = newValue
-        }
-    }
-    
-    public var nextButtonImage : UIImage?{
-        get{
-            return nextbtnImage
-        }
-        set{
-            self.nextbtnImage = newValue
+    @IBInspectable public var fullscreenbuttonImage : UIImage?{
+        
+        didSet{
+            self.fullscreenImage = fullscreenbuttonImage
+            self.fullscreenButton.setImage(self.fullscreenImage, for: .normal)
+            self.setNeedsDisplay()
         }
     }
     
-    public var previousButtonImage : UIImage?{
-        get{
-            return previousbtnImage
+    @IBInspectable public var exitscreenbuttonImage : UIImage?{
+        didSet{
+            self.exitfullscreenImage = exitscreenbuttonImage
         }
-        set{
-            self.previousbtnImage = newValue
+    }
+    
+    @IBInspectable public var nextButtonImage : UIImage?{
+        
+        didSet{
+            self.nextbtnImage = nextButtonImage
+            self.nextButton.setImage(self.nextbtnImage, for: .normal)
+            self.setNeedsDisplay()
+        }
+    }
+    
+    @IBInspectable public var previousButtonImage : UIImage?{
+        
+        didSet{
+            self.previousbtnImage = previousButtonImage
+            self.previousButton.setImage(self.previousbtnImage, for: .normal)
+            self.setNeedsDisplay()
+            
         }
     }
     

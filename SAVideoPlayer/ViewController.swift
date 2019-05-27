@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.btnClose.alpha = 0
+        self.btnClose.alpha = 1
         self.viewOverlay.isHidden = true
         self.view.isUserInteractionEnabled = false
         DispatchQueue.main.async {
@@ -42,7 +42,6 @@ class ViewController: UIViewController {
 //            self.setUpPlayerWithLocal()
             //Play video with url
             self.setUpPlayerWithURlStreaming()
-          //  self.setUpGestureRecognizer()
             NotificationCenter.default.addObserver(self, selector: #selector(self.didChangeOrientation), name: UIDevice.orientationDidChangeNotification, object: nil)
             self.btnClose.layer.cornerRadius = self.btnClose.frame.size.height / 2
             self.setupDropdown()
@@ -81,16 +80,6 @@ class ViewController: UIViewController {
     @objc func didChangeOrientation(gesture : Notification)
     {
         self.dropdown?.isHidden = true
-//        if UIDevice.current.orientation == .portrait
-//        {
-//            self.swipe?.addTarget(self, action: #selector(handleGesture))
-//            self.swipeoverlay?.addTarget(self, action: #selector(handleGesture))
-//        }
-//        else{
-//            self.swipe?.removeTarget(self, action: nil)
-//            self.swipeoverlay?.removeTarget(self, action: nil)
-//        }
-        
     }
     
     //MARK: Class methods
@@ -100,12 +89,10 @@ class ViewController: UIViewController {
         viewVideo.configure(url: url,ControllView: self.viewOverlay)
         viewVideo.play()
         
-        // other Configuration
+        // Other optional Configuration
         viewVideo.saveVideoLocally = true
         viewVideo.delegate = self
         viewVideo.currentVideoID = self.videoID
-        //viewVideo.videoControll?.playbuttonImage = your image
-//        viewVideo.videoControll?.pausebuttonImage = you image
         
     }
     
@@ -114,14 +101,10 @@ class ViewController: UIViewController {
         viewVideo.configure(ControllView: self.viewOverlay,localPath:self.arrlocalVideo[self.index],fileextension : "mp4")
         viewVideo.play()
         
-        //Other configuration
+        //Other optional configuration
         viewVideo.delegate = self
         viewVideo.currentVideoID = self.videoID
-        
-        
     }
-    
-   
     
     func animateLikeDisLike(like:Bool)
     {
@@ -204,12 +187,12 @@ extension ViewController : PlayerEventDelegate
 {
     func AVPlayer(minimizevideoScreen: Bool) {
         DispatchQueue.main.async {
-        if minimizevideoScreen{
-            self.btnClose.isHidden = false
-        }
-        else{
-            self.btnClose.isHidden = true
-        }
+            if minimizevideoScreen{
+                self.btnClose.isHidden = false
+            }
+            else{
+                self.btnClose.isHidden = true
+            }
         }
     }
     
