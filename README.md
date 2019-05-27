@@ -27,9 +27,6 @@ The slider is taken from BufferSlider Github project.
 
 ![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/Simulator%20Screen%20Shot%20-%20iPhone%206%20-%202019-05-23%20at%2017.37.56.png)
 
-
-![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/Simulator%20Screen%20Shot%20-%20iPhone%206%20-%202019-05-23%20at%2017.37.59.png)
-
 ### Prerequisites
 
 Swift 4.2
@@ -179,6 +176,12 @@ There is a method which lets you change the player
 ## UI Guildlines
 
 Directly drag IB to UIViewController, the aspect ratio for the 16:9 constraint (priority to 750, lower than the 1000 line), the code section only needs to achieve. See more detail on the demo.
+
+## Assign VideoController class to controller view
+![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/SetVideoController.png)
+
+## select images for controllers like, play, pause, fullscreen, exitFullscreen, Next and Previous
+![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/Set%20Images%20for%20controller.png)
 
 ## Built With
 
