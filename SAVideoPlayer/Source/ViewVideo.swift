@@ -630,7 +630,7 @@ public class ViewVideo : UIView
         if self.isEmbeddedVideo{
             return
         }
-        guard let duration  = player?.currentItem?.duration else{
+        guard let duration  = self.player?.currentItem?.duration else{
             return
         }
         self.player?.rate = rate
@@ -638,9 +638,9 @@ public class ViewVideo : UIView
         let composition = AVMutableComposition()
         do{
             try composition.insertTimeRange(timeRange,
-                                            of: (player?.currentItem!.asset)!,
+                                            of: (self.player?.currentItem!.asset)!,
                                             at: CMTime.zero)
-            composition.scaleTimeRange(timeRange, toDuration: CMTimeMultiplyByFloat64((player?.currentItem?.asset.duration)!, multiplier: Float64(1.0 / rate)))
+            composition.scaleTimeRange(timeRange, toDuration: CMTimeMultiplyByFloat64((self.player?.currentItem?.asset.duration)!, multiplier: Float64(1.0 / rate)))
         }
         catch let error{
             print(error.localizedDescription)
