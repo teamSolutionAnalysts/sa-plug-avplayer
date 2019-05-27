@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.btnClose.alpha = 1
+        self.btnClose.alpha = 0
         self.viewOverlay.isHidden = true
         self.view.isUserInteractionEnabled = false
         DispatchQueue.main.async {
@@ -90,7 +90,7 @@ class ViewController: UIViewController {
         viewVideo.play()
         
         // Other optional Configuration
-        viewVideo.saveVideoLocally = true
+        viewVideo.saveVideoLocally = false
         viewVideo.delegate = self
         viewVideo.currentVideoID = self.videoID
         
@@ -188,10 +188,10 @@ extension ViewController : PlayerEventDelegate
     func AVPlayer(minimizevideoScreen: Bool) {
         DispatchQueue.main.async {
             if minimizevideoScreen{
-                self.btnClose.isHidden = false
+                self.btnClose.alpha = 1
             }
             else{
-                self.btnClose.isHidden = true
+                self.btnClose.alpha = 0
             }
         }
     }
