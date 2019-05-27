@@ -6,7 +6,7 @@ Here we have a simple plug and play module that a developer can use to integrate
 
 ## Features
 
-* Support play local and network
+* Playing local and using url supported.
 * Url with extension and embed video url supported.(No control for embedded video it will be played using WkWebView)
 * Only youtube embed url will be supported
 * support Fullscreen
@@ -16,19 +16,12 @@ Here we have a simple plug and play module that a developer can use to integrate
 * PlayerEventDelegate Delegate method control Next previous and replay video method control single or multiple urls.
 * Save Video locally.
 * Support custom player view.
-* Support subtitle
-* Memory management taken care.
-
-Reference:
-The slider is taken from BufferSlider Github project.
+* Memory controll
 
 ### Preview (Mine)
 ##Note : Make your own design. this is just a view to view
 
 ![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/Simulator%20Screen%20Shot%20-%20iPhone%206%20-%202019-05-23%20at%2017.37.56.png)
-
-
-![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/Simulator%20Screen%20Shot%20-%20iPhone%206%20-%202019-05-23%20at%2017.37.59.png)
 
 ### Prerequisites
 
@@ -39,10 +32,10 @@ iOS 10*
 Xcode 10.2
 ### Installing
 
-You want to add pod 'SAPlugAVPlayer', '~> 0.2.1' similar to the following to your Podfile
+You want to add pod 'SAPlugAVPlayer', '~> 0.2.2' similar to the following to your Podfile
 ```swift
 target 'MyApp' do
-  pod 'SAPlugAVPlayer', '~> 0.2.1'
+  pod 'SAPlugAVPlayer', '~> 0.2.2'
 end
 ```
 Then run a pod install inside your terminal, or from CocoaPods.app.
@@ -66,6 +59,16 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
             self.setUpPlayerWithURlStreaming()
 		}
 	}
+	
+	override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        	if self.viewVideo.isEmbeddedVideo == false
+        	{
+            	self.viewVideo.playerLayer?.frame = self.viewVideo.bounds
+        	}
+    	}
+	
 	//Play Video with url streaming
 	func setUpPlayerWithURlStreaming()
     	 {
@@ -180,6 +183,12 @@ There is a method which lets you change the player
 
 Directly drag IB to UIViewController, the aspect ratio for the 16:9 constraint (priority to 750, lower than the 1000 line), the code section only needs to achieve. See more detail on the demo.
 
+## Assign VideoController class to controller view
+![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/SetVideoController.png)
+
+## select images for controllers like, play, pause, fullscreen, exitFullscreen, Next and Previous
+![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/Set%20Images%20for%20controller.png)
+
 ## Built With
 
 * AVKit Framework
@@ -187,3 +196,6 @@ Directly drag IB to UIViewController, the aspect ratio for the 16:9 constraint (
 
 ## Authors
 Solution Analyst
+
+## Reference:
+The slider is taken from BufferSlider Github project.
