@@ -23,6 +23,8 @@
 		AFF6C4902295122900DCDE84 /* filename.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AFF6C48F2295122800DCDE84 /* filename.mp4 */; };
 		AFF6C492229553ED00DCDE84 /* filename1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AFF6C491229553ED00DCDE84 /* filename1.mp4 */; };
 		AFF6C4942295543400DCDE84 /* filename2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AFF6C4932295543400DCDE84 /* filename2.mp4 */; };
+		AFF6D6E6229BA8EF00336763 /* Set Images for controller.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF6D6E4229BA8EF00336763 /* Set Images for controller.png */; };
+		AFF6D6E7229BA8EF00336763 /* SetVideoController.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF6D6E5229BA8EF00336763 /* SetVideoController.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		AFF6C48F2295122800DCDE84 /* filename.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = filename.mp4; sourceTree = "<group>"; };
 		AFF6C491229553ED00DCDE84 /* filename1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = filename1.mp4; sourceTree = "<group>"; };
 		AFF6C4932295543400DCDE84 /* filename2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = filename2.mp4; sourceTree = "<group>"; };
+		AFF6D6E4229BA8EF00336763 /* Set Images for controller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Set Images for controller.png"; sourceTree = "<group>"; };
+		AFF6D6E5229BA8EF00336763 /* SetVideoController.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SetVideoController.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,8 @@
 				AF38A86B228961F600DC0B2B /* ViewController.swift */,
 				AF38A8992289971800DC0B2B /* ListVideoVC.swift */,
 				AF38A86D228961F600DC0B2B /* Main.storyboard */,
+				AFF6D6E4229BA8EF00336763 /* Set Images for controller.png */,
+				AFF6D6E5229BA8EF00336763 /* SetVideoController.png */,
 				AF3270EC2296C5B200C46927 /* Simulator Screen Shot - iPhone 6 - 2019-05-23 at 17.37.56.png */,
 				AF3270ED2296C5B200C46927 /* Simulator Screen Shot - iPhone 6 - 2019-05-23 at 17.37.59.png */,
 				AFF6C491229553ED00DCDE84 /* filename1.mp4 */,
@@ -252,6 +258,8 @@
 				AF38A871228961F800DC0B2B /* Assets.xcassets in Resources */,
 				AF38A86F228961F600DC0B2B /* Main.storyboard in Resources */,
 				AF3270EE2296C5B200C46927 /* Simulator Screen Shot - iPhone 6 - 2019-05-23 at 17.37.56.png in Resources */,
+				AFF6D6E7229BA8EF00336763 /* SetVideoController.png in Resources */,
+				AFF6D6E6229BA8EF00336763 /* Set Images for controller.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
