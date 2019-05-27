@@ -39,10 +39,10 @@ iOS 10*
 Xcode 10.2
 ### Installing
 
-You want to add pod 'SAPlugAVPlayer', '~> 0.1.7' similar to the following to your Podfile
+You want to add pod 'SAPlugAVPlayer', '~> 0.2.1' similar to the following to your Podfile
 ```swift
 target 'MyApp' do
-  pod 'SAPlugAVPlayer', '~> 0.1.7'
+  pod 'SAPlugAVPlayer', '~> 0.2.1'
 end
 ```
 Then run a pod install inside your terminal, or from CocoaPods.app.
@@ -54,9 +54,8 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 ```swift
 	import SAPlugAVPlayer
 
- 	@IBOutlet weak var viewController: UIView!
+ 	@IBOutlet weak var videoControll: VideoController!
     	@IBOutlet weak var viewVideo: ViewVideo!
-	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
 	override func viewDidLoad() {
     		super.viewDidLoad()  
@@ -71,22 +70,24 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 	func setUpPlayerWithURlStreaming()
     	 {
         //MARK : if url is emded. It will play in webview and managed automatically in webview
-        viewVideo.configure(url: url,ControllView: self.viewOverlay,loader: self.activityIndicator)
+        viewVideo.configure(url: url,ControllView: self.videoControll)
+	viewVideo.play()
+	
+	//other configuration
         viewVideo.saveVideoLocally = true
         viewVideo.delegate = self
         viewVideo.currentVideoID = self.videoID
-        viewVideo.play()
-        viewVideo.activityIndicator?.startAnimating()
     }
 
 	//Play Video locally
 	func setUpPlayerWithLocal()
     {
-        viewVideo.configure(ControllView: self.viewOverlay,loader: self.activityIndicator,localPath:self.arrlocalVideo[self.index],fileextension : "mp4")
+        viewVideo.configure(ControllView: self.videoControll,localPath:self.arrlocalVideo[self.index],fileextension : "mp4")
+	viewVideo.play()
+	
         viewVideo.delegate = self
         viewVideo.currentVideoID = self.videoID
-        viewVideo.play()
-        viewVideo.activityIndicator?.startAnimating()
+  	
     }
 
 	//With PlayerEventDelegate Method manage as you need iterate over array of urls and manage Next Previous End of video, fullscreen, totalTime and  many more.
@@ -177,45 +178,8 @@ There is a method which lets you change the player
 
 ## UI Guildlines
 
-Make a view for video player and another with all controlls like,
-* Use VideoControllButton subclass for PlayPause, FullScreen
-* Use VideoControllLabel subclass for time label and total time
-* Use BufferSlider for UISlider which lets you customize colors and other property.
-* For Activity Indicator set hideWhenStopped = true and isHidden false
-
-## Note 
-Do not forgot to write ButtonControlType :
-For Buttons -> playpause, expand, forward, backward
-For Labels -> LabelControllType 1 for timelabelupdate or 2 for total time
-See more detail on the demo.
-
-
 Directly drag IB to UIViewController, the aspect ratio for the 16:9 constraint (priority to 750, lower than the 1000 line), the code section only needs to achieve. See more detail on the demo.
 
-```
-viewVideo.configure(url: url,ControllView: self.viewController,loader: self.activityIndicator)
-```
-
-## Controlls Types 
-```swift
-	enum ButtonControlType :String {
-        case PlayPause = "playpause"
-        case Expand = "expand"
-        case forward = "forward"
-        case backward = "backward"
-    	}
-```
-
-### Sub Class Controlls
-User BufferSlider for buffer progress
-VideoControllButton for PlayPause and fullscreeExit buttons
-VideoControllLabel for time labels 
-
-```swift
-	VideoControllButton
-	VideoControllLabel
-	BufferSlider
-```
 ## Built With
 
 * AVKit Framework
