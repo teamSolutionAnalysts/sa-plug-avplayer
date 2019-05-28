@@ -40,7 +40,21 @@ end
 ```
 Then run a pod install inside your terminal, or from CocoaPods.app.
 
-Manually
+### Carthage
+Carthage is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with Homebrew using the following command:
+```
+$ brew update
+$ brew install carthage
+```
+To integrate SAPlugAVPlayer into your Xcode project using Carthage, specify it in your Cartfile:
+
+	github "iosparesh/SAPlugAVPlayer"
+	
+Run carthage update to build the framework and drag the built SAPlugAVPlayer.framework into your Xcode project.
+
+### Manually
 If you prefer not to use any of the aforementioned dependency managers, you can integrate SA-Plug-AVPlayer into your project manually. Just copy the source file in your project directory
 
 ### Sample
