@@ -171,6 +171,10 @@ public class ViewVideo : UIView
     }
     
     @objc func handleGesture(_ sender: UIPanGestureRecognizer) {
+        if self.videoControll?.slider.isTracking ?? false
+        {
+            return
+        }
         self.delegate?.AVPlayer(panGesture: sender)
     }
     

@@ -203,9 +203,9 @@ extension ViewController : PlayerEventDelegate
         let touchPoint = sender.location(in: self.viewVideo?.window)
         if sender.state == UIGestureRecognizer.State.began {
             initialTouchPoint = touchPoint
-            if touchPoint.y - initialTouchPoint.y > 10 && self.viewVideo.isFullscreen == false{
+            if touchPoint.y - initialTouchPoint.y > 0 && self.viewVideo.isFullscreen == false{
                 self.isAnimating = true
-                self.viewVideo.pause()
+                //self.viewVideo.pause()
             }
         } else if sender.state == UIGestureRecognizer.State.changed {
             if (touchPoint.x - initialTouchPoint.x) > 10
@@ -244,7 +244,7 @@ extension ViewController : PlayerEventDelegate
                 
             }
             self.isAnimating = false
-            self.viewVideo.play()
+            //self.viewVideo.play()
         }
     }
     
