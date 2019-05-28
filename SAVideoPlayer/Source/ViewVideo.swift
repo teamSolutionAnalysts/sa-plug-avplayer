@@ -664,6 +664,9 @@ public class ViewVideo : UIView
     
     public func fastForwardPlayer()
     {
+        if self.isEmbeddedVideo{
+            return
+        }
         guard let duration  = player?.currentItem?.duration else{
             return
         }
@@ -681,7 +684,9 @@ public class ViewVideo : UIView
     
     public func fastBackward()
     {
-        
+        if self.isEmbeddedVideo{
+            return
+        }
         let playerCurrentTime = CMTimeGetSeconds((player?.currentTime())!)
         var newTime = playerCurrentTime - seekDuration
         
