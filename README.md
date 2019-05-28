@@ -29,7 +29,7 @@ Swift 4.2
 
 iOS 10*
 
-Xcode 10.2
+Xcode 10
 ### Installing
 
 You want to add pod 'SAPlugAVPlayer', '~> 0.2.4' similar to the following to your Podfile
