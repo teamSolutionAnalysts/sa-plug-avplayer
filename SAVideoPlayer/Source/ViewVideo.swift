@@ -50,6 +50,7 @@ public class ViewVideo : UIView
     public let seekDuration: Float64 = 5
     public var isFullscreen :Bool = false
     var isAnimating : Bool = false
+   
     public var videoControll : VideoController?
     {
         didSet{
@@ -167,8 +168,10 @@ public class ViewVideo : UIView
         }
         let swipeoverlay = UIPanGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeoverlay.maximumNumberOfTouches = 1
-        self.videoControll?.addGestureRecognizer(swipeoverlay)
+        self.videoControll?.gestureView.addGestureRecognizer(swipeoverlay)
     }
+    
+    
     
     @objc func handleGesture(_ sender: UIPanGestureRecognizer) {
         if self.videoControll?.slider.isTracking ?? false
@@ -420,12 +423,11 @@ public class ViewVideo : UIView
             self.timer?.invalidate()
             self.timer = nil
             self.pause()
-            self.isToolHidden = false
+            self.showOverlay()
         }
         else{
             self.play()
-            self.videoControll?.isHidden = true
-            self.isToolHidden = true
+            self.hideOverlay()
         }
     }
     
@@ -438,6 +440,15 @@ public class ViewVideo : UIView
         self.isToolHidden = true
     }
     
+    func showOverlay()
+    {
+        if self.isEmbeddedVideo{
+            return
+        }
+        self.videoControll?.isHidden = false
+        self.isToolHidden = false
+    }
+    
     @objc func didTouchOverlay()
     {
         if self.isEmbeddedVideo{
@@ -447,17 +458,18 @@ public class ViewVideo : UIView
         if self.isToolHidden
         {
             DispatchQueue.main.async {
-                self.videoControll?.isHidden = false
+                self.showOverlay()
                 self.timer = nil
                 self.updateFocusVideo()
-                self.isToolHidden = false
+               
             }
         }
         else{
-            self.videoControll?.isHidden = true
-            self.isToolHidden = true
+            self.hideOverlay()
         }
     }
+    
+    
     
     @objc func btnExpandTouched(_ sender: Any) {
         if self.isEmbeddedVideo{
@@ -504,6 +516,7 @@ public class ViewVideo : UIView
     }
     
     @objc func sliderDidChangeValue(_ sender: Any) {
+        
         if self.isEmbeddedVideo{
             return
         }
@@ -542,8 +555,7 @@ public class ViewVideo : UIView
         }
         if self.isToolHidden == false
         {
-            self.videoControll?.isHidden = true
-            self.isToolHidden = true
+            self.hideOverlay()
         }
     }
     
@@ -567,8 +579,7 @@ public class ViewVideo : UIView
             self.setHoursMinutesSecondsFrom(seconds: sec)
             self.videoControll?.playButton?.setImage(self.videoControll?.pauseImage, for: .normal)
             self.delegate?.AVPlayer(didPlay: self.player!)
-            self.videoControll?.isHidden = true
-            self.isToolHidden = true
+            self.hideOverlay()
         }
     }
     
@@ -592,7 +603,7 @@ public class ViewVideo : UIView
             self.url = videoURL
             self.webview?.load(URLRequest(url: videoURL))
         }
-        self.videoControll?.isHidden = true
+        self.hideOverlay()
     }
     
     public func replaceVideo(videourl:String)
@@ -603,7 +614,7 @@ public class ViewVideo : UIView
             if ViewVideo.checkIfUrlIsEmbedded(url: videourl)
             {
                 self.webview?.load(URLRequest(url: fileurl))
-                self.videoControll?.isHidden = true
+                self.hideOverlay()
             }
             else
             {

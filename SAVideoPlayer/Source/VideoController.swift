@@ -44,6 +44,7 @@ public class VideoController : UIView{
     var nextbtnImage : UIImage?
     var previousbtnImage : UIImage?
     public var toolView = UIView()
+    public var gestureView = UIView()
     
     public var labelTime : UILabel!
     public var totalTime : UILabel!
@@ -169,6 +170,7 @@ public class VideoController : UIView{
     
     private func setToolBar()
     {
+        addGestureView()
         //set Slider
         self.backgroundColor = UIColor.clear
         let trailing = 78
@@ -216,6 +218,7 @@ public class VideoController : UIView{
         
         toolView = UIView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(70), height: CGFloat(70)))
         toolView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
+        toolView.isUserInteractionEnabled = false
         self.addSubview(toolView)
         
         self.toolView.addSubview(self.fullscreenButton!)
@@ -246,6 +249,28 @@ public class VideoController : UIView{
         
         
         addConstraintToolbar()
+        
+    }
+    
+    func addGestureView()
+    {
+        gestureView = UIView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(70), height: CGFloat(70)))
+        self.gestureView.translatesAutoresizingMaskIntoConstraints = false
+        self.gestureView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
+        self.gestureView.isUserInteractionEnabled = true
+        self.addSubview(self.gestureView)
+        
+        let leadingtoolview = NSLayoutConstraint(item: self.gestureView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0)
+        
+        let trailingtoolview = NSLayoutConstraint(item: self.gestureView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
+        
+        let toptoolview = NSLayoutConstraint(item: self.gestureView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
+        
+        let bottomView = NSLayoutConstraint(item: gestureView, attribute: .bottom, relatedBy: .equal,
+                                            toItem: self, attribute: .bottom, multiplier: 1.0, constant: 50)
+        
+        NSLayoutConstraint.activate([leadingtoolview, trailingtoolview,toptoolview, bottomView])
+        
     }
     
     func getBundle() -> Bundle?
