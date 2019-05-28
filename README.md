@@ -6,20 +6,21 @@ Here we have a simple plug and play module that a developer can use to integrate
 
 ## Features
 
-* Playing local and using url supported.
-* Url with extension and embed video url supported.(No control for embedded video it will be played using WkWebView)
-* Only youtube embed url will be supported
-* support Fullscreen
-* Custom slider with buffer loader.
-* FastForward and Backward support
+* Playing local videos and url streming is supported.
+* Url with extension and embed video url supported.(No control for embedded video).
+* Only youtube embed url will be supported.
+* support Fullscreen.
+* Slider design customization available.
+* FastForward and Backward support.
+* Next and Previous video callback.
 * Change player rate.
-* PlayerEventDelegate Delegate method control Next previous and replay video method control single or multiple urls.
+* PlayerEventDelegate Delegate method control Next previous and reply, replace video with next or previous pan gesture delegate method which helps you manage your animation of video view.
 * Save Video locally.
 * Support custom player view.
-* Memory controll
+* Memory controll.
 
 ### Preview (Mine)
-##Note : Make your own design. this is just a view to view
+**Note : Make your own design. this is just a view to view
 
 ![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/Simulator%20Screen%20Shot%20-%20iPhone%206%20-%202019-05-23%20at%2017.37.56.png)
 
@@ -29,7 +30,8 @@ Swift 4.2
 
 iOS 10*
 
-Xcode 10.2
+Xcode 10
+
 ### Installing
 
 You want to add pod 'SAPlugAVPlayer', '~> 0.2.4' similar to the following to your Podfile
@@ -40,8 +42,24 @@ end
 ```
 Then run a pod install inside your terminal, or from CocoaPods.app.
 
-Manually
-If you prefer not to use any of the aforementioned dependency managers, you can integrate SA-Plug-AVPlayer into your project manually. Just copy the source file in your project directory
+### Carthage
+
+Carthage is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with Homebrew using the following command:
+```
+$ brew update
+$ brew install carthage
+```
+To integrate SAPlugAVPlayer into your Xcode project using Carthage, specify it in your Cartfile:
+
+	github "iosparesh/SAPlugAVPlayer"
+	
+Run carthage update to build the framework and drag the built SAPlugAVPlayer.framework into your Xcode project.
+
+### Manually
+
+If you prefer not to use any of the aforementioned dependency managers, you can integrate SAPlugAVPlayer into your project manually. Just copy the source file in your project directory
 
 ### Sample
 ```swift
@@ -150,6 +168,16 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 }
 ```
 
+## UI Guildlines
+
+Directly drag IB to UIViewController, the aspect ratio for the 16:9 constraint (priority to 750, lower than the 1000 line), the code section only needs to achieve. See more detail on the demo.
+
+## Assign VideoController class to controller view
+![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/SetVideoController.png)
+
+## select images for controllers like, play, pause, fullscreen, exitFullscreen, Next and Previous
+![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/Set%20Images%20for%20controller.png)
+
 ### Fast Forward and Backward
 
 We have given the pan gesture configuration in ViewController file please add gesture recognizer on your viewvideo and you will be able to manually access the fast forward  and backward methods.
@@ -170,16 +198,6 @@ We have kept this code on the developer side because there is another drag video
 ```
 There is a method which lets you change the player
 
-## UI Guildlines
-
-Directly drag IB to UIViewController, the aspect ratio for the 16:9 constraint (priority to 750, lower than the 1000 line), the code section only needs to achieve. See more detail on the demo.
-
-## Assign VideoController class to controller view
-![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/SetVideoController.png)
-
-## select images for controllers like, play, pause, fullscreen, exitFullscreen, Next and Previous
-![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/Set%20Images%20for%20controller.png)
-
 ## Built With
 
 * AVKit Framework
@@ -189,4 +207,4 @@ Directly drag IB to UIViewController, the aspect ratio for the 16:9 constraint (
 Solution Analyst
 
 ## Reference:
-The slider is taken from BufferSlider Github project.
+The slider is used from raxcat/BufferSlider, git
