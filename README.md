@@ -207,4 +207,4 @@ There is a method which lets you change the player
 Solution Analyst
 
 ## Reference:
-The slider is taken from BufferSlider Github project.
+The slider is used from raxcat/BufferSlider, git
