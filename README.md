@@ -7,20 +7,19 @@ Here we have a simple plug and play module that a developer can use to integrate
 ## Features
 
 * Playing local videos and url streming is supported.
-* Url with extension and embed video url supported.(No control for embedded video).
-* Only youtube embed url will be supported.
-* support Fullscreen.
+* Url with extension and embed video url supported (No control for embedded video).
+* Supports only Youtube embed URLs.
+* Supports fullscreen.
 * Slider design customization available.
 * FastForward and Backward support.
 * Next and Previous video callback.
 * Change player rate.
 * PlayerEventDelegate Delegate method control Next previous and reply, replace video with next or previous pan gesture delegate method which helps you manage your animation of video view.
-* Save Video locally.
-* Support custom player view.
+* Supports Save Video locally.
+* Supports custom player view.
 * Memory controll.
 
-### Preview (Mine)
-**Note : Make your own design. this is just a view to view
+### Preview
 
 ![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/Simulator%20Screen%20Shot%20-%20iPhone%206%20-%202019-05-23%20at%2017.37.56.png)
 
