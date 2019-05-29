@@ -187,7 +187,7 @@ public class VideoController : UIView{
         self.slider = BufferSlider(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(self.frame.size.width - CGFloat(32 + trailing)), height: CGFloat(20)))
         
         //Configure Slider
-        slider.baseColor = UIColor.blue
+        slider.baseColor = UIColor.black
         slider.progressColor = UIColor.clear
         slider.bufferColor = UIColor.yellow
         slider.sliderHeight = 4
