@@ -208,7 +208,7 @@ Solution Analyst
 ## Reference:
 The slider is used from raxcat/BufferSlider, git
 
-### License
+## License
 
 MIT License
 
