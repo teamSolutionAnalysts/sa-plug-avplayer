@@ -98,17 +98,15 @@ public class VideoController : UIView{
         }
     }
     
-    
-    
     private func addConstraintCenter(cview: UIView, multiplier : CGFloat)
     {
         
         
         let widthConstraint = NSLayoutConstraint(item: cview, attribute: .width, relatedBy: .equal,
-                                                 toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 100)
+                                                 toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 50)
         
         let heightConstraint = NSLayoutConstraint(item: cview, attribute: .height, relatedBy: .equal,
-                                                  toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 100)
+                                                  toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 50)
         
         
         let xConstraint = NSLayoutConstraint(item: cview, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: multiplier, constant: 0)
@@ -165,6 +163,18 @@ public class VideoController : UIView{
         
         NSLayoutConstraint.activate([leading, botton,trailing,tralingexpand,bottomfullscreen,widthConstraint,(heightConstraint),heightfullscreenConstraint])
         
+        let leadinggestureview = NSLayoutConstraint(item: self.gestureView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0)
+        
+        let trailinggestureview = NSLayoutConstraint(item: self.gestureView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
+        
+        let toptoolview = NSLayoutConstraint(item: self.gestureView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
+        
+        let bottomView = NSLayoutConstraint(item: gestureView, attribute: .bottom, relatedBy: .equal,
+                                            toItem: self.toolView, attribute: .top, multiplier: 1.0, constant: 0)
+      //  let heightgesture = NSLayoutConstraint(item: gestureView, attribute: .height, relatedBy: .equal,
+//                                                            toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 200)
+        
+        NSLayoutConstraint.activate([leadinggestureview, trailinggestureview,toptoolview,bottomView])
         
     }
     
@@ -187,7 +197,10 @@ public class VideoController : UIView{
         
         //Set Fullscreen
         self.fullscreenButton = UIButton(type: .custom)
-        self.fullscreenButton?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(70), height: CGFloat(70))
+        self.fullscreenButton?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(50), height: CGFloat(50))
+        self.fullscreenButton.layer.shadowColor = UIColor.white.cgColor
+        self.fullscreenButton.layer.shadowOffset = CGSize(width: CGFloat(0), height: CGFloat(0))
+        self.fullscreenButton.layer.shadowOpacity = 0.4
         self.fullscreenButton?.translatesAutoresizingMaskIntoConstraints = false
         self.fullscreenImage = UIImage(named: "fullscreen@2x", in: self.getBundle(), compatibleWith: nil)
         self.exitfullscreenImage = UIImage(named: "Colaps@2x", in: self.getBundle(), compatibleWith: nil)
@@ -195,7 +208,10 @@ public class VideoController : UIView{
         
         //Set PlayPause Button
         self.playButton = UIButton(type: .custom)
-        self.playButton?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(70), height: CGFloat(70))
+        self.playButton?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(50), height: CGFloat(50))
+        self.playButton.layer.shadowColor = UIColor.white.cgColor
+        self.playButton.layer.shadowOffset = CGSize(width: CGFloat(0), height: CGFloat(0))
+        self.playButton.layer.shadowOpacity = 0.4
         self.playButton?.translatesAutoresizingMaskIntoConstraints = false
         self.playImage = UIImage(named: "play@2x", in: self.getBundle(), compatibleWith: nil)
         self.pauseImage = UIImage(named: "pause@2x", in: self.getBundle(), compatibleWith: nil)
@@ -203,22 +219,22 @@ public class VideoController : UIView{
         
         ///Set next button image
         self.nextButton = UIButton(type: .custom)
-        self.nextButton?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(70), height: CGFloat(70))
+        self.nextButton?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(50), height: CGFloat(50))
         self.nextbtnImage = UIImage(named: "fast-forward", in: self.getBundle(), compatibleWith: nil)
         self.nextButton?.translatesAutoresizingMaskIntoConstraints = false
         self.nextButton?.setImage(self.nextbtnImage, for: .normal)
         //Set Previous button image
         self.previousButton = UIButton(type: .custom)
-        self.previousButton?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(70), height: CGFloat(70))
+        self.previousButton?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(50), height: CGFloat(50))
         self.previousbtnImage = UIImage(named: "backward", in: self.getBundle(), compatibleWith: nil)
         self.previousButton?.translatesAutoresizingMaskIntoConstraints = false
         self.previousButton?.setImage(self.previousbtnImage, for: .normal)
         
         //tool View
         
-        toolView = UIView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(70), height: CGFloat(70)))
+        toolView = UIView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(50), height: CGFloat(50)))
         toolView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
-        toolView.isUserInteractionEnabled = false
+        toolView.isUserInteractionEnabled = true
         self.addSubview(toolView)
         
         self.toolView.addSubview(self.fullscreenButton!)
@@ -246,30 +262,17 @@ public class VideoController : UIView{
         self.totalTime.font = UIFont.boldSystemFont(ofSize: 16)
         self.totalTime.translatesAutoresizingMaskIntoConstraints = false
         self.toolView.addSubview(totalTime)
-        
-        
         addConstraintToolbar()
-        
     }
     
     func addGestureView()
     {
         gestureView = UIView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(70), height: CGFloat(70)))
         self.gestureView.translatesAutoresizingMaskIntoConstraints = false
-        self.gestureView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
+        self.gestureView.backgroundColor = UIColor.clear
         self.gestureView.isUserInteractionEnabled = true
         self.addSubview(self.gestureView)
-        
-        let leadingtoolview = NSLayoutConstraint(item: self.gestureView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0)
-        
-        let trailingtoolview = NSLayoutConstraint(item: self.gestureView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
-        
-        let toptoolview = NSLayoutConstraint(item: self.gestureView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
-        
-        let bottomView = NSLayoutConstraint(item: gestureView, attribute: .bottom, relatedBy: .equal,
-                                            toItem: self, attribute: .bottom, multiplier: 1.0, constant: 50)
-        
-        NSLayoutConstraint.activate([leadingtoolview, trailingtoolview,toptoolview, bottomView])
+
         
     }
     
