@@ -31,7 +31,7 @@ iOS 10*
 
 Xcode 10
 
-### Installing
+## Installing
 
 You want to add pod 'SAPlugAVPlayer', '~> 0.2.6' similar to the following to your Podfile
 ```swift
@@ -41,7 +41,7 @@ end
 ```
 Then run a pod install inside your terminal, or from CocoaPods.app.
 
-### Carthage
+## Carthage
 
 Carthage is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
 
@@ -56,13 +56,13 @@ To integrate SAPlugAVPlayer into your Xcode project using Carthage, specify it i
 	
 Run carthage update to build the framework and drag the built SAPlugAVPlayer.framework into your Xcode project.
 
-### Manually
+## Manually
 
 If you prefer not to use any of the aforementioned dependency managers, you can integrate SAPlugAVPlayer into your project manually. Just copy the source file in your project directory
 
-### Steps to add player
+## Steps to add player
 
-# Assign VideoController class to controller view
+## Assign VideoController class to controller view
 ![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/SetVideoController.png)
 
 Drag and drop IBOutlets from UI
@@ -76,10 +76,10 @@ class ViewController : UIViewController{
 }
 ```
 
-# Add and select images for buttons, play, pause, fullscreen, exitFullscreen, next and previous from Attribute Inspector as shown below
+## Add and select images for buttons, play, pause, fullscreen, exitFullscreen, next and previous from Attribute Inspector as shown below
 ![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/Set%20Images%20for%20controller.png)
 
-# To Play video from url streaming
+## To Play video from url streaming
 
 ```swift
 func setUpPlayerWithURlStreaming()
@@ -90,7 +90,7 @@ func setUpPlayerWithURlStreaming()
      }
 ```
 
-# To Play video from local path with extension
+## To Play video from local path with extension
 ```swift
 func setUpPlayerWithLocal()
     {
@@ -101,7 +101,7 @@ func setUpPlayerWithLocal()
     }
 ```
 
-# Add Delegate PlayerEventDelegate
+## Add Delegate PlayerEventDelegate
 
 ```swift 
 // MARK: - Player Delegate Methods
@@ -180,7 +180,7 @@ extension ViewController : PlayerEventDelegate
 
 ```
 
-### Optional configuration
+## Optional configuration
 
 ```swift
 	self.viewVideo.saveVideoLocally = false
@@ -194,7 +194,7 @@ extension ViewController : PlayerEventDelegate
         self.videoController.slider.roundedSlider = // Bool
 ```
 
-### Player Rate 
+## Player Rate 
 
 ```swift 
 	self.viewVideo.changePlayerRate(rate: rate)
