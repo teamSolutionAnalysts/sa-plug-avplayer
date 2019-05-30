@@ -61,8 +61,12 @@ Run carthage update to build the framework and drag the built SAPlugAVPlayer.fra
 If you prefer not to use any of the aforementioned dependency managers, you can integrate SAPlugAVPlayer into your project manually. Just copy the source file in your project directory
 
 ## Steps to add player
+## Assign ViewVideo class
+
+![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/AssignViewVideo.png)
 
 ## Assign VideoController class to controller view
+
 ![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/SetVideoController.png)
 
 Drag and drop IBOutlets from UI
@@ -83,22 +87,22 @@ class ViewController : UIViewController{
 
 ```swift
 func setUpPlayerWithURlStreaming()
-    {
-        self.viewVideo.configure(url: self.url, ControllView: self.videoController)
-        self.viewVideo.delegate = self
-        self.viewVideo.play()
-     }
+{
+    self.viewVideo.configure(url: self.url, ControllView: self.videoController)
+    self.viewVideo.delegate = self
+    self.viewVideo.play()
+ }
 ```
 
 ## To Play video from local path with extension
 ```swift
 func setUpPlayerWithLocal()
-    {
-        viewVideo.configure(ControllView: self.videoController,localPath:"localpath",fileextension : "mp4")
-        viewVideo.delegate = self
-        viewVideo.currentVideoID = self.videoID
-        viewVideo.play()
-    }
+{
+    viewVideo.configure(ControllView: self.videoController,localPath:"localpath",fileextension : "mp4")
+    viewVideo.delegate = self
+    viewVideo.currentVideoID = self.videoID
+    viewVideo.play()
+ }
 ```
 
 ## Add Delegate PlayerEventDelegate
