@@ -61,11 +61,11 @@ Run carthage update to build the framework and drag the built SAPlugAVPlayer.fra
 If you prefer not to use any of the aforementioned dependency managers, you can integrate SAPlugAVPlayer into your project manually. Just copy the source file in your project directory
 
 ## Steps to add player
-## Assign ViewVideo class
+### Assign ViewVideo class
 
 ![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/AssignViewVideo.png)
 
-## Assign VideoController class to controller view
+### Assign VideoController class to controller view
 
 ![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/SetVideoController.png)
 
@@ -80,10 +80,10 @@ class ViewController : UIViewController{
 }
 ```
 
-## Add and select images for buttons, play, pause, fullscreen, exitFullscreen, next and previous from Attribute Inspector as shown below
+### Add and select images for buttons, play, pause, fullscreen, exitFullscreen, next and previous from Attribute Inspector as shown below
 ![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/Set%20Images%20for%20controller.png)
 
-## To Play video from url streaming
+### To Play video from url streaming
 
 ```swift
 func setUpPlayerWithURlStreaming()
@@ -94,7 +94,7 @@ func setUpPlayerWithURlStreaming()
  }
 ```
 
-## To Play video from local path with extension
+### To Play video from local path with extension
 ```swift
 func setUpPlayerWithLocal()
 {
@@ -104,7 +104,7 @@ func setUpPlayerWithLocal()
  }
 ```
 
-## Add Delegate PlayerEventDelegate
+### Add PlayerEventDelegate
 
 ```swift 
 // MARK: - Player Delegate Methods
@@ -197,14 +197,14 @@ extension ViewController : PlayerEventDelegate
         self.videoController.slider.roundedSlider = // Bool
 ```
 
-## Player Rate 
+### Player Rate 
 
 ```swift 
 	self.viewVideo.changePlayerRate(rate: rate)
 ```
 There is a method which lets you change the player
 
-## Built With
+### Built With
 
 * AVKit Framework
 * URLSession is used
