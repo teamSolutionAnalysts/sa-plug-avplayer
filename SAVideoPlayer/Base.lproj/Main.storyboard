@@ -385,13 +385,12 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="IBlblTheme" destination="lWT-TW-2hl" id="2ul-7p-Tkk"/>
                         <outlet property="aspectRationVideoView" destination="SC1-JG-nbE" id="J3T-wK-034"/>
                         <outlet property="btnClose" destination="ghs-aZ-FRt" id="0x3-9T-GuU"/>
                         <outlet property="lblDislikes" destination="fxD-7P-HWR" id="dqR-qp-8iA"/>
                         <outlet property="lblLikes" destination="U3G-k0-giZ" id="bbY-3K-XbT"/>
                         <outlet property="scrollView" destination="Fzb-R4-nv3" id="BJc-rE-RJ5"/>
-                        <outlet property="viewOverlay" destination="yGY-4M-023" id="VJ4-le-Cl0"/>
+                        <outlet property="viewOverlay" destination="yGY-4M-023" id="HpB-jU-VYE"/>
                         <outlet property="viewVideo" destination="RS5-oY-2ov" id="7ut-qU-m8v"/>
                     </connections>
                 </viewController>
