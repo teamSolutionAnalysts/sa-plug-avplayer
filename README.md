@@ -100,7 +100,6 @@ func setUpPlayerWithLocal()
 {
     viewVideo.configure(ControllView: self.videoController,localPath:"localpath",fileextension : "mp4")
     viewVideo.delegate = self
-    viewVideo.currentVideoID = self.videoID
     viewVideo.play()
  }
 ```
