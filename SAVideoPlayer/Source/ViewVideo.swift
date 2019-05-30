@@ -203,7 +203,6 @@ public class ViewVideo : UIView
             playerItem.addObserver(self, forKeyPath: "loadedTimeRanges", options: [.new], context: nil)
             self.player?.addObserver(self, forKeyPath: #keyPath(AVPlayer.currentItem.status), options: [.new, .initial], context: nil)
             self.player?.addObserver(self, forKeyPath: #keyPath(AVPlayer.status), options: [.new, .initial], context: nil)
-            
         }
     }
     

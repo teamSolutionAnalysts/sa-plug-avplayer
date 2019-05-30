@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF0EAB0B229FA49C00CB2BA3 /* AssignViewVideo.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0EAB0A229FA49C00CB2BA3 /* AssignViewVideo.png */; };
 		AF147EBD228A901500EF42EA /* Controlls.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF147EBC228A901500EF42EA /* Controlls.swift */; };
 		AF147EBF228AA14400EF42EA /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF147EBE228AA14400EF42EA /* DemoData.swift */; };
 		AF3270E2229678F400C46927 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3270E1229678F400C46927 /* Extension.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF0EAB0A229FA49C00CB2BA3 /* AssignViewVideo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AssignViewVideo.png; sourceTree = "<group>"; };
 		AF147EBC228A901500EF42EA /* Controlls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controlls.swift; sourceTree = "<group>"; };
 		AF147EBE228AA14400EF42EA /* DemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
 		AF3270E1229678F400C46927 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				AF38A86B228961F600DC0B2B /* ViewController.swift */,
 				AF38A8992289971800DC0B2B /* ListVideoVC.swift */,
 				AF38A86D228961F600DC0B2B /* Main.storyboard */,
+				AF0EAB0A229FA49C00CB2BA3 /* AssignViewVideo.png */,
 				AFF6D6E4229BA8EF00336763 /* Set Images for controller.png */,
 				AFF6D6E5229BA8EF00336763 /* SetVideoController.png */,
 				AF3270EC2296C5B200C46927 /* Simulator Screen Shot - iPhone 6 - 2019-05-23 at 17.37.56.png */,
@@ -260,6 +263,7 @@
 				AF3270EE2296C5B200C46927 /* Simulator Screen Shot - iPhone 6 - 2019-05-23 at 17.37.56.png in Resources */,
 				AFF6D6E7229BA8EF00336763 /* SetVideoController.png in Resources */,
 				AFF6D6E6229BA8EF00336763 /* Set Images for controller.png in Resources */,
+				AF0EAB0B229FA49C00CB2BA3 /* AssignViewVideo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

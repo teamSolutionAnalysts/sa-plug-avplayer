@@ -272,6 +272,8 @@ public class VideoController : UIView{
         self.gestureView.backgroundColor = UIColor.clear
         self.gestureView.isUserInteractionEnabled = true
         self.addSubview(self.gestureView)
+
+        
     }
     
     func getBundle() -> Bundle?

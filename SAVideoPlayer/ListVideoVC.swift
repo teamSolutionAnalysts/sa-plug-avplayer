@@ -17,9 +17,12 @@ class ListVideoVC: UIViewController {
     var dataSource = DemoData().mediaJSON
     var intialFrame :CGRect = CGRect.zero
     var initialTouchPoint: CGPoint = CGPoint(x: 0,y: 0)
+   
     @IBOutlet weak var tableVideo: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        
         self.tableVideo.estimatedRowHeight = 220
         self.tableVideo.rowHeight = UITableView.automaticDimension
     }

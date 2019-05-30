@@ -385,6 +385,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="IBlblTheme" destination="lWT-TW-2hl" id="2ul-7p-Tkk"/>
                         <outlet property="aspectRationVideoView" destination="SC1-JG-nbE" id="J3T-wK-034"/>
                         <outlet property="btnClose" destination="ghs-aZ-FRt" id="0x3-9T-GuU"/>
                         <outlet property="lblDislikes" destination="fxD-7P-HWR" id="dqR-qp-8iA"/>
