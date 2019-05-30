@@ -31,7 +31,7 @@ iOS 10*
 
 Xcode 10
 
-### Installing
+## Installing
 
 You want to add pod 'SAPlugAVPlayer', '~> 0.2.6' similar to the following to your Podfile
 ```swift
@@ -41,7 +41,7 @@ end
 ```
 Then run a pod install inside your terminal, or from CocoaPods.app.
 
-### Carthage
+## Carthage
 
 Carthage is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
 
@@ -56,140 +56,147 @@ To integrate SAPlugAVPlayer into your Xcode project using Carthage, specify it i
 	
 Run carthage update to build the framework and drag the built SAPlugAVPlayer.framework into your Xcode project.
 
-### Manually
+## Manually
 
 If you prefer not to use any of the aforementioned dependency managers, you can integrate SAPlugAVPlayer into your project manually. Just copy the source file in your project directory
 
-### Sample
+## Steps to add player
+### Assign ViewVideo class
+
+![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/AssignViewVideo.png)
+
+### Assign VideoController class to controller view
+
+![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/SetVideoController.png)
+
+Drag and drop IBOutlets from UI
+
+```swift 
+class ViewController : UIViewController{
+   
+    @IBOutlet weak var viewVideo: ViewVideo!
+    @IBOutlet weak var videoController: VideoController!
+    
+}
+```
+
+### Add and select images for buttons, play, pause, fullscreen, exitFullscreen, next and previous from Attribute Inspector as shown below
+![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/Set%20Images%20for%20controller.png)
+
+### To Play video from url streaming
+
 ```swift
-	import SAPlugAVPlayer
+func setUpPlayerWithURlStreaming()
+{
+    self.viewVideo.configure(url: self.url, ControllView: self.videoController)
+    self.viewVideo.delegate = self
+    self.viewVideo.play()
+ }
+```
 
- 	@IBOutlet weak var videoControll: VideoController!
-    	@IBOutlet weak var viewVideo: ViewVideo!
+### To Play video from local path with extension
+```swift
+func setUpPlayerWithLocal()
+{
+    viewVideo.configure(ControllView: self.videoController,localPath:"localpath",fileextension : "mp4")
+    viewVideo.delegate = self
+    viewVideo.play()
+ }
+```
 
-	override func viewDidLoad() {
-    		super.viewDidLoad()  
- 		DispatchQueue.main.async {
-	        //Play video locally
-        		//self.setUpPlayerWithLocal()
-    		    //Play video with url
-            self.setUpPlayerWithURlStreaming()
-		}
-	}
+### Add PlayerEventDelegate
 
-	//Play Video with url streaming
-	func setUpPlayerWithURlStreaming()
-    	 {
-        //MARK : if url is emded. It will play in webview and managed automatically in webview
-        viewVideo.configure(url: url,ControllView: self.videoControll)
-	viewVideo.play()
-	
-	//other configuration
-        viewVideo.saveVideoLocally = true
-        viewVideo.delegate = self
-        viewVideo.currentVideoID = self.videoID
+```swift 
+// MARK: - Player Delegate Methods
+extension ViewController : PlayerEventDelegate
+{
+    func AVPlayer(minimizevideoScreen: Bool) {
+      
     }
-
-	//Play Video locally
-	func setUpPlayerWithLocal()
-    {
-        viewVideo.configure(ControllView: self.videoControll,localPath:self.arrlocalVideo[self.index],fileextension : "mp4")
-	viewVideo.play()
-	
-        viewVideo.delegate = self
-        viewVideo.currentVideoID = self.videoID
-  	
+    
+    func AVPlayer(panGesture didTriggerd: UIPanGestureRecognizer?) {
+        
     }
-
-	//With PlayerEventDelegate Method manage as you need iterate over array of urls and manage Next Previous End of video, fullscreen, totalTime and  many more.
-
-	class ViewController : PlayerEventDelegate{
-
+    
     func totalTime(_ player: AVPlayer) {
         
     }
     
     func AVPlayer(didEndPlaying: AVPlayer?) {
         //Play your next video
+	//Replace your local video with next one
+        self.viewVideo.replacelocalVideo(path: "Your next video path", videoextension: "mp4")
+	
+	OR
+	
+	//Replace your streaming url with next one
+	self.viewVideo.replaceVideo(videourl: "url")
+	
     }
     
     func AVPlayer(didTap overLay: AVPlayer?) {
-        self.dropdown?.isHidden = true
     }
     
     func AVPlayer(willExpand player: AVPlayer?) {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
-            self.viewVideo.isMiniMized = false
-            self.btnClose.alpha = 0
-
-            let value = UIInterfaceOrientation.landscapeLeft.rawValue
-            UIDevice.current.setValue(value, forKey: "orientation")
-        })
+       
     }
     
     func AVPlayer(didTaptoNextvideo: AVPlayer?) {
-        //Replace your video with next one
-        if index != self.arrlocalVideo.count - 1
-        {
-            self.index += 1
-            self.viewVideo.replacelocalVideo(path: self.arrlocalVideo[self.index], videoextension: "mp4")
-            if index == self.arrVideos.count - 1{
-                self.viewVideo.btnForward?.isEnabled = false
-            }
-            else
-            {
-                self.viewVideo.btnForward?.isEnabled = true
-                self.viewVideo.btnBackward?.isEnabled = true
-            }
-        }
-        
-        //self.viewVideo.replacelocalVideo(path: "filename", videoextension: "mp4")
+	//Replace your local video with next one
+        self.viewVideo.replacelocalVideo(path: "Your next video path", videoextension: "mp4")
+	
+	OR
+	
+	//Replace your streaming url with next one
+	self.viewVideo.replaceVideo(videourl: "url")
     }
     
     func AVPlayer(didTaptoPreviousvideo: AVPlayer?) {
         //Replace your video with previous one
-        if index != 0
-        {
-            self.index -= 1
-            self.viewVideo.replacelocalVideo(path: self.arrlocalVideo[self.index], videoextension: "mp4")
-            if index == 0{
-                self.viewVideo.btnBackward?.isEnabled = false
-            }
-            else
+        self.viewVideo.replacelocalVideo(path: "Your previous video", videoextension: "mp4")
+	
+	OR
+	
+	//Replace your streaming url with next one
+	self.viewVideo.replaceVideo(videourl: "url")
+    }
+    
+    func AVPlayer(panGesture sender: UIGestureRecognizer?) {
+        guard let sender = sender else{
+            return
+        }
+        let touchPoint = sender.location(in: self.viewVideo?.window)
+        if sender.state == UIGestureRecognizer.State.began {
+            initialTouchPoint = touchPoint
+        } else if sender.state == UIGestureRecognizer.State.changed {
+            if (touchPoint.x - initialTouchPoint.x) > 10
             {
-                self.viewVideo.btnForward?.isEnabled = true
-                self.viewVideo.btnBackward?.isEnabled = true
-                
+                self.viewVideo.fastForwardPlayer()
+            }
+            else if (initialTouchPoint.x - touchPoint.x) > 10
+            {
+                self.viewVideo.fastBackward()
             }
         }
     }
 }
+
 ```
 
-## UI Guildlines
-
-Directly drag IB to UIViewController, the aspect ratio for the 16:9 constraint (priority to 750, lower than the 1000 line), the code section only needs to achieve. See more detail on the demo.
-
-## Assign VideoController class to controller view
-![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/SetVideoController.png)
-
-## select images for controllers like, play, pause, fullscreen, exitFullscreen, Next and Previous
-![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/Set%20Images%20for%20controller.png)
-
-### Fast Forward and Backward
-
-We have given the pan gesture configuration in ViewController file please add gesture recognizer on your viewvideo and you will be able to manually access the fast forward  and backward methods.
-We have kept this code on the developer side because there is another drag video view feature associated. You can take advantage of managing multiple cases.
+## Optional configuration
 
 ```swift
-	if (touchPoint.x - initialTouchPoint.x) > 1{
-       	        self.viewVideo.fastForwardPlayer()
-       	}
-	else if (initialTouchPoint.x - touchPoint.x) > 10{
-		self.viewVideo.fastBackward()
-        }
+	self.viewVideo.saveVideoLocally = false
+        self.viewVideo.currentVideoID = self.videoID // to manage video by id
+        
+        //Change slider configuration (optional)
+        self.videoController.slider.baseColor  = // UIColor
+        self.videoController.slider.bufferColor = // UIColor
+        self.videoController.slider.progressColor = // UIColor
+        self.videoController.slider.borderWidth = // CGFloat
+        self.videoController.slider.roundedSlider = // Bool
 ```
+
 ### Player Rate 
 
 ```swift 
@@ -197,7 +204,7 @@ We have kept this code on the developer side because there is another drag video
 ```
 There is a method which lets you change the player
 
-## Built With
+### Built With
 
 * AVKit Framework
 * URLSession is used
