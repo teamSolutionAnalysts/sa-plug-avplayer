@@ -65,6 +65,9 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 
 ![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/AssignViewVideo.png)
 
+### Note :
+If you are planing to play only youtube embedded urls. Do not take VideoController view. You can play embedded url with ViewVideo only.
+
 ### Assign VideoController class to controller view
 
 ![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/SetVideoController.png)
