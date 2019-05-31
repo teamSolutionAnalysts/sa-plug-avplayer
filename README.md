@@ -58,7 +58,7 @@ Run carthage update to build the framework and drag the built SAPlugAVPlayer.fra
 
 ## Manually
 
-If you prefer not to use any of the aforementioned dependency managers, you can integrate SAPlugAVPlayer into your project manually. Just copy the source file in your project directory
+If you prefer not to use any of the aforementioned dependency managers, you can integrate SAPlugAVPlayer into your project manually. Just copy the source folder in your project directory from https://github.com/teamSolutionAnalysts/sa-plug-avplayer/tree/master/SAVideoPlayer/Source
 
 ## Steps to add player
 ### Assign ViewVideo class
