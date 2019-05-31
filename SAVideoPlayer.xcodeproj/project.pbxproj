@@ -26,26 +26,26 @@
 		AFF6C4942295543400DCDE84 /* filename2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AFF6C4932295543400DCDE84 /* filename2.mp4 */; };
 		AFF6D6E6229BA8EF00336763 /* Set Images for controller.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF6D6E4229BA8EF00336763 /* Set Images for controller.png */; };
 		AFF6D6E7229BA8EF00336763 /* SetVideoController.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF6D6E5229BA8EF00336763 /* SetVideoController.png */; };
-		AFF8B06522A0F8F0007940C6 /* SAPlugAVPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = AFF8B06322A0F8F0007940C6 /* SAPlugAVPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AFF8B06822A0F8F0007940C6 /* SAPlugAVPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF8B06122A0F8EF007940C6 /* SAPlugAVPlayer.framework */; };
-		AFF8B06922A0F8F0007940C6 /* SAPlugAVPlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AFF8B06122A0F8EF007940C6 /* SAPlugAVPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AFF8B07B22A0FC95007940C6 /* backward.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B07A22A0FC95007940C6 /* backward.png */; };
 		AFF8B07D22A0FC9F007940C6 /* Colaps@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B07C22A0FC9E007940C6 /* Colaps@2x.png */; };
 		AFF8B07F22A0FCA8007940C6 /* fast-forward.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B07E22A0FCA8007940C6 /* fast-forward.png */; };
 		AFF8B08122A0FCAF007940C6 /* fullscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B08022A0FCAF007940C6 /* fullscreen@2x.png */; };
 		AFF8B08322A0FCB7007940C6 /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B08222A0FCB7007940C6 /* pause@2x.png */; };
 		AFF8B08522A0FCC0007940C6 /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B08422A0FCC0007940C6 /* play@2x.png */; };
-		AFF8B09E22A14E0A007940C6 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8B09422A14892007940C6 /* DemoData.swift */; };
-		AFF8B09F22A14E0A007940C6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8B09522A14892007940C6 /* Extension.swift */; };
-		AFF8B0A022A14E0A007940C6 /* ViewVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8B09622A14892007940C6 /* ViewVideo.swift */; };
-		AFF8B0A122A14E0A007940C6 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8B09722A14892007940C6 /* VideoController.swift */; };
-		AFF8B0A222A14E0A007940C6 /* Controlls.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8B09822A14892007940C6 /* Controlls.swift */; };
-		AFF8B0A322A14E1C007940C6 /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B08722A0FD57007940C6 /* pause@2x.png */; };
-		AFF8B0A422A14E1C007940C6 /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B08822A0FD57007940C6 /* play@2x.png */; };
-		AFF8B0A522A14E1C007940C6 /* Colaps@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B08922A0FD57007940C6 /* Colaps@2x.png */; };
-		AFF8B0A622A14E1C007940C6 /* fullscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B08A22A0FD57007940C6 /* fullscreen@2x.png */; };
-		AFF8B0A722A14E1C007940C6 /* backward.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B08B22A0FD57007940C6 /* backward.png */; };
-		AFF8B0A822A14E1C007940C6 /* fast-forward.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B08C22A0FD57007940C6 /* fast-forward.png */; };
+		AFF8B0BC22A15826007940C6 /* sa_plug_avplayer.h in Headers */ = {isa = PBXBuildFile; fileRef = AFF8B0BA22A15826007940C6 /* sa_plug_avplayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AFF8B0BF22A15826007940C6 /* sa_plug_avplayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF8B0B822A15826007940C6 /* sa_plug_avplayer.framework */; };
+		AFF8B0C022A15826007940C6 /* sa_plug_avplayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AFF8B0B822A15826007940C6 /* sa_plug_avplayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AFF8B0D122A1584C007940C6 /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B0C522A1584C007940C6 /* pause@2x.png */; };
+		AFF8B0D222A1584C007940C6 /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B0C622A1584C007940C6 /* play@2x.png */; };
+		AFF8B0D322A1584C007940C6 /* Colaps@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B0C722A1584C007940C6 /* Colaps@2x.png */; };
+		AFF8B0D422A1584C007940C6 /* fullscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B0C822A1584C007940C6 /* fullscreen@2x.png */; };
+		AFF8B0D522A1584C007940C6 /* backward.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B0C922A1584C007940C6 /* backward.png */; };
+		AFF8B0D622A1584C007940C6 /* fast-forward.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B0CA22A1584C007940C6 /* fast-forward.png */; };
+		AFF8B0D722A1584C007940C6 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8B0CC22A1584C007940C6 /* DemoData.swift */; };
+		AFF8B0D822A1584C007940C6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8B0CD22A1584C007940C6 /* Extension.swift */; };
+		AFF8B0D922A1584C007940C6 /* ViewVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8B0CE22A1584C007940C6 /* ViewVideo.swift */; };
+		AFF8B0DA22A1584C007940C6 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8B0CF22A1584C007940C6 /* VideoController.swift */; };
+		AFF8B0DB22A1584C007940C6 /* Controlls.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8B0D022A1584C007940C6 /* Controlls.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,12 +63,12 @@
 			remoteGlobalIDString = AF38A865228961F600DC0B2B;
 			remoteInfo = SAVideoPlayer;
 		};
-		AFF8B06622A0F8F0007940C6 /* PBXContainerItemProxy */ = {
+		AFF8B0BD22A15826007940C6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AF38A85E228961F600DC0B2B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AFF8B06022A0F8EF007940C6;
-			remoteInfo = SAPlugAVPlayer;
+			remoteGlobalIDString = AFF8B0B722A15826007940C6;
+			remoteInfo = "sa-plug-avplayer";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -79,7 +79,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AFF8B06922A0F8F0007940C6 /* SAPlugAVPlayer.framework in Embed Frameworks */,
+				AFF8B0C022A15826007940C6 /* sa_plug_avplayer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,28 +110,28 @@
 		AFF6C4932295543400DCDE84 /* filename2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = filename2.mp4; sourceTree = "<group>"; };
 		AFF6D6E4229BA8EF00336763 /* Set Images for controller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Set Images for controller.png"; sourceTree = "<group>"; };
 		AFF6D6E5229BA8EF00336763 /* SetVideoController.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SetVideoController.png; sourceTree = "<group>"; };
-		AFF8B06122A0F8EF007940C6 /* SAPlugAVPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SAPlugAVPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFF8B06322A0F8F0007940C6 /* SAPlugAVPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAPlugAVPlayer.h; sourceTree = "<group>"; };
-		AFF8B06422A0F8F0007940C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFF8B07A22A0FC95007940C6 /* backward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backward.png; sourceTree = "<group>"; };
 		AFF8B07C22A0FC9E007940C6 /* Colaps@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Colaps@2x.png"; sourceTree = "<group>"; };
 		AFF8B07E22A0FCA8007940C6 /* fast-forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fast-forward.png"; sourceTree = "<group>"; };
 		AFF8B08022A0FCAF007940C6 /* fullscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fullscreen@2x.png"; sourceTree = "<group>"; };
 		AFF8B08222A0FCB7007940C6 /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause@2x.png"; sourceTree = "<group>"; };
 		AFF8B08422A0FCC0007940C6 /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
-		AFF8B08722A0FD57007940C6 /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause@2x.png"; sourceTree = "<group>"; };
-		AFF8B08822A0FD57007940C6 /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
-		AFF8B08922A0FD57007940C6 /* Colaps@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Colaps@2x.png"; sourceTree = "<group>"; };
-		AFF8B08A22A0FD57007940C6 /* fullscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fullscreen@2x.png"; sourceTree = "<group>"; };
-		AFF8B08B22A0FD57007940C6 /* backward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backward.png; sourceTree = "<group>"; };
-		AFF8B08C22A0FD57007940C6 /* fast-forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fast-forward.png"; sourceTree = "<group>"; };
-		AFF8B09422A14892007940C6 /* DemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
-		AFF8B09522A14892007940C6 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		AFF8B09622A14892007940C6 /* ViewVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewVideo.swift; sourceTree = "<group>"; };
-		AFF8B09722A14892007940C6 /* VideoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
-		AFF8B09822A14892007940C6 /* Controlls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controlls.swift; sourceTree = "<group>"; };
 		AFF8B0AF22A14EED007940C6 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		AFF8B0B122A14F17007940C6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		AFF8B0B822A15826007940C6 /* sa_plug_avplayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = sa_plug_avplayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFF8B0BA22A15826007940C6 /* sa_plug_avplayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sa_plug_avplayer.h; sourceTree = "<group>"; };
+		AFF8B0BB22A15826007940C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFF8B0C522A1584C007940C6 /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause@2x.png"; sourceTree = "<group>"; };
+		AFF8B0C622A1584C007940C6 /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
+		AFF8B0C722A1584C007940C6 /* Colaps@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Colaps@2x.png"; sourceTree = "<group>"; };
+		AFF8B0C822A1584C007940C6 /* fullscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fullscreen@2x.png"; sourceTree = "<group>"; };
+		AFF8B0C922A1584C007940C6 /* backward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backward.png; sourceTree = "<group>"; };
+		AFF8B0CA22A1584C007940C6 /* fast-forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fast-forward.png"; sourceTree = "<group>"; };
+		AFF8B0CC22A1584C007940C6 /* DemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
+		AFF8B0CD22A1584C007940C6 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		AFF8B0CE22A1584C007940C6 /* ViewVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewVideo.swift; sourceTree = "<group>"; };
+		AFF8B0CF22A1584C007940C6 /* VideoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
+		AFF8B0D022A1584C007940C6 /* Controlls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controlls.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFF8B06822A0F8F0007940C6 /* SAPlugAVPlayer.framework in Frameworks */,
+				AFF8B0BF22A15826007940C6 /* sa_plug_avplayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,7 +157,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AFF8B05E22A0F8EF007940C6 /* Frameworks */ = {
+		AFF8B0B522A15826007940C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -171,7 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				AF38A868228961F600DC0B2B /* SAVideoPlayer */,
-				AFF8B06222A0F8F0007940C6 /* SAPlugAVPlayer */,
+				AFF8B0B922A15826007940C6 /* sa-plug-avplayer */,
 				AF38A867228961F600DC0B2B /* Products */,
 				AFF8B0AE22A14EED007940C6 /* Frameworks */,
 			);
@@ -183,7 +183,7 @@
 				AF38A866228961F600DC0B2B /* SAVideoPlayer.app */,
 				AF38A87A228961F800DC0B2B /* SAVideoPlayerTests.xctest */,
 				AF38A885228961F800DC0B2B /* SAVideoPlayerUITests.xctest */,
-				AFF8B06122A0F8EF007940C6 /* SAPlugAVPlayer.framework */,
+				AFF8B0B822A15826007940C6 /* sa_plug_avplayer.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,17 +224,6 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
-		AFF8B06222A0F8F0007940C6 /* SAPlugAVPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				AFF8B09322A14892007940C6 /* Source */,
-				AFF8B08622A0FD57007940C6 /* Assest */,
-				AFF8B06322A0F8F0007940C6 /* SAPlugAVPlayer.h */,
-				AFF8B06422A0F8F0007940C6 /* Info.plist */,
-			);
-			path = SAPlugAVPlayer;
-			sourceTree = "<group>";
-		};
 		AFF8B07922A0FC43007940C6 /* Assest */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,31 +237,6 @@
 			path = Assest;
 			sourceTree = "<group>";
 		};
-		AFF8B08622A0FD57007940C6 /* Assest */ = {
-			isa = PBXGroup;
-			children = (
-				AFF8B08722A0FD57007940C6 /* pause@2x.png */,
-				AFF8B08822A0FD57007940C6 /* play@2x.png */,
-				AFF8B08922A0FD57007940C6 /* Colaps@2x.png */,
-				AFF8B08A22A0FD57007940C6 /* fullscreen@2x.png */,
-				AFF8B08B22A0FD57007940C6 /* backward.png */,
-				AFF8B08C22A0FD57007940C6 /* fast-forward.png */,
-			);
-			path = Assest;
-			sourceTree = "<group>";
-		};
-		AFF8B09322A14892007940C6 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				AFF8B09422A14892007940C6 /* DemoData.swift */,
-				AFF8B09522A14892007940C6 /* Extension.swift */,
-				AFF8B09622A14892007940C6 /* ViewVideo.swift */,
-				AFF8B09722A14892007940C6 /* VideoController.swift */,
-				AFF8B09822A14892007940C6 /* Controlls.swift */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
 		AFF8B0AE22A14EED007940C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,14 +246,50 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AFF8B0B922A15826007940C6 /* sa-plug-avplayer */ = {
+			isa = PBXGroup;
+			children = (
+				AFF8B0C422A1584C007940C6 /* Assest */,
+				AFF8B0CB22A1584C007940C6 /* Source */,
+				AFF8B0BA22A15826007940C6 /* sa_plug_avplayer.h */,
+				AFF8B0BB22A15826007940C6 /* Info.plist */,
+			);
+			path = "sa-plug-avplayer";
+			sourceTree = "<group>";
+		};
+		AFF8B0C422A1584C007940C6 /* Assest */ = {
+			isa = PBXGroup;
+			children = (
+				AFF8B0C522A1584C007940C6 /* pause@2x.png */,
+				AFF8B0C622A1584C007940C6 /* play@2x.png */,
+				AFF8B0C722A1584C007940C6 /* Colaps@2x.png */,
+				AFF8B0C822A1584C007940C6 /* fullscreen@2x.png */,
+				AFF8B0C922A1584C007940C6 /* backward.png */,
+				AFF8B0CA22A1584C007940C6 /* fast-forward.png */,
+			);
+			path = Assest;
+			sourceTree = "<group>";
+		};
+		AFF8B0CB22A1584C007940C6 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				AFF8B0CC22A1584C007940C6 /* DemoData.swift */,
+				AFF8B0CD22A1584C007940C6 /* Extension.swift */,
+				AFF8B0CE22A1584C007940C6 /* ViewVideo.swift */,
+				AFF8B0CF22A1584C007940C6 /* VideoController.swift */,
+				AFF8B0D022A1584C007940C6 /* Controlls.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		AFF8B05C22A0F8EF007940C6 /* Headers */ = {
+		AFF8B0B322A15826007940C6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFF8B06522A0F8F0007940C6 /* SAPlugAVPlayer.h in Headers */,
+				AFF8B0BC22A15826007940C6 /* sa_plug_avplayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +308,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				AFF8B06722A0F8F0007940C6 /* PBXTargetDependency */,
+				AFF8B0BE22A15826007940C6 /* PBXTargetDependency */,
 			);
 			name = SAVideoPlayer;
 			productName = SAVideoPlayer;
@@ -351,22 +351,22 @@
 			productReference = AF38A885228961F800DC0B2B /* SAVideoPlayerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		AFF8B06022A0F8EF007940C6 /* SAPlugAVPlayer */ = {
+		AFF8B0B722A15826007940C6 /* sa-plug-avplayer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AFF8B06C22A0F8F0007940C6 /* Build configuration list for PBXNativeTarget "SAPlugAVPlayer" */;
+			buildConfigurationList = AFF8B0C122A15826007940C6 /* Build configuration list for PBXNativeTarget "sa-plug-avplayer" */;
 			buildPhases = (
-				AFF8B05C22A0F8EF007940C6 /* Headers */,
-				AFF8B05D22A0F8EF007940C6 /* Sources */,
-				AFF8B05E22A0F8EF007940C6 /* Frameworks */,
-				AFF8B05F22A0F8EF007940C6 /* Resources */,
+				AFF8B0B322A15826007940C6 /* Headers */,
+				AFF8B0B422A15826007940C6 /* Sources */,
+				AFF8B0B522A15826007940C6 /* Frameworks */,
+				AFF8B0B622A15826007940C6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SAPlugAVPlayer;
-			productName = SAPlugAVPlayer;
-			productReference = AFF8B06122A0F8EF007940C6 /* SAPlugAVPlayer.framework */;
+			name = "sa-plug-avplayer";
+			productName = "sa-plug-avplayer";
+			productReference = AFF8B0B822A15826007940C6 /* sa_plug_avplayer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -390,7 +390,7 @@
 						CreatedOnToolsVersion = 10.2;
 						TestTargetID = AF38A865228961F600DC0B2B;
 					};
-					AFF8B06022A0F8EF007940C6 = {
+					AFF8B0B722A15826007940C6 = {
 						CreatedOnToolsVersion = 10.2;
 					};
 				};
@@ -411,7 +411,7 @@
 				AF38A865228961F600DC0B2B /* SAVideoPlayer */,
 				AF38A879228961F800DC0B2B /* SAVideoPlayerTests */,
 				AF38A884228961F800DC0B2B /* SAVideoPlayerUITests */,
-				AFF8B06022A0F8EF007940C6 /* SAPlugAVPlayer */,
+				AFF8B0B722A15826007940C6 /* sa-plug-avplayer */,
 			);
 		};
 /* End PBXProject section */
@@ -455,16 +455,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AFF8B05F22A0F8EF007940C6 /* Resources */ = {
+		AFF8B0B622A15826007940C6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFF8B0A322A14E1C007940C6 /* pause@2x.png in Resources */,
-				AFF8B0A422A14E1C007940C6 /* play@2x.png in Resources */,
-				AFF8B0A522A14E1C007940C6 /* Colaps@2x.png in Resources */,
-				AFF8B0A622A14E1C007940C6 /* fullscreen@2x.png in Resources */,
-				AFF8B0A722A14E1C007940C6 /* backward.png in Resources */,
-				AFF8B0A822A14E1C007940C6 /* fast-forward.png in Resources */,
+				AFF8B0D222A1584C007940C6 /* play@2x.png in Resources */,
+				AFF8B0D622A1584C007940C6 /* fast-forward.png in Resources */,
+				AFF8B0D522A1584C007940C6 /* backward.png in Resources */,
+				AFF8B0D422A1584C007940C6 /* fullscreen@2x.png in Resources */,
+				AFF8B0D322A1584C007940C6 /* Colaps@2x.png in Resources */,
+				AFF8B0D122A1584C007940C6 /* pause@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,15 +500,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AFF8B05D22A0F8EF007940C6 /* Sources */ = {
+		AFF8B0B422A15826007940C6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFF8B09E22A14E0A007940C6 /* DemoData.swift in Sources */,
-				AFF8B09F22A14E0A007940C6 /* Extension.swift in Sources */,
-				AFF8B0A022A14E0A007940C6 /* ViewVideo.swift in Sources */,
-				AFF8B0A122A14E0A007940C6 /* VideoController.swift in Sources */,
-				AFF8B0A222A14E0A007940C6 /* Controlls.swift in Sources */,
+				AFF8B0D722A1584C007940C6 /* DemoData.swift in Sources */,
+				AFF8B0D922A1584C007940C6 /* ViewVideo.swift in Sources */,
+				AFF8B0DB22A1584C007940C6 /* Controlls.swift in Sources */,
+				AFF8B0D822A1584C007940C6 /* Extension.swift in Sources */,
+				AFF8B0DA22A1584C007940C6 /* VideoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,10 +525,10 @@
 			target = AF38A865228961F600DC0B2B /* SAVideoPlayer */;
 			targetProxy = AF38A886228961F800DC0B2B /* PBXContainerItemProxy */;
 		};
-		AFF8B06722A0F8F0007940C6 /* PBXTargetDependency */ = {
+		AFF8B0BE22A15826007940C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AFF8B06022A0F8EF007940C6 /* SAPlugAVPlayer */;
-			targetProxy = AFF8B06622A0F8F0007940C6 /* PBXContainerItemProxy */;
+			target = AFF8B0B722A15826007940C6 /* sa-plug-avplayer */;
+			targetProxy = AFF8B0BD22A15826007940C6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -801,7 +801,7 @@
 			};
 			name = Release;
 		};
-		AFF8B06A22A0F8F0007940C6 /* Debug */ = {
+		AFF8B0C222A15826007940C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -812,7 +812,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SAPlugAVPlayer/Info.plist;
+				INFOPLIST_FILE = "sa-plug-avplayer/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -820,7 +820,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Solutionanalysts.SAPlugAVPlayerCarthage;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Solutionanalysts.SAVideoPlayer.sa-plug-avplayer";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -831,7 +831,7 @@
 			};
 			name = Debug;
 		};
-		AFF8B06B22A0F8F0007940C6 /* Release */ = {
+		AFF8B0C322A15826007940C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -842,7 +842,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SAPlugAVPlayer/Info.plist;
+				INFOPLIST_FILE = "sa-plug-avplayer/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -850,7 +850,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Solutionanalysts.SAPlugAVPlayerCarthage;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Solutionanalysts.SAVideoPlayer.sa-plug-avplayer";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -900,11 +900,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AFF8B06C22A0F8F0007940C6 /* Build configuration list for PBXNativeTarget "SAPlugAVPlayer" */ = {
+		AFF8B0C122A15826007940C6 /* Build configuration list for PBXNativeTarget "sa-plug-avplayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AFF8B06A22A0F8F0007940C6 /* Debug */,
-				AFF8B06B22A0F8F0007940C6 /* Release */,
+				AFF8B0C222A15826007940C6 /* Debug */,
+				AFF8B0C322A15826007940C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
