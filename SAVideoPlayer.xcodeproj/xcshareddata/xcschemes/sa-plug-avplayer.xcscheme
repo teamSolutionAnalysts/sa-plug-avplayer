@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AFF8B0B722A15826007940C6"
-               BuildableName = "sa_plug_avplayer.framework"
+               BlueprintIdentifier = "AFEE2E2522A163A90045BD46"
+               BuildableName = "sa-plug-avplayer.app"
                BlueprintName = "sa-plug-avplayer"
                ReferencedContainer = "container:SAVideoPlayer.xcodeproj">
             </BuildableReference>
@@ -45,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AFF8B0B722A15826007940C6"
-            BuildableName = "sa_plug_avplayer.framework"
+            BlueprintIdentifier = "AFEE2E2522A163A90045BD46"
+            BuildableName = "sa-plug-avplayer.app"
             BlueprintName = "sa-plug-avplayer"
             ReferencedContainer = "container:SAVideoPlayer.xcodeproj">
          </BuildableReference>
@@ -63,8 +63,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AFF8B0B722A15826007940C6"
-            BuildableName = "sa_plug_avplayer.framework"
+            BlueprintIdentifier = "AFEE2E2522A163A90045BD46"
+            BuildableName = "sa-plug-avplayer.app"
             BlueprintName = "sa-plug-avplayer"
             ReferencedContainer = "container:SAVideoPlayer.xcodeproj">
          </BuildableReference>
