@@ -65,8 +65,21 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 
 ![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/AssignViewVideo.png)
 
-### Note :
+### Note for embed urls :
 If you are planing to play only youtube embedded urls. Do not take VideoController view. You can play embedded url with ViewVideo only.
+
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    setUpPlayerWithURlStreaming()
+}
+
+func setUpPlayerWithURlStreaming()
+{
+    self.viewVideo.configure(url: self.url, ControllView: nil)
+    self.viewVideo.delegate = self
+ }
+```
 
 ### Assign VideoController class to controller view
 
