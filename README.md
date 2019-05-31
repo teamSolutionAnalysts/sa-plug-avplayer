@@ -89,6 +89,11 @@ class ViewController : UIViewController{
 ### To Play video from url streaming
 
 ```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    setUpPlayerWithURlStreaming()
+}
+
 func setUpPlayerWithURlStreaming()
 {
     self.viewVideo.configure(url: self.url, ControllView: self.videoController)
@@ -99,6 +104,11 @@ func setUpPlayerWithURlStreaming()
 
 ### To Play video from local path with extension
 ```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    setUpPlayerWithLocal()
+}
+
 func setUpPlayerWithLocal()
 {
     viewVideo.configure(ControllView: self.videoController,localPath:"localpath",fileextension : "mp4")
