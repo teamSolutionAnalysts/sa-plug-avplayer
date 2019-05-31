@@ -58,12 +58,28 @@ Run carthage update to build the framework and drag the built SAPlugAVPlayer.fra
 
 ## Manually
 
-If you prefer not to use any of the aforementioned dependency managers, you can integrate SAPlugAVPlayer into your project manually. Just copy the source file in your project directory
+If you prefer not to use any of the aforementioned dependency managers, you can integrate SAPlugAVPlayer into your project manually. Just copy the source folder in your project directory from https://github.com/teamSolutionAnalysts/sa-plug-avplayer/tree/master/SAVideoPlayer/Source
 
 ## Steps to add player
 ### Assign ViewVideo class
 
 ![alt text](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/blob/master/SAVideoPlayer/AssignViewVideo.png)
+
+### Note for embed urls :
+If you are planing to play only youtube embedded urls. Do not take VideoController view. You can play embedded url with ViewVideo only.
+
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    setUpPlayerWithURlStreaming()
+}
+
+func setUpPlayerWithURlStreaming()
+{
+    self.viewVideo.configure(url: self.url, ControllView: nil)
+    self.viewVideo.delegate = self
+ }
+```
 
 ### Assign VideoController class to controller view
 
@@ -86,6 +102,11 @@ class ViewController : UIViewController{
 ### To Play video from url streaming
 
 ```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    setUpPlayerWithURlStreaming()
+}
+
 func setUpPlayerWithURlStreaming()
 {
     self.viewVideo.configure(url: self.url, ControllView: self.videoController)
@@ -96,6 +117,11 @@ func setUpPlayerWithURlStreaming()
 
 ### To Play video from local path with extension
 ```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    setUpPlayerWithLocal()
+}
+
 func setUpPlayerWithLocal()
 {
     viewVideo.configure(ControllView: self.videoController,localPath:"localpath",fileextension : "mp4")
