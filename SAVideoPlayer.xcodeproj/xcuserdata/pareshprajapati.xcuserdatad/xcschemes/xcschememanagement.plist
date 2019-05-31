@@ -11,7 +11,7 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>SAVideoPlayer.xcscheme_^#shared#^_</key>
+		<key>SAVideoPlayer.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
@@ -20,16 +20,6 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>AF38A865228961F600DC0B2B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AF38A879228961F800DC0B2B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AF38A884228961F800DC0B2B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
