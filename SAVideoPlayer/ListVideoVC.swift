@@ -40,7 +40,7 @@ extension ListVideoVC : UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellVideo", for: indexPath) as! cellVideo
-        
+        cell.imgVideo.image = nil
         if let url = URL(string: self.dataSource[indexPath.row].url), self.dataSource[indexPath.row].thumbnail == nil
         {
             

@@ -1,0 +1,11 @@
+framework module SAPlugAVPlayer {
+  umbrella header "SAPlugAVPlayer.h"
+
+  export *
+  module * { export * }
+}
+
+module SAPlugAVPlayer.Swift {
+    header "SAPlugAVPlayer-Swift.h"
+    requires objc
+}

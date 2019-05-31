@@ -1,0 +1,19 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "53560a1b7d7192f04d947a9e36a07aedab1d5ad2",
+  "iOS" : [
+    {
+      "name" : "SAPlugAVPlayer",
+      "hash" : "f06ba206e9bb1f0e94a302bc04eeefb77b3c80a521b03a4fff73828c4bf63392",
+      "swiftToolchainVersion" : "5.0 (swiftlang-1001.0.69.5 clang-1001.0.46.3)"
+    }
+  ]
+}

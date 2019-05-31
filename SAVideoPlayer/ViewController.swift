@@ -8,6 +8,7 @@
 
 import UIKit
 import AVKit
+import MobileCoreServices
 
 class ViewController: UIViewController {
 
@@ -48,6 +49,8 @@ class ViewController: UIViewController {
             self.view.isUserInteractionEnabled = true
         }
     }
+    
+    
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -85,8 +88,7 @@ class ViewController: UIViewController {
     //MARK: Class methods
     func setUpPlayerWithURlStreaming()
     {
-        //MARK : if url is emded. It will play in webview and managed automatically in webview
-        viewVideo.configure(url: url,ControllView: self.viewOverlay)
+        viewVideo.configure(url: self.url,ControllView: self.viewOverlay)
         viewVideo.play()
         
         // Other optional Configuration
@@ -95,6 +97,24 @@ class ViewController: UIViewController {
         viewVideo.currentVideoID = self.videoID
         
     }
+    
+    func formateURl(path : URL) -> URL?
+    {
+        let fileManager = FileManager()
+        let newPath = path.appendingPathExtension("mp4")
+        if fileManager.fileExists(atPath: path.absoluteString)
+        {
+            do{
+                try fileManager.createSymbolicLink(atPath: newPath.absoluteString, withDestinationPath: path.absoluteString)
+                
+            }
+            catch let error {
+                print(error.localizedDescription)
+            }
+        }
+        return newPath
+    }
+    
     
     func setUpPlayerWithLocal()
     {
@@ -185,7 +205,11 @@ class ViewController: UIViewController {
 // MARK: - Player Delegate Methods
 extension ViewController : PlayerEventDelegate
 {
-    func AVPlayer(minimizevideoScreen: Bool) {
+    func SAAVPlayer(avplayer: AVPlayer?, didFailwith error: String?) {
+        print(error ?? "")
+    }
+    
+    func SAAVPlayer(minimizevideoScreen: Bool) {
         DispatchQueue.main.async {
             if minimizevideoScreen{
                 self.btnClose.alpha = 1
@@ -196,7 +220,7 @@ extension ViewController : PlayerEventDelegate
         }
     }
     
-    func AVPlayer(panGesture sender: UIGestureRecognizer?) {
+    func SAAVPlayer(panGesture sender: UIGestureRecognizer?) {
         guard let sender = sender else{
             return
         }
@@ -253,15 +277,15 @@ extension ViewController : PlayerEventDelegate
         
     }
     
-    func AVPlayer(didEndPlaying: AVPlayer?) {
+    func SAAVPlayer(didEndPlaying: AVPlayer?) {
         //Play your next video
     }
     
-    func AVPlayer(didTap overLay: AVPlayer?) {
+    func SAAVPlayer(didTap overLay: AVPlayer?) {
         self.dropdown?.isHidden = true
     }
     
-    func AVPlayer(willExpand player: AVPlayer?) {
+    func SAAVPlayer(willExpand player: AVPlayer?) {
         UIView.animate(withDuration: 0.3, animations: {
             self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
             self.viewVideo.isMiniMized = false
@@ -271,7 +295,7 @@ extension ViewController : PlayerEventDelegate
         })
     }
     
-    func AVPlayer(didTaptoNextvideo: AVPlayer?) {
+    func SAAVPlayer(didTaptoNextvideo: AVPlayer?) {
         //Replace your video with next one
         if index != self.arrVideos.count - 1
         {
@@ -290,7 +314,7 @@ extension ViewController : PlayerEventDelegate
         //self.viewVideo.replacelocalVideo(path: "filename", videoextension: "mp4")
     }
     
-    func AVPlayer(didTaptoPreviousvideo: AVPlayer?) {
+    func SAAVPlayer(didTaptoPreviousvideo: AVPlayer?) {
         //Replace your video with previous one
         if index != 0
         {

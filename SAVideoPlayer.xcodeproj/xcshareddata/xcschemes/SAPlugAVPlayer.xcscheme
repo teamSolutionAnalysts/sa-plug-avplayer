@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AF38A865228961F600DC0B2B"
-               BuildableName = "SAVideoPlayer.app"
-               BlueprintName = "SAVideoPlayer"
+               BlueprintIdentifier = "AFF8B06022A0F8EF007940C6"
+               BuildableName = "SAPlugAVPlayer.framework"
+               BlueprintName = "SAPlugAVPlayer"
                ReferencedContainer = "container:SAVideoPlayer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF38A865228961F600DC0B2B"
-            BuildableName = "SAVideoPlayer.app"
-            BlueprintName = "SAVideoPlayer"
-            ReferencedContainer = "container:SAVideoPlayer.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -51,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF38A865228961F600DC0B2B"
-            BuildableName = "SAVideoPlayer.app"
-            BlueprintName = "SAVideoPlayer"
+            BlueprintIdentifier = "AFF8B06022A0F8EF007940C6"
+            BuildableName = "SAPlugAVPlayer.framework"
+            BlueprintName = "SAPlugAVPlayer"
             ReferencedContainer = "container:SAVideoPlayer.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -70,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF38A865228961F600DC0B2B"
-            BuildableName = "SAVideoPlayer.app"
-            BlueprintName = "SAVideoPlayer"
+            BlueprintIdentifier = "AFF8B06022A0F8EF007940C6"
+            BuildableName = "SAPlugAVPlayer.framework"
+            BlueprintName = "SAPlugAVPlayer"
             ReferencedContainer = "container:SAVideoPlayer.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -26,6 +26,26 @@
 		AFF6C4942295543400DCDE84 /* filename2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AFF6C4932295543400DCDE84 /* filename2.mp4 */; };
 		AFF6D6E6229BA8EF00336763 /* Set Images for controller.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF6D6E4229BA8EF00336763 /* Set Images for controller.png */; };
 		AFF6D6E7229BA8EF00336763 /* SetVideoController.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF6D6E5229BA8EF00336763 /* SetVideoController.png */; };
+		AFF8B06522A0F8F0007940C6 /* SAPlugAVPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = AFF8B06322A0F8F0007940C6 /* SAPlugAVPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AFF8B06822A0F8F0007940C6 /* SAPlugAVPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF8B06122A0F8EF007940C6 /* SAPlugAVPlayer.framework */; };
+		AFF8B06922A0F8F0007940C6 /* SAPlugAVPlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AFF8B06122A0F8EF007940C6 /* SAPlugAVPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AFF8B07B22A0FC95007940C6 /* backward.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B07A22A0FC95007940C6 /* backward.png */; };
+		AFF8B07D22A0FC9F007940C6 /* Colaps@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B07C22A0FC9E007940C6 /* Colaps@2x.png */; };
+		AFF8B07F22A0FCA8007940C6 /* fast-forward.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B07E22A0FCA8007940C6 /* fast-forward.png */; };
+		AFF8B08122A0FCAF007940C6 /* fullscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B08022A0FCAF007940C6 /* fullscreen@2x.png */; };
+		AFF8B08322A0FCB7007940C6 /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B08222A0FCB7007940C6 /* pause@2x.png */; };
+		AFF8B08522A0FCC0007940C6 /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B08422A0FCC0007940C6 /* play@2x.png */; };
+		AFF8B09E22A14E0A007940C6 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8B09422A14892007940C6 /* DemoData.swift */; };
+		AFF8B09F22A14E0A007940C6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8B09522A14892007940C6 /* Extension.swift */; };
+		AFF8B0A022A14E0A007940C6 /* ViewVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8B09622A14892007940C6 /* ViewVideo.swift */; };
+		AFF8B0A122A14E0A007940C6 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8B09722A14892007940C6 /* VideoController.swift */; };
+		AFF8B0A222A14E0A007940C6 /* Controlls.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8B09822A14892007940C6 /* Controlls.swift */; };
+		AFF8B0A322A14E1C007940C6 /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B08722A0FD57007940C6 /* pause@2x.png */; };
+		AFF8B0A422A14E1C007940C6 /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B08822A0FD57007940C6 /* play@2x.png */; };
+		AFF8B0A522A14E1C007940C6 /* Colaps@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B08922A0FD57007940C6 /* Colaps@2x.png */; };
+		AFF8B0A622A14E1C007940C6 /* fullscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B08A22A0FD57007940C6 /* fullscreen@2x.png */; };
+		AFF8B0A722A14E1C007940C6 /* backward.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B08B22A0FD57007940C6 /* backward.png */; };
+		AFF8B0A822A14E1C007940C6 /* fast-forward.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF8B08C22A0FD57007940C6 /* fast-forward.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +63,28 @@
 			remoteGlobalIDString = AF38A865228961F600DC0B2B;
 			remoteInfo = SAVideoPlayer;
 		};
+		AFF8B06622A0F8F0007940C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF38A85E228961F600DC0B2B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AFF8B06022A0F8EF007940C6;
+			remoteInfo = SAPlugAVPlayer;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AFF8B06D22A0F8F0007940C6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AFF8B06922A0F8F0007940C6 /* SAPlugAVPlayer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AF0EAB0A229FA49C00CB2BA3 /* AssignViewVideo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AssignViewVideo.png; sourceTree = "<group>"; };
@@ -69,6 +110,28 @@
 		AFF6C4932295543400DCDE84 /* filename2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = filename2.mp4; sourceTree = "<group>"; };
 		AFF6D6E4229BA8EF00336763 /* Set Images for controller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Set Images for controller.png"; sourceTree = "<group>"; };
 		AFF6D6E5229BA8EF00336763 /* SetVideoController.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SetVideoController.png; sourceTree = "<group>"; };
+		AFF8B06122A0F8EF007940C6 /* SAPlugAVPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SAPlugAVPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFF8B06322A0F8F0007940C6 /* SAPlugAVPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAPlugAVPlayer.h; sourceTree = "<group>"; };
+		AFF8B06422A0F8F0007940C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFF8B07A22A0FC95007940C6 /* backward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backward.png; sourceTree = "<group>"; };
+		AFF8B07C22A0FC9E007940C6 /* Colaps@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Colaps@2x.png"; sourceTree = "<group>"; };
+		AFF8B07E22A0FCA8007940C6 /* fast-forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fast-forward.png"; sourceTree = "<group>"; };
+		AFF8B08022A0FCAF007940C6 /* fullscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fullscreen@2x.png"; sourceTree = "<group>"; };
+		AFF8B08222A0FCB7007940C6 /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause@2x.png"; sourceTree = "<group>"; };
+		AFF8B08422A0FCC0007940C6 /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
+		AFF8B08722A0FD57007940C6 /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause@2x.png"; sourceTree = "<group>"; };
+		AFF8B08822A0FD57007940C6 /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
+		AFF8B08922A0FD57007940C6 /* Colaps@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Colaps@2x.png"; sourceTree = "<group>"; };
+		AFF8B08A22A0FD57007940C6 /* fullscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fullscreen@2x.png"; sourceTree = "<group>"; };
+		AFF8B08B22A0FD57007940C6 /* backward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backward.png; sourceTree = "<group>"; };
+		AFF8B08C22A0FD57007940C6 /* fast-forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fast-forward.png"; sourceTree = "<group>"; };
+		AFF8B09422A14892007940C6 /* DemoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
+		AFF8B09522A14892007940C6 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		AFF8B09622A14892007940C6 /* ViewVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewVideo.swift; sourceTree = "<group>"; };
+		AFF8B09722A14892007940C6 /* VideoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
+		AFF8B09822A14892007940C6 /* Controlls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controlls.swift; sourceTree = "<group>"; };
+		AFF8B0AF22A14EED007940C6 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		AFF8B0B122A14F17007940C6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFF8B06822A0F8F0007940C6 /* SAPlugAVPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +157,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AFF8B05E22A0F8EF007940C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -100,7 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				AF38A868228961F600DC0B2B /* SAVideoPlayer */,
+				AFF8B06222A0F8F0007940C6 /* SAPlugAVPlayer */,
 				AF38A867228961F600DC0B2B /* Products */,
+				AFF8B0AE22A14EED007940C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +183,7 @@
 				AF38A866228961F600DC0B2B /* SAVideoPlayer.app */,
 				AF38A87A228961F800DC0B2B /* SAVideoPlayerTests.xctest */,
 				AF38A885228961F800DC0B2B /* SAVideoPlayerUITests.xctest */,
+				AFF8B06122A0F8EF007940C6 /* SAPlugAVPlayer.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,6 +191,7 @@
 		AF38A868228961F600DC0B2B /* SAVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				AFF8B07922A0FC43007940C6 /* Assest */,
 				AF38A89F2289A81800DC0B2B /* Source */,
 				AF38A869228961F600DC0B2B /* AppDelegate.swift */,
 				AF38A86B228961F600DC0B2B /* ViewController.swift */,
@@ -149,7 +224,76 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		AFF8B06222A0F8F0007940C6 /* SAPlugAVPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				AFF8B09322A14892007940C6 /* Source */,
+				AFF8B08622A0FD57007940C6 /* Assest */,
+				AFF8B06322A0F8F0007940C6 /* SAPlugAVPlayer.h */,
+				AFF8B06422A0F8F0007940C6 /* Info.plist */,
+			);
+			path = SAPlugAVPlayer;
+			sourceTree = "<group>";
+		};
+		AFF8B07922A0FC43007940C6 /* Assest */ = {
+			isa = PBXGroup;
+			children = (
+				AFF8B07E22A0FCA8007940C6 /* fast-forward.png */,
+				AFF8B07C22A0FC9E007940C6 /* Colaps@2x.png */,
+				AFF8B07A22A0FC95007940C6 /* backward.png */,
+				AFF8B08022A0FCAF007940C6 /* fullscreen@2x.png */,
+				AFF8B08222A0FCB7007940C6 /* pause@2x.png */,
+				AFF8B08422A0FCC0007940C6 /* play@2x.png */,
+			);
+			path = Assest;
+			sourceTree = "<group>";
+		};
+		AFF8B08622A0FD57007940C6 /* Assest */ = {
+			isa = PBXGroup;
+			children = (
+				AFF8B08722A0FD57007940C6 /* pause@2x.png */,
+				AFF8B08822A0FD57007940C6 /* play@2x.png */,
+				AFF8B08922A0FD57007940C6 /* Colaps@2x.png */,
+				AFF8B08A22A0FD57007940C6 /* fullscreen@2x.png */,
+				AFF8B08B22A0FD57007940C6 /* backward.png */,
+				AFF8B08C22A0FD57007940C6 /* fast-forward.png */,
+			);
+			path = Assest;
+			sourceTree = "<group>";
+		};
+		AFF8B09322A14892007940C6 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				AFF8B09422A14892007940C6 /* DemoData.swift */,
+				AFF8B09522A14892007940C6 /* Extension.swift */,
+				AFF8B09622A14892007940C6 /* ViewVideo.swift */,
+				AFF8B09722A14892007940C6 /* VideoController.swift */,
+				AFF8B09822A14892007940C6 /* Controlls.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		AFF8B0AE22A14EED007940C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AFF8B0B122A14F17007940C6 /* AVFoundation.framework */,
+				AFF8B0AF22A14EED007940C6 /* AVKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AFF8B05C22A0F8EF007940C6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFF8B06522A0F8F0007940C6 /* SAPlugAVPlayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		AF38A865228961F600DC0B2B /* SAVideoPlayer */ = {
@@ -159,10 +303,12 @@
 				AF38A862228961F600DC0B2B /* Sources */,
 				AF38A863228961F600DC0B2B /* Frameworks */,
 				AF38A864228961F600DC0B2B /* Resources */,
+				AFF8B06D22A0F8F0007940C6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AFF8B06722A0F8F0007940C6 /* PBXTargetDependency */,
 			);
 			name = SAVideoPlayer;
 			productName = SAVideoPlayer;
@@ -205,6 +351,24 @@
 			productReference = AF38A885228961F800DC0B2B /* SAVideoPlayerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		AFF8B06022A0F8EF007940C6 /* SAPlugAVPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFF8B06C22A0F8F0007940C6 /* Build configuration list for PBXNativeTarget "SAPlugAVPlayer" */;
+			buildPhases = (
+				AFF8B05C22A0F8EF007940C6 /* Headers */,
+				AFF8B05D22A0F8EF007940C6 /* Sources */,
+				AFF8B05E22A0F8EF007940C6 /* Frameworks */,
+				AFF8B05F22A0F8EF007940C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SAPlugAVPlayer;
+			productName = SAPlugAVPlayer;
+			productReference = AFF8B06122A0F8EF007940C6 /* SAPlugAVPlayer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -226,6 +390,9 @@
 						CreatedOnToolsVersion = 10.2;
 						TestTargetID = AF38A865228961F600DC0B2B;
 					};
+					AFF8B06022A0F8EF007940C6 = {
+						CreatedOnToolsVersion = 10.2;
+					};
 				};
 			};
 			buildConfigurationList = AF38A861228961F600DC0B2B /* Build configuration list for PBXProject "SAVideoPlayer" */;
@@ -244,6 +411,7 @@
 				AF38A865228961F600DC0B2B /* SAVideoPlayer */,
 				AF38A879228961F800DC0B2B /* SAVideoPlayerTests */,
 				AF38A884228961F800DC0B2B /* SAVideoPlayerUITests */,
+				AFF8B06022A0F8EF007940C6 /* SAPlugAVPlayer */,
 			);
 		};
 /* End PBXProject section */
@@ -254,16 +422,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFF6C4902295122900DCDE84 /* filename.mp4 in Resources */,
+				AFF8B08122A0FCAF007940C6 /* fullscreen@2x.png in Resources */,
 				AFF6C4942295543400DCDE84 /* filename2.mp4 in Resources */,
+				AFF8B08522A0FCC0007940C6 /* play@2x.png in Resources */,
 				AF3270EF2296C5B200C46927 /* Simulator Screen Shot - iPhone 6 - 2019-05-23 at 17.37.59.png in Resources */,
 				AFF6C492229553ED00DCDE84 /* filename1.mp4 in Resources */,
 				AF38A874228961F800DC0B2B /* LaunchScreen.storyboard in Resources */,
 				AF38A871228961F800DC0B2B /* Assets.xcassets in Resources */,
+				AFF8B08322A0FCB7007940C6 /* pause@2x.png in Resources */,
 				AF38A86F228961F600DC0B2B /* Main.storyboard in Resources */,
 				AF3270EE2296C5B200C46927 /* Simulator Screen Shot - iPhone 6 - 2019-05-23 at 17.37.56.png in Resources */,
 				AFF6D6E7229BA8EF00336763 /* SetVideoController.png in Resources */,
+				AFF8B07F22A0FCA8007940C6 /* fast-forward.png in Resources */,
 				AFF6D6E6229BA8EF00336763 /* Set Images for controller.png in Resources */,
+				AFF8B07B22A0FC95007940C6 /* backward.png in Resources */,
 				AF0EAB0B229FA49C00CB2BA3 /* AssignViewVideo.png in Resources */,
+				AFF8B07D22A0FC9F007940C6 /* Colaps@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +452,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFF8B05F22A0F8EF007940C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFF8B0A322A14E1C007940C6 /* pause@2x.png in Resources */,
+				AFF8B0A422A14E1C007940C6 /* play@2x.png in Resources */,
+				AFF8B0A522A14E1C007940C6 /* Colaps@2x.png in Resources */,
+				AFF8B0A622A14E1C007940C6 /* fullscreen@2x.png in Resources */,
+				AFF8B0A722A14E1C007940C6 /* backward.png in Resources */,
+				AFF8B0A822A14E1C007940C6 /* fast-forward.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +500,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AFF8B05D22A0F8EF007940C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFF8B09E22A14E0A007940C6 /* DemoData.swift in Sources */,
+				AFF8B09F22A14E0A007940C6 /* Extension.swift in Sources */,
+				AFF8B0A022A14E0A007940C6 /* ViewVideo.swift in Sources */,
+				AFF8B0A122A14E0A007940C6 /* VideoController.swift in Sources */,
+				AFF8B0A222A14E0A007940C6 /* Controlls.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -325,6 +524,11 @@
 			isa = PBXTargetDependency;
 			target = AF38A865228961F600DC0B2B /* SAVideoPlayer */;
 			targetProxy = AF38A886228961F800DC0B2B /* PBXContainerItemProxy */;
+		};
+		AFF8B06722A0F8F0007940C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AFF8B06022A0F8EF007940C6 /* SAPlugAVPlayer */;
+			targetProxy = AFF8B06622A0F8F0007940C6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -469,6 +673,7 @@
 		AF38A88F228961F800DC0B2B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = G34KQT9TPD;
@@ -495,6 +700,7 @@
 		AF38A890228961F800DC0B2B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = G34KQT9TPD;
@@ -595,6 +801,66 @@
 			};
 			name = Release;
 		};
+		AFF8B06A22A0F8F0007940C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SAPlugAVPlayer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Solutionanalysts.SAPlugAVPlayerCarthage;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AFF8B06B22A0F8F0007940C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SAPlugAVPlayer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Solutionanalysts.SAPlugAVPlayerCarthage;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -630,6 +896,15 @@
 			buildConfigurations = (
 				AF38A895228961F800DC0B2B /* Debug */,
 				AF38A896228961F800DC0B2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFF8B06C22A0F8F0007940C6 /* Build configuration list for PBXNativeTarget "SAPlugAVPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFF8B06A22A0F8F0007940C6 /* Debug */,
+				AFF8B06B22A0F8F0007940C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
