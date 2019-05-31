@@ -1,0 +1,11 @@
+framework module sa_plug_avplayer {
+  umbrella header "sa_plug_avplayer.h"
+
+  export *
+  module * { export * }
+}
+
+module sa_plug_avplayer.Swift {
+    header "sa_plug_avplayer-Swift.h"
+    requires objc
+}
