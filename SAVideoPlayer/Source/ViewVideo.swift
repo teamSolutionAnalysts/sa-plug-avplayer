@@ -714,6 +714,7 @@ public class ViewVideo : UIView
         }
         self.hideOverlay()
     }
+    
     //MARK: - Public methods to change video
     public func replaceVideo(videourl:String)
     {
@@ -740,7 +741,10 @@ public class ViewVideo : UIView
             }
         }
     }
-    
+    /*
+        Replace video (except embedded) with new local video.
+        you can specify path to the local directory and extension compulsory.
+     */
     public func replacelocalVideo(path:String,videoextension : String)
     {
         
@@ -759,6 +763,9 @@ public class ViewVideo : UIView
     }
     
     //MARK: - public methods to change player rate
+    /*
+        Specify the rate in (Float) from 0 to 2
+     */
     public func changePlayerRate(rate : Float) {
         if self.isEmbeddedVideo{
             
@@ -793,7 +800,9 @@ public class ViewVideo : UIView
     }
     
     //MARK: - Fast-Forward
-
+    /*
+        To fast forward you video you need just need to call this method.
+     */
     public func fastForwardPlayer()
     {
         if self.isEmbeddedVideo{
@@ -815,6 +824,9 @@ public class ViewVideo : UIView
     }
     
      //MARK: - Move video Backward
+    /*
+     
+     */
     public func fastBackward()
     {
         if self.isEmbeddedVideo{
@@ -844,7 +856,9 @@ public class ViewVideo : UIView
         self.videoControll?.totalTime?.text = NSString(format: "%02d:%02d", secs/60, secs%60) as String
     }
     
-    //MARK: - is video playing or not
+    /*
+        Is video playing or not
+     */
     public var isPlaying : Bool{
         if self.isEmbeddedVideo{
             return false
@@ -852,7 +866,7 @@ public class ViewVideo : UIView
         return player?.timeControlStatus == AVPlayer.TimeControlStatus.playing
     }
     
-    //MARK: - to pause the video
+    //MARK: - Pause video
     public func pause() {
         if self.isEmbeddedVideo{
             return
@@ -864,7 +878,7 @@ public class ViewVideo : UIView
         self.timer = nil
         self.isToolHidden = false
     }
-     //MARK: - to stop the video
+     //MARK: - Stop video
     public func stop() {
         if self.isEmbeddedVideo{
             return
@@ -930,7 +944,7 @@ public class ViewVideo : UIView
     
     deinit {
         //print("Player did deinitialized")
-        //        self.player?.removeTimeObserver(self)
+        // self.player?.removeTimeObserver(self)
         if let token = timeObserver {
             player?.removeTimeObserver(token)
             timeObserver = nil
