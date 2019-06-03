@@ -113,10 +113,10 @@ public class VideoController : UIView{
         
         let yConstraint = NSLayoutConstraint(item: cview, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
         
-//        self.addConstraint(widthConstraint)
-//        self.addConstraint(heightConstraint)
-//       self.addConstraint(xConstraint)
-//        self.addConstraint(yConstraint)
+        //        self.addConstraint(widthConstraint)
+        //        self.addConstraint(heightConstraint)
+        //       self.addConstraint(xConstraint)
+        //        self.addConstraint(yConstraint)
         NSLayoutConstraint.activate([xConstraint, yConstraint,widthConstraint,(heightConstraint)])
     }
     
@@ -132,7 +132,7 @@ public class VideoController : UIView{
         let bottomtoolview = NSLayoutConstraint(item: self.toolView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0)
         
         let heightConstrainttool = NSLayoutConstraint(item: toolView, attribute: .height, relatedBy: .equal,
-                                                  toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 50)
+                                                      toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 50)
         NSLayoutConstraint.activate([leadingtoolview, trailingtoolview,bottomtoolview, heightConstrainttool])
         
         //Start TIme label Constraint
@@ -147,19 +147,19 @@ public class VideoController : UIView{
         NSLayoutConstraint.activate([labelTotaltop, labelTotaltrailing])
         
         //Slider and Full Screeen Constraint
-         let leading = NSLayoutConstraint(item: self.slider!, attribute: .leading, relatedBy: .equal, toItem: self.toolView, attribute: .leading, multiplier: 1, constant: 8)
+        let leading = NSLayoutConstraint(item: self.slider!, attribute: .leading, relatedBy: .equal, toItem: self.toolView, attribute: .leading, multiplier: 1, constant: 8)
         let trailing = NSLayoutConstraint(item: self.slider!, attribute: .trailing, relatedBy: .equal, toItem: self.fullscreenButton, attribute: .leading, multiplier: 1, constant: 8)
         let botton = NSLayoutConstraint(item: self.slider!, attribute: .bottom, relatedBy: .equal, toItem: self.toolView, attribute: .bottom, multiplier: 1, constant: 8)
         let heightConstraint = NSLayoutConstraint(item: slider!, attribute: .height, relatedBy: .equal,
                                                   toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 66)
         let tralingexpand = NSLayoutConstraint(item: self.fullscreenButton!, attribute: .trailing, relatedBy: .equal, toItem: self.toolView, attribute: .trailing, multiplier: 1, constant: 8)
-
+        
         let bottomfullscreen = NSLayoutConstraint(item: self.fullscreenButton!, attribute: .bottom, relatedBy: .equal, toItem: self.toolView, attribute: .bottom, multiplier: 1, constant: 8)
         
         let widthConstraint = NSLayoutConstraint(item: fullscreenButton!, attribute: .width, relatedBy: .equal,
                                                  toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 66)
         let heightfullscreenConstraint = NSLayoutConstraint(item: fullscreenButton!, attribute: .height, relatedBy: .equal,
-                                                  toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 66)
+                                                            toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 66)
         
         NSLayoutConstraint.activate([leading, botton,trailing,tralingexpand,bottomfullscreen,widthConstraint,(heightConstraint),heightfullscreenConstraint])
         
@@ -171,8 +171,8 @@ public class VideoController : UIView{
         
         let bottomView = NSLayoutConstraint(item: gestureView, attribute: .bottom, relatedBy: .equal,
                                             toItem: self.toolView, attribute: .top, multiplier: 1.0, constant: 0)
-      //  let heightgesture = NSLayoutConstraint(item: gestureView, attribute: .height, relatedBy: .equal,
-//                                                            toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 200)
+        //  let heightgesture = NSLayoutConstraint(item: gestureView, attribute: .height, relatedBy: .equal,
+        //                                                            toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 200)
         
         NSLayoutConstraint.activate([leadinggestureview, trailinggestureview,toptoolview,bottomView])
         
@@ -202,8 +202,8 @@ public class VideoController : UIView{
         self.fullscreenButton.layer.shadowOffset = CGSize(width: CGFloat(0), height: CGFloat(0))
         self.fullscreenButton.layer.shadowOpacity = 0.4
         self.fullscreenButton?.translatesAutoresizingMaskIntoConstraints = false
-        self.fullscreenImage = UIImage(named: "fullscreen@2x", in: self.getBundle(), compatibleWith: nil)
-        self.exitfullscreenImage = UIImage(named: "Colaps@2x", in: self.getBundle(), compatibleWith: nil)
+        self.fullscreenImage = self.getImageFromBundle(name: "fullscreen@2x")
+        self.exitfullscreenImage = self.getImageFromBundle(name: "Colaps@2x")
         self.fullscreenButton?.setImage(self.fullscreenImage, for: .normal)
         
         //Set PlayPause Button
@@ -213,20 +213,20 @@ public class VideoController : UIView{
         self.playButton.layer.shadowOffset = CGSize(width: CGFloat(0), height: CGFloat(0))
         self.playButton.layer.shadowOpacity = 0.4
         self.playButton?.translatesAutoresizingMaskIntoConstraints = false
-        self.playImage = UIImage(named: "play@2x", in: self.getBundle(), compatibleWith: nil)
-        self.pauseImage = UIImage(named: "pause@2x", in: self.getBundle(), compatibleWith: nil)
+        self.playImage = self.getImageFromBundle(name: "play@2x")
+        self.pauseImage = self.getImageFromBundle(name: "pause@2x")
         self.playButton?.setImage(self.playImage, for: .normal)
         
         ///Set next button image
         self.nextButton = UIButton(type: .custom)
         self.nextButton?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(50), height: CGFloat(50))
-        self.nextbtnImage = UIImage(named: "fast-forward", in: self.getBundle(), compatibleWith: nil)
+        self.nextbtnImage = self.getImageFromBundle(name: "fast-forward")
         self.nextButton?.translatesAutoresizingMaskIntoConstraints = false
         self.nextButton?.setImage(self.nextbtnImage, for: .normal)
         //Set Previous button image
         self.previousButton = UIButton(type: .custom)
         self.previousButton?.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(50), height: CGFloat(50))
-        self.previousbtnImage = UIImage(named: "backward", in: self.getBundle(), compatibleWith: nil)
+        self.previousbtnImage = self.getImageFromBundle(name: "backward")
         self.previousButton?.translatesAutoresizingMaskIntoConstraints = false
         self.previousButton?.setImage(self.previousbtnImage, for: .normal)
         
@@ -272,18 +272,17 @@ public class VideoController : UIView{
         self.gestureView.backgroundColor = UIColor.clear
         self.gestureView.isUserInteractionEnabled = true
         self.addSubview(self.gestureView)
-
+        
         
     }
     
-    func getBundle() -> Bundle?
-    {
-        let bundle = Bundle(for: self.classForCoder)
-        if let buld = Bundle(identifier: bundle.bundleIdentifier ?? "")
-        {
-            return buld
+    func getImageFromBundle(name: String) -> UIImage {
+        let podBundle = Bundle(for: self.classForCoder)
+        if let url = podBundle.url(forResource: "SAVideoPlayer", withExtension: "bundle") {
+            let bundle = Bundle(url: url)
+            return UIImage(named: name, in: bundle, compatibleWith: nil)!
         }
-        return bundle
+        return UIImage()
     }
-
+    
 }
