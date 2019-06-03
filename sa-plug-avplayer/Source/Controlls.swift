@@ -22,7 +22,7 @@ public enum LabelControllType : Int {
     case Slider
 }
 
-public class VideoControllButton : UIButton
+class VideoControllButton : UIButton
 {
     var controllType : ButtonControlType = .PlayPause
     
@@ -57,8 +57,7 @@ public class VideoControllButton : UIButton
     
 }
 
-
-public class VideoControllLabel : UILabel
+class VideoControllLabel : UILabel
 {
     var controllType : LabelControllType = .TimeLabelStart
     
