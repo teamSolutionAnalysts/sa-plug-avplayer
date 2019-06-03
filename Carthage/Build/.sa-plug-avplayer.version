@@ -8,11 +8,11 @@
   "tvOS" : [
 
   ],
-  "commitish" : "6a94529737c34001663bb8494a2a1065d3b023ef",
+  "commitish" : "04ed2a561fc933cc767b9945d51b5e9a4d5728e6",
   "iOS" : [
     {
       "name" : "sa_plug_avplayer",
-      "hash" : "9dd40f6eae1ab89855e1d7cbc06b75b6775779ae250c797097d58b617c8d9f1e",
+      "hash" : "426a737bbd1ce20734620a02bf507f37e408345bad748083fc174b8433f98b1e",
       "swiftToolchainVersion" : "5.0 (swiftlang-1001.0.69.5 clang-1001.0.46.3)"
     }
   ]
