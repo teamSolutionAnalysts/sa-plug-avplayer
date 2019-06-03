@@ -52,7 +52,7 @@ $ brew install carthage
 ```
 To integrate SAPlugAVPlayer into your Xcode project using Carthage, specify it in your Cartfile:
 
-	github "teamSolutionAnalysts/sa-plug-avplayer" == 0.2.9
+	github "teamSolutionAnalysts/sa-plug-avplayer" == 0.3.3
 	
 Run carthage update to build the framework and drag the built SAPlugAVPlayer.framework into your Xcode project.
 
