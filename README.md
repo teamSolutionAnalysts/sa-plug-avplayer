@@ -6,7 +6,7 @@ Here we have a simple plug and play module that a developer can use to integrate
 
 ## Features
 
-* Playing local videos and url streming is supported.
+* Supports playing local videos and url streming.
 * Url with extension and embed video url supported (No control for embedded video).
 * Supports only Youtube embed URLs.
 * Supports fullscreen.
