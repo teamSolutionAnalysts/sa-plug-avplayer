@@ -139,19 +139,15 @@ func setUpPlayerWithLocal()
 // MARK: - Player Delegate Methods
 extension ViewController : PlayerEventDelegate
 {
-    func AVPlayer(minimizevideoScreen: Bool) {
+    func SAAVPlayer(minimizevideoScreen: Bool) {
       
     }
     
-    func AVPlayer(panGesture didTriggerd: UIPanGestureRecognizer?) {
+    func SAAVPlayer(panGesture didTriggerd: UIPanGestureRecognizer?) {
         
     }
     
-    func totalTime(_ player: AVPlayer) {
-        
-    }
-    
-    func AVPlayer(didEndPlaying: AVPlayer?) {
+    func SAAVPlayer(didEndPlaying: AVPlayer?) {
         //Play your next video
 	//Replace your local video with next one
         self.viewVideo.replacelocalVideo(path: "Your next video path", videoextension: "mp4")
@@ -163,14 +159,14 @@ extension ViewController : PlayerEventDelegate
 	
     }
     
-    func AVPlayer(didTap overLay: AVPlayer?) {
+    func SAAVPlayer(didTap overLay: AVPlayer?) {
     }
     
-    func AVPlayer(willExpand player: AVPlayer?) {
+    func SAAVPlayer(willExpand player: AVPlayer?) {
        
     }
     
-    func AVPlayer(didTaptoNextvideo: AVPlayer?) {
+    func SAAVPlayer(didTaptoNextvideo: AVPlayer?) {
 	//Replace your local video with next one
         self.viewVideo.replacelocalVideo(path: "Your next video path", videoextension: "mp4")
 	
@@ -180,7 +176,7 @@ extension ViewController : PlayerEventDelegate
 	self.viewVideo.replaceVideo(videourl: "url")
     }
     
-    func AVPlayer(didTaptoPreviousvideo: AVPlayer?) {
+    func SAAVPlayer(didTaptoPreviousvideo: AVPlayer?) {
         //Replace your video with previous one
         self.viewVideo.replacelocalVideo(path: "Your previous video", videoextension: "mp4")
 	
@@ -190,7 +186,7 @@ extension ViewController : PlayerEventDelegate
 	self.viewVideo.replaceVideo(videourl: "url")
     }
     
-    func AVPlayer(panGesture sender: UIGestureRecognizer?) {
+    func SAAVPlayer(panGesture sender: UIGestureRecognizer?) {
         guard let sender = sender else{
             return
         }
