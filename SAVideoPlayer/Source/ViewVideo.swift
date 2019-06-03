@@ -77,7 +77,6 @@ public class ViewVideo : UIView
             
         }
     }
-    public var OverlayWindow: UIView?
     
     //This is public variable which specifies that the video is embedded or not
     open var isEmbeddedVideo : Bool{
@@ -86,19 +85,25 @@ public class ViewVideo : UIView
     
     // You can always know which url is currently playing the video.
     public var url : URL?
+    
+    // Observer reference to remove on dismiss
     public var timeObserver :Any?
     
-    //seekDuration specifies the fast-forward and backward jump duration you can manually set this to any
+    // seekDuration specifies the fast-forward and backward jump duration you can manually set this to any
     public let seekDuration: Float64 = 5
+    
     // the variable will return weather the video is playing in fullscreen or not.
     public var isFullscreen :Bool = false
     
     //Not Available for now
     public var isCell :Bool = false
+    
+    //MARK: - Internal variable
     var isAnimating : Bool = false
     var nextButton : UIButton!
     var previousButton : UIButton!
     
+    //This is a public view which has all controls. you can access it
     public var videoControll : VideoController?
     {
         didSet{
@@ -109,7 +114,7 @@ public class ViewVideo : UIView
             self.videoControll?.slider.addTarget(self, action: #selector(sliderDidChangeValue), for: .valueChanged)
         }
     }
-
+    //Get current item playing.
     public var currentItem : AVPlayerItem?{
         if let item = self.player?.currentItem
         {
@@ -118,6 +123,7 @@ public class ViewVideo : UIView
         return nil
     }
     
+    //You have direct access to the assest from here.
     public lazy var asset: AVURLAsset = {
         
         var asset: AVURLAsset = AVURLAsset(url: self.url!)
@@ -127,6 +133,7 @@ public class ViewVideo : UIView
         return asset
     }()
     
+    //MARK: - Initialization
     public override init(frame: CGRect) {
         super.init(frame: frame)
         self._setup()
@@ -153,6 +160,23 @@ public class ViewVideo : UIView
         self.addActityIndicator()
         
     }
+    
+    //MARK: - Configure ViewVide
+    /*
+     To Play Streming url:
+        With url and controller view you can start playing with streaming from server.
+    */
+    
+    /*
+     To Play Local url
+        Without url but with controller, localpath and extension you can play videos from local storage.
+    */
+    
+    /*
+     To Play embedded
+        With url and without controller view you can play embedded urls
+     */
+    
     
     public func configure(url: String = "", ControllView:VideoController?, localPath  :String = "", fileextension : String = "") {
     
