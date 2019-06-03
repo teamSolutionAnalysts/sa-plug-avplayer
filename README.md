@@ -52,13 +52,13 @@ $ brew install carthage
 ```
 To integrate SAPlugAVPlayer into your Xcode project using Carthage, specify it in your Cartfile:
 
-	github "iosparesh/SAPlugAVPlayer"
+	github "teamSolutionAnalysts/sa-plug-avplayer" == 0.2.9
 	
 Run carthage update to build the framework and drag the built SAPlugAVPlayer.framework into your Xcode project.
 
 ## Manually
 
-If you prefer not to use any of the aforementioned dependency managers, you can integrate SAPlugAVPlayer into your project manually. Just copy the source folder in your project directory from https://github.com/teamSolutionAnalysts/sa-plug-avplayer/tree/master/SAVideoPlayer/Source
+If you prefer not to use any of the aforementioned dependency managers, you can integrate SAPlugAVPlayer into your project manually. Just copy the source folder in your project directory from [Source](https://github.com/teamSolutionAnalysts/sa-plug-avplayer/tree/master/SAVideoPlayer)
 
 ## Steps to add player
 ### Assign ViewVideo class
@@ -69,6 +69,9 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 If you are planing to play only youtube embedded urls. Do not take VideoController view. You can play embedded url with ViewVideo only.
 
 ```swift
+import SAPlugAVPlayer
+import AVFoundation
+
 override func viewDidLoad() {
     super.viewDidLoad()
     setUpPlayerWithURlStreaming()
