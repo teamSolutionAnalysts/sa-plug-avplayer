@@ -69,6 +69,9 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 If you are planing to play only youtube embedded urls. Do not take VideoController view. You can play embedded url with ViewVideo only.
 
 ```swift
+import SAPlugAVPlayer
+import AVFoundation
+
 override func viewDidLoad() {
     super.viewDidLoad()
     setUpPlayerWithURlStreaming()
