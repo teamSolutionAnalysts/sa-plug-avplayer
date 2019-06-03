@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF0C677A22A4EB24009030C3 /* SAAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF0C677922A4EB24009030C3 /* SAAssets.xcassets */; };
 		AF0EAB0B229FA49C00CB2BA3 /* AssignViewVideo.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0EAB0A229FA49C00CB2BA3 /* AssignViewVideo.png */; };
 		AF147EBD228A901500EF42EA /* Controlls.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF147EBC228A901500EF42EA /* Controlls.swift */; };
 		AF147EBF228AA14400EF42EA /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF147EBE228AA14400EF42EA /* DemoData.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AF0C677922A4EB24009030C3 /* SAAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SAAssets.xcassets; sourceTree = "<group>"; };
 		AF0EAB0A229FA49C00CB2BA3 /* AssignViewVideo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AssignViewVideo.png; sourceTree = "<group>"; };
 		AF147EBC228A901500EF42EA /* Controlls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controlls.swift; sourceTree = "<group>"; };
 		AF147EBE228AA14400EF42EA /* DemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				AF38A870228961F800DC0B2B /* Assets.xcassets */,
 				AF38A872228961F800DC0B2B /* LaunchScreen.storyboard */,
 				AF38A875228961F800DC0B2B /* Info.plist */,
+				AF0C677922A4EB24009030C3 /* SAAssets.xcassets */,
 			);
 			path = SAVideoPlayer;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				AF38A86F228961F600DC0B2B /* Main.storyboard in Resources */,
 				AF3270EE2296C5B200C46927 /* Simulator Screen Shot - iPhone 6 - 2019-05-23 at 17.37.56.png in Resources */,
 				AFF6D6E7229BA8EF00336763 /* SetVideoController.png in Resources */,
+				AF0C677A22A4EB24009030C3 /* SAAssets.xcassets in Resources */,
 				AFF8B07F22A0FCA8007940C6 /* fast-forward.png in Resources */,
 				AFF6D6E6229BA8EF00336763 /* Set Images for controller.png in Resources */,
 				AFF8B07B22A0FC95007940C6 /* backward.png in Resources */,
