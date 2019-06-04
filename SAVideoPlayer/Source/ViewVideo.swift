@@ -578,8 +578,6 @@ public class ViewVideo : UIView
         }
     }
     
-    
-    
     @objc func btnExpandTouched(_ sender: Any) {
         if self.isEmbeddedVideo{
             return
