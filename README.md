@@ -1,5 +1,7 @@
 # SAPlugAVPlayer
 
+### Classes :  ![CNContact](https://developer.apple.com/documentation/contacts), CNMutableContact, CNContactStore.
+
 Simple and featured video player with full of customisation possibility, full control over AVPlayer. Adjust as you need in terms of design and feature.
 ## Getting Started
 Here we have a simple plug and play module that a developer can use to integrate for video playing in swift 4.2. PlugAVPlayer lets you create your own UI and add images for buttons like play and fullscreen.
